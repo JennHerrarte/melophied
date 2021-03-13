@@ -5,7 +5,7 @@ import LoginPage from '../pages/LoginPage/LoginPage'
 const Routes = () => (
     <Switch>
         <Route exact path="/" component={ HomePage } />
-        <Route exact path="/login" component={ LoginPage } />
+        <Route path="/login" component={ LoginPage } />
     </Switch>
 )
 
