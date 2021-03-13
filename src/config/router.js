@@ -5,7 +5,7 @@ import FanPage from '../pages/FanPage/FanPage'
 const Routes = () => (
     <Switch>
         <Route exact path="/" component={ HomePage } />
-        <Route exact path="/Fanpage" component={ FanPage } />
+        <Route path="/fanpage" component={ FanPage } />
     </Switch>
 )
 
