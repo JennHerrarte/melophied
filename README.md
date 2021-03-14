@@ -37,7 +37,7 @@ Discover new songs by browsing other community created tribute fan pages. Explor
 ![Home Page](https://media.git.generalassemb.ly/user/19097/files/11a0e680-8411-11eb-8f48-144f7615a49b)
 ![Register Page](https://media.git.generalassemb.ly/user/19097/files/12397d00-8411-11eb-8237-61ccc4ebedb9)
 ![Log In Page](https://media.git.generalassemb.ly/user/19097/files/12397d00-8411-11eb-80ca-e06424d79f4c)
-![User Profile Page](https://media.git.generalassemb.ly/user/19097/files/12397d00-8411-11eb-840a-e443f27721b4)
+![User Profile Page](https://media.git.generalassemb.ly/user/19097/files/9f490880-84db-11eb-9fd4-ade853cadd25)
 ![About](https://media.git.generalassemb.ly/user/19097/files/11085000-8411-11eb-80c0-a3e15496c5d5)
 ![Explore Page](https://media.git.generalassemb.ly/user/19097/files/11a0e680-8411-11eb-9dad-6c03cb7f632c)
 ![Create Fan Page](https://media.git.generalassemb.ly/user/19097/files/11a0e680-8411-11eb-888e-2d5f3e13979c)
@@ -48,6 +48,3 @@ Discover new songs by browsing other community created tribute fan pages. Explor
 
 **ERD**
 ![Models](https://media.git.generalassemb.ly/user/19097/files/b28fa180-8411-11eb-8009-fde4decd67f7)
-
-
-
