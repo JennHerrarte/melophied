@@ -9,7 +9,7 @@ const FanPage = () => {
     return (
         <div className="FanPage">
               <img src={Kevin} className="Kevin" alt="Kevin"/>
-            <h1>Tame Impala</h1>
+            <h1 className='artistTitle'>Tame Impala</h1>
             <FanPageBio/>
             <Tracks/>
             <Albums/>

@@ -1,9 +1,19 @@
-body {
-    font-family: 'Josefin Sans', sans-serif;
-    /* font-family: 'Roboto', sans-serif; */
-}
 
+    /* font-family: 'Josefin Sans', sans-serif; */
+    /* font-family: 'Roboto', sans-serif; */
+
+body {
+    background-color: black;
+}
 .Kevin {
     width: 90em;
+}
+
+.artistTitle {
+    align-items: center;
+    color:  #851e3e;
+    justify-content: center;
+    display: flex;
     font-family: 'Josefin Sans', sans-serif;
+    font-size: 5rem;
 }
