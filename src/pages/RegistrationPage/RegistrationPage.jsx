@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Form, Button, Container} from 'react-bootstrap';
 import {useState} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 
 const RegistrationPage = () => {
 
@@ -10,11 +10,44 @@ const RegistrationPage = () => {
     const [email, setEmail]=useState('')
     const [username, setUsername]=useState('')
     const [password, setPassword]=useState('')
+
+    const history = useHistory;
     
+    const registrationHandler = (e) => {
 
-    const registrationHandler = () => {
-
-    }
+        e.preventDefault()
+  
+        submitRegistrationData()
+      }
+  
+      const submitRegistrationData = async () => {
+  
+        try {
+  
+          const data = {
+            firstName,
+            lastName,
+            email,  
+            username,
+            password
+          }
+  
+          console.log(data);
+          
+          // TODO
+          // await User.login(data)
+  
+          // TODO check if email or username already exists. if yes, return error
+  
+          history.push('/')
+  
+        } catch (error) {
+  
+          return console.log(error);
+  
+        }
+  
+      }
 
     return (
         <>
