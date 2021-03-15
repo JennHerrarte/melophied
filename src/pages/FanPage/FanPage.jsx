@@ -1,12 +1,15 @@
 import FanPageBio from '../../components/FanPageBio/FanPageBio'
 import Albums from '../../components/Albums/Albums'
 import Tracks from '../../components/Tracks/Tracks'
-import UserShows from '../../components/Tracks/UserShows'
+import UserShows from '../../components/UserShows/UserShows'
+import Kevin from '../FanPage/testimages/Kevin.png' 
+import './FanPage.css'
 
 const FanPage = () => {
     return (
         <div className="FanPage">
-            <h1>FanPage</h1>
+              <img src={Kevin} className="Kevin" alt="Kevin"/>
+            <h1>Tame Impala</h1>
             <FanPageBio/>
             <Tracks/>
             <Albums/>
