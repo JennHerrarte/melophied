@@ -1,11 +1,13 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Form, Button, Container} from 'react-bootstrap';
 import {useState} from 'react';
+import {Link} from 'react-router-dom';
 
 const RegistrationPage = () => {
 
     const [firstName, setFirstName]=useState('')
     const [lastName, setLastName]=useState('')
+    const [email, setEmail]=useState('')
     const [username, setUsername]=useState('')
     const [password, setPassword]=useState('')
     
@@ -21,17 +23,17 @@ const RegistrationPage = () => {
 
         <Form.Group controlId="confirm-password">
         <Form.Label>First Name</Form.Label>
-        <Form.Control type="text" placeholder="First Name" name="firstName" />
+        <Form.Control type="text" placeholder="First Name" name="firstName" onChange={(e) => {setFirstName(e.target.value)}}/>
         </Form.Group>
 
         <Form.Group controlId="confirm-password">
         <Form.Label>Last Name</Form.Label>
-        <Form.Control type="text" placeholder="Last Name" name="lastName" />
+        <Form.Control type="text" placeholder="Last Name" name="lastName" onChange={(e) => {setLastName(e.target.value)}}/>
         </Form.Group>
 
         <Form.Group controlId="confirm-password">
         <Form.Label>Email</Form.Label>
-        <Form.Control type="email" placeholder="Email" name="email" />
+        <Form.Control type="email" placeholder="Email" name="email" onChange={(e) => {setEmail(e.target.value)}} />
         </Form.Group>
 
         <Form onSubmit={registrationHandler}>
@@ -56,6 +58,12 @@ const RegistrationPage = () => {
             Submit
         </Button>
         </Form>
+
+        <p>
+        Already have a Melophied account? 
+        <Link to="/login">Log in here</Link>
+        </p>
+
         </Container>
 </> 
     )
