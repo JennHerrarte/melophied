@@ -11,9 +11,11 @@ const FanPage = () => {
               <img src={Kevin} className="Kevin" fluid alt="Kevin"/>
             <h1 className='artistTitle'>Tame Impala</h1>
             <FanPageBio/>
-            <Tracks/>
-            <Albums/>
-            <UserShows/>
+            <div className="FanPageBody">
+                <Tracks/>
+                <Albums/>
+                <UserShows/>
+            </div>
         </div>
     )
 }

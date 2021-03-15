@@ -1,17 +1,23 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Card, Button } from 'react-bootstrap'
+import { Card } from 'react-bootstrap'
 
 const UserShows = () => {
     return(
-        <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src="holder.js/100px180" />
+        <Card style={{ width: '25rem', height: '40rem' }}>
         <Card.Body>
+          <h1 className='maincardtitle'>Concerts</h1>
           <Card.Title>Card Title</Card.Title>
           <Card.Text>
-            Some quick example text to build on the card title and make up the bulk of
-            the card's content.
+            <ul>
+                <li>OutsideLands</li>
+                <li>OutsideLands</li>
+                <li>OutsideLands</li>
+                <li>OutsideLands</li>
+                <li>OutsideLands</li>
+                <li>OutsideLands</li>
+                <li>OutsideLands</li>
+            </ul>
           </Card.Text>
-          <Button variant="primary">Go somewhere</Button>
         </Card.Body>
       </Card>
     )
