@@ -17,6 +17,12 @@ const RegistrationForm = () => {
     const registrationHandler = (e) => {
 
         e.preventDefault()
+
+        if (password !== password2) {
+            return console.log('passwords do not match');
+            // TODO check if there is a way to check passwords match before button submit? 
+            // Will need a notification to alert user if passwords do not match
+        }
   
         submitRegistrationData()
       }
@@ -30,17 +36,18 @@ const RegistrationForm = () => {
             lastName,
             email,  
             username,
-            password
+            password, 
+            password2
           }
   
           console.log(data);
           
-          // TODO
-          // await User.login(data)
+          // TODO 
+          // await User.create(data)
   
           // TODO check if email or username already exists. if yes, return error
 
-          //TODO check if password and password2 match. if not, return error
+         
   
           history.push('/login');
   
