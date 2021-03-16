@@ -19,6 +19,16 @@ class Spotify {
 
     }
 
+    // search artist
+
+    // get all albums by an artist
+
+    // get all tracks of an artist (will need to fetch all albums and use getMultipleAlbums endpoint to fetch all of its tracks)
+
+    // get top tracks of an artist
+
+    // get top albums of an artist (seems like there's no endpoint for that)
+
 }
 
 export default Spotify
