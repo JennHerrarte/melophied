@@ -32,7 +32,7 @@ const LoginForm = () => {
       history.push("/");
 
     } catch (error) {
-        
+
       return console.log(error);
     }
   };
@@ -66,6 +66,16 @@ const LoginForm = () => {
               }}
             />
           </Form.Group>
+
+          <Form.Group controlId="rememberMe" type="checkbox"
+              name="rememberMe">
+            <Form.Label>Remember Me</Form.Label>
+            <Form.Control
+              type="checkbox"
+              name="rememberMe"
+            />
+          </Form.Group>
+
 
           <Button variant="primary" type="submit">
             Login
