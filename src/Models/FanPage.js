@@ -1,36 +1,36 @@
 import axios from 'axios';
 
-const BASE_URL = process.env.REACT_APP_API_URL || 'https://localhost:3005'
+const BASE_URL = process.env.REACT_APP_API_URL || 'https://localhost:3005/api'
 
 class FanPage {
   /* get all fanPages */
   static all = () => {
-    return axios.get( `${BASE_URL}/fanpages`);
+    return axios.get( `${BASE_URL}/melohpied/fanpage/all`);
   }
 
   /* get top five fanPages */
   static topFive = () => {
-    return axios.get( `${BASE_URL}/fanpages/topfive`);
+    return axios.get( `${BASE_URL}/melohpied/fanpage/topfive`);
   }
 
   /* get one fanPage */
   static show = ( pageId ) => {
-    return axios.get(`${BASE_URL}/fanpages/${pageId}`);
+    return axios.get(`${BASE_URL}/melohpied/fanpage/show/${pageId}`);
   }
 
   /* create fanPage */
   static create = ( pageData ) => {
-    return axios.post(`${BASE_URL}/fanpages/create`, pageData );
+    return axios.post(`${BASE_URL}/melohpied/fanpage/create`, pageData );
   }
 
   /* update fanPage */
   static update = ( pageId, pageData ) => {
-    return axios.put(`${BASE_URL}/fanpages/${pageId}/update`, pageData );
+    return axios.put(`${BASE_URL}/melohpied/fanpage/${pageId}/update`, pageData );
   }
 
   /* delete fanPage */
   static destroy = ( pageId ) => {
-    return axios.delete(`${BASE_URL}/movies/${pageId}/delete`);
+    return axios.delete(`${BASE_URL}/melohpied/fanpage/${pageId}/delete`);
   }
 }
 
