@@ -12,7 +12,8 @@ class Spotify {
         return axios('https://accounts.spotify.com/api/token', {
             headers: {
                 'Content-Type' : 'application/x-www-form-urlencoded',
-                'Authorization' : 'Basic ' + btoa(REACT_APP_CLIENT_ID + ':' + REACT_APP_CLIENT_SECRET)
+                'Authorization' : `Basic ${btoa(`${REACT_APP_CLIENT_ID}:${REACT_APP_CLIENT_SECRET}`)}`
+                //'Basic ' + btoa(REACT_APP_CLIENT_ID + ':' + REACT_APP_CLIENT_SECRET)
             },
             data: 'grant_type=client_credentials',
             method: 'POST'
