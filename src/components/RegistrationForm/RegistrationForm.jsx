@@ -40,7 +40,7 @@ const RegistrationForm = () => {
             password2
           }
   
-          console.log(data);
+          console.log('user data', data);
           
           // TODO 
           // await User.create(data)
