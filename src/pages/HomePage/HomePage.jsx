@@ -42,6 +42,7 @@ const HomePage = () => {
     return (
         <div className="HomePage">
             <h1>Hello World!</h1>
+            <p>These are my top 5 fan pages</p>
         </div>
     )
 }
