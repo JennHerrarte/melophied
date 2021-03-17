@@ -27,8 +27,12 @@ const LoginForm = () => {
 
       await User.login(data);
 
+      // TODO ask backend team to send data if the user is found and authenticated. If not found, show error
+
       history.push("/");
+
     } catch (error) {
+        
       return console.log(error);
     }
   };
