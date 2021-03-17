@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Form, Button, Container} from 'react-bootstrap';
 import {useState} from 'react';
 import {Link, useHistory} from 'react-router-dom';
+import User from '../../Models/User';
 
 const RegistrationForm = () => {
 
@@ -41,9 +42,8 @@ const RegistrationForm = () => {
           }
   
           console.log('user data', data);
-          
-          // TODO 
-          // await User.create(data)
+         
+          await User.register(data)
   
           // TODO check if email or username already exists. if yes, return error
 
