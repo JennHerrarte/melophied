@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 import Spotify from '../../services/spotify'
-import FanPagesContainer from '../../components/FanPagesContainer/FanPagesContainer'
+import FanPageCardsContainer from '../../components/FanPageCardsContainer/FanPageCardsContainer'
 
 const HomePage = () => {
 
@@ -44,7 +44,7 @@ const HomePage = () => {
         <div className="HomePage">
             <h1>Hello World!</h1>
             <p>These are my top 5 fan pages</p>
-            <FanPagesContainer/>
+            <FanPageCardsContainer/>
         </div>
     )
 }
