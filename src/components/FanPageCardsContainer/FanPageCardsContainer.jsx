@@ -2,13 +2,13 @@
 
 import FanPageCard from  '../FanPageCard/FanPageCard'
 
-const FanPagesContainer = () => {
+const FanPageCardsContainer = () => {
     return(
-        <div className='FanPagesContainer'>
+        <div className='FanPageCardsContainer'>
             <p>This container holds all the fan page cards</p>
             <FanPageCard/>
         </div>
     )   
 }
 
-export default FanPagesContainer;
+export default FanPageCardsContainer;
