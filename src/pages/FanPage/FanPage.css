@@ -1,0 +1,29 @@
+
+    /* font-family: 'Josefin Sans', sans-serif; */
+    /* font-family: 'Roboto', sans-serif; */
+/* body {
+    background-color: #355070;
+} */
+
+.Kevin {
+    width: 90em;
+}
+
+.artistTitle {
+    align-items: center;
+    color:  #E56B6F;
+    display: flex;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 5rem;
+    justify-content: center;
+    margin-top: 50px;
+  
+}
+
+.FanPageBody {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 50px;
+}
