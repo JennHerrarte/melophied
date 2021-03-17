@@ -5,8 +5,9 @@ import { Link, useHistory } from "react-router-dom";
 import User from "../../Models/User";
 
 const LoginForm = () => {
-  const [userId, setUserId] = useState("");
-  const [password, setPassword] = useState("");
+  const [userId, setUserId] = useState('');
+  const [password, setPassword] = useState('');
+  const [rememberMe, setRememberMe]=useState('off')
 
   const history = useHistory();
 
@@ -16,14 +17,17 @@ const LoginForm = () => {
     submitLoginData();
   };
 
+  // TODO Local Storage function to store userId if contact has checked "remember me" on login form 
+  // const lsRememberMe
+
+
   const submitLoginData = async () => {
     try {
       const data = {
         userId,
         password,
+        rememberMe,
       };
-
-      console.log("user data", data);
 
       await User.login(data);
 
@@ -73,6 +77,9 @@ const LoginForm = () => {
             <Form.Control
               type="checkbox"
               name="rememberMe"
+              onChange={(e) => {
+                setRememberMe(e.target.value);
+              }}
             />
           </Form.Group>
 
