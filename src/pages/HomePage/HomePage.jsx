@@ -1,7 +1,6 @@
 import {useState, useEffect} from 'react'
 import Spotify from '../../services/spotify'
 import FanPagesContainer from '../../components/FanPagesContainer/FanPagesContainer'
-// import User from '../../Models/'
 
 const HomePage = () => {
 

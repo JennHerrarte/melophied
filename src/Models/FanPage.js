@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = process.env.REACT_APP_API_URL || 'https://localhost:3005/api'
+const BASE_URL = process.env.REACT_APP_API_URL
 
 class FanPage {
   /* get all fanPages */
