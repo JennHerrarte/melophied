@@ -1,6 +1,6 @@
 import axios from 'axios'
 const { REACT_APP_CLIENT_ID, REACT_APP_CLIENT_SECRET } = process.env
-const BASE_URL = 'https://api.spotify.com/v1/'
+const BASE_URL = 'https://api.spotify.com/v1'
 
 
 class Spotify {
@@ -18,22 +18,35 @@ class Spotify {
             method: 'POST'
         })
 
-    }
+    };
 
     // search artists
 
     static searchArtists = (token, keyword) => {
 
-        return axios(`${BASE_URL}search?q=${keyword}&type=artist`, {
+        return axios(`${BASE_URL}/search?q=${keyword}&type=artist`, {
             headers: {
                 'Authorization' : `Bearer ${token}`
             },
             method: 'GET'
         })
 
-    }
+    };    
 
     // get all albums by an artist
+
+    static getAlbums = (token, artistId) => {
+
+        return axios(`${BASE_URL}/artists/${artistId}/albums?include_groups=album`, {
+            headers: {
+                'Authorization' : `Bearer ${token}`
+            },
+            method: 'GET'
+        })
+
+    };
+
+    
 
     // get all tracks of an artist (will need to fetch all albums and use getMultipleAlbums endpoint to fetch all of its tracks)
 
