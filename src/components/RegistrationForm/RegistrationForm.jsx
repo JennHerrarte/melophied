@@ -12,7 +12,7 @@ const RegistrationForm = () => {
     const [password, setPassword]=useState('')
     const [password2, setPassword2]=useState('')
 
-    const history = useHistory;
+    const history = useHistory();
     
     const registrationHandler = (e) => {
 
