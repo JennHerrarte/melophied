@@ -1,7 +1,9 @@
-const ArtistSelector = () => {
+const ArtistSelector = ({token, fetchArtists}) => {
+
     return (
         <div className="ArtistSelector">
-            Artist Selector
+            <input type="text" className="artistSearchBar" placeholder="Find your artist" 
+            onChange={(e) => fetchArtists(token, e.target.value)} />
         </div>
     )
 }
