@@ -1,7 +1,9 @@
+import FanPageEditor from '../../components/FanPageEditor/FanPageEditor'
+
 const CreateFanPage = () => {
     return (
         <div className="CreateFanPage">
-            CreateFanPage
+            <FanPageEditor />
         </div>
     )
 }
