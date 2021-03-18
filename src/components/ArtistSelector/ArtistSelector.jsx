@@ -1,6 +1,6 @@
 import './ArtistSelector.css'
 
-const ArtistSelector = ({token, fetchArtists, artists, setArtists, setArtistId }) => {
+const ArtistSelector = ({token, fetchArtists, artists, setArtists, setArtistData }) => {
 
     return (
 
@@ -11,11 +11,11 @@ const ArtistSelector = ({token, fetchArtists, artists, setArtists, setArtistId }
                 {/* if artists is not empty, show search result below the input */}
             {
                 artists.length ? 
-                <div class="ArtistSelector__searchResult">
+                <div className="ArtistSelector__searchResult">
                     {/* show clickable paragraph for each artists in the array. When artist is clicked, sets the ID of the artist for the FanPage */}
                     {
                         artists.map((artist) => <p className="ArtistSelector__artist" key={artist.id} onClick={() => {
-                            setArtistId(artist.id)
+                            setArtistData({name: artist.name, id: artist.id})
                         }}>{artist.name}</p> )
                     }
 

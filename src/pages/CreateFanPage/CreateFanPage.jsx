@@ -7,7 +7,7 @@ import Spotify from '../../services/spotify'
 const CreateFanPage = () => {
 
     const [token, setToken] = useState('')
-    const [artistId, setArtistId] = useState('')
+    const [artistData, setArtistData] = useState({name: '', id: ''})
     const [artists, setArtists] = useState([])
 
     // fetch spotify token when the home page loads
@@ -32,16 +32,17 @@ const CreateFanPage = () => {
 
     return (
         <div className="CreateFanPage">
+            {/* if no artist is selected yet, show ArtistSelector. Once artist is selected, show FanPageEditor */}
             {
-                artistId !== '' ?
-                <FanPageEditor />
-                :
+                artistData.name === '' ?
                 <ArtistSelector 
                 token={ token } 
                 fetchArtists={ fetchArtists } 
                 artists={ artists } 
                 setArtists={ setArtists } 
-                setArtistId={ setArtistId }/>
+                setArtistData={ setArtistData }/>
+                :
+                <FanPageEditor />
             }
         </div>
     )
