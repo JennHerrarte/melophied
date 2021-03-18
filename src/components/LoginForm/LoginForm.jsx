@@ -7,7 +7,7 @@ import User from "../../Models/User";
 const LoginForm = () => {
   const [userId, setUserId] = useState('');
   const [password, setPassword] = useState('');
-  const [rememberMe, setRememberMe]=useState('off')
+  const [rememberMe, setRememberMe]=useState(false);
 
   const history = useHistory();
 
@@ -40,7 +40,7 @@ const LoginForm = () => {
       return console.log(error);
     }
   };
-
+  console.log(rememberMe)
   return (
     <div className="LoginForm">
       <Container>
@@ -77,8 +77,10 @@ const LoginForm = () => {
             <Form.Control
               type="checkbox"
               name="rememberMe"
+              value={rememberMe}
               onChange={(e) => {
-                setRememberMe(e.target.value);
+                setRememberMe(!rememberMe);
+                
               }}
             />
           </Form.Group>
