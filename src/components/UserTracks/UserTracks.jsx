@@ -1,8 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Card } from 'react-bootstrap'
-import './Tracks.css'
+import './UserTracks.css'
 
-const Tracks = () => {
+const UserTracks = () => {
     return(
         <Card style={{ width: '25rem', height: '40rem' }}>
         <Card.Body>
@@ -32,5 +32,5 @@ const Tracks = () => {
     )
 }
 
-export default Tracks; 
+export default UserTracks; 
 
