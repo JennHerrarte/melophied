@@ -28,18 +28,20 @@ const LoginForm = () => {
         password,
       };
 
-      await User.login(data);
+      const res = await User.login(data);
 
-      // TODO ask backend team to send data if the user is found and authenticated. If not found, show error
+      localStorage.setItem('uid', res.data.userJWT )
 
       history.push("/");
+      
+      window.location.reload(false)
 
     } catch (error) {
 
       return console.log(error);
     }
   };
-  console.log(rememberMe)
+  
   return (
     <div className="LoginForm">
       <Container>

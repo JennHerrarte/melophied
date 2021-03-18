@@ -21,8 +21,7 @@ const RegistrationForm = () => {
 
         if (password !== verifiedPassword) {
             return console.log('passwords do not match');
-            // TODO check if there is a way to check passwords match before button submit? 
-            // Will need a notification to alert user if passwords do not match
+
         }
   
         submitRegistrationData()
@@ -40,14 +39,8 @@ const RegistrationForm = () => {
             password, 
             verifiedPassword
           }
-  
-          console.log('user data', data);
-         
-          await User.register(data)
-  
-          // TODO check if email or username already exists. if yes, return error
 
-         
+          await User.register(data)
   
           history.push('/login');
   
