@@ -5,7 +5,7 @@ import { Link, useHistory } from "react-router-dom";
 import User from "../../Models/User";
 
 const LoginForm = () => {
-  const [userId, setUserId] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe]=useState(false);
 
@@ -24,9 +24,8 @@ const LoginForm = () => {
   const submitLoginData = async () => {
     try {
       const data = {
-        userId,
+        username,
         password,
-        rememberMe,
       };
 
       await User.login(data);
@@ -52,9 +51,9 @@ const LoginForm = () => {
             <Form.Control
               type="text"
               placeholder="Enter Username or email"
-              name="userId"
+              name="username"
               onChange={(e) => {
-                setUserId(e.target.value);
+                setUsername(e.target.value);
               }}
             />
           </Form.Group>
