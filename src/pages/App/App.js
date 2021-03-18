@@ -14,7 +14,7 @@ function App() {
 
   const logout = () => {
 
-    localStorage.clear()
+    localStorage.removeItem('uid')
 
     setCurrentUser(localStorage.getItem('uid'))
     history.push('/');
