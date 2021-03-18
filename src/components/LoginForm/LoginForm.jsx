@@ -40,7 +40,7 @@ const LoginForm = () => {
       return console.log(error);
     }
   };
-  console.log(rememberMe)
+  
   return (
     <div className="LoginForm">
       <Container>
@@ -80,7 +80,6 @@ const LoginForm = () => {
               value={rememberMe}
               onChange={(e) => {
                 setRememberMe(!rememberMe);
-                
               }}
             />
           </Form.Group>
