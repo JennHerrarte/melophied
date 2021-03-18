@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Form, Button, Container } from "react-bootstrap";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import User from "../../Models/User";
 
@@ -10,6 +10,13 @@ const LoginForm = () => {
   const [rememberMe, setRememberMe]=useState(false);
 
   const history = useHistory();
+
+  useEffect(() => {
+    if (localStorage.username && localStorage.rememberMe) {
+      setUsername(localStorage.getItem('username'))
+      setRememberMe(localStorage.getItem('rememberMe'))
+    }
+  }, [])
 
   const loginHandler = (e) => {
     e.preventDefault();
@@ -27,6 +34,14 @@ const LoginForm = () => {
         username,
         password,
       };
+
+      if (rememberMe === true && username && password) {
+        localStorage.setItem('username', username)
+        localStorage.setItem('rememberMe', rememberMe)
+      } else {
+        localStorage.removeItem('username')
+        localStorage.removeItem('rememberMe')
+      }
 
       const res = await User.login(data);
 
@@ -57,6 +72,7 @@ const LoginForm = () => {
               onChange={(e) => {
                 setUsername(e.target.value);
               }}
+              value={username}
             />
           </Form.Group>
 
@@ -79,9 +95,9 @@ const LoginForm = () => {
               type="checkbox"
               name="rememberMe"
               value={rememberMe}
+              checked={rememberMe}
               onChange={(e) => {
                 setRememberMe(!rememberMe);
-                
               }}
             />
           </Form.Group>
