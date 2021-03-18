@@ -12,3 +12,5 @@ const ArtistTopTracks = () => {
         </div>
     )
 }
+
+export default ArtistTopTracks;
