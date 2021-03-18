@@ -5,6 +5,7 @@ import './App.css';
 import Routes from '../../config/router'
 import Navbar from '../../components/Navbar/Navbar'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import HomePage from '../../pages/HomePage/HomePage';
 
 
 function App() {
@@ -21,12 +22,14 @@ function App() {
 
   }
 
+  
+
   return (
     <div className="App">
       <Navbar currentUser={ currentUser } logout={ logout } />
       <main>
         <Routes currentUser={ currentUser }
-          setCurrentUser={ setCurrentUser } />
+          setCurrentUser={ setCurrentUser } />  
       </main>
     </div>
   );
