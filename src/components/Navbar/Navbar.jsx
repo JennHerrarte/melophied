@@ -5,6 +5,7 @@ const Navbar = () => {
         <nav className="nav">
             <section className="nav__links">
                 <Link className="nav__link" to="/">Home</Link>
+                <Link className="nav__link" to="/about">About</Link>
                 <Link className="nav__link" to="/explore">Explore</Link>
             </section>
         </nav>
