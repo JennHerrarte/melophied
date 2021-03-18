@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Card } from 'react-bootstrap'
-import './Tracks.css'
+import './UserTracks.css'
 
 const UserTracks = () => {
     return(
