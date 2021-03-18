@@ -26,7 +26,6 @@ const LoginForm = () => {
       const data = {
         userId,
         password,
-        rememberMe,
       };
 
       await User.login(data);
