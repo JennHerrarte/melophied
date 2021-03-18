@@ -36,7 +36,12 @@ const CreateFanPage = () => {
                 artistId !== '' ?
                 <FanPageEditor />
                 :
-                <ArtistSelector token={ token } fetchArtists={ fetchArtists } artists={ artists } setArtistId={ setArtistId }/>
+                <ArtistSelector 
+                token={ token } 
+                fetchArtists={ fetchArtists } 
+                artists={ artists } 
+                setArtists={ setArtists } 
+                setArtistId={ setArtistId }/>
             }
         </div>
     )
