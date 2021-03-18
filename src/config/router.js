@@ -5,6 +5,7 @@ import LoginPage from '../pages/LoginPage/LoginPage'
 import FanPage from '../pages/FanPage/FanPage'
 import AboutPage from '../pages/AboutPage/AboutPage'
 import ExplorePage from '../pages/ExplorePage/ExplorePage'
+import CreateFanPage from '../pages/CreateFanPage/CreateFanPage'
 
 const Routes = () => (
     <Switch>
@@ -14,6 +15,7 @@ const Routes = () => (
         <Route path="/fanpage" component={ FanPage } />
         <Route path="/about" component={ AboutPage } />
         <Route path="/explore" component={ ExplorePage } />
+        <Route path="/create" component={ CreateFanPage } />
     </Switch>
 )
 
