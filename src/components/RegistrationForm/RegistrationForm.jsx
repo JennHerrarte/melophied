@@ -11,7 +11,7 @@ const RegistrationForm = () => {
     const [email, setEmail]=useState('')
     const [username, setUsername]=useState('')
     const [password, setPassword]=useState('')
-    const [password2, setPassword2]=useState('')
+    const [verifiedPassword, setVerifiedPassword]=useState('')
 
     const history = useHistory();
     
@@ -19,7 +19,7 @@ const RegistrationForm = () => {
 
         e.preventDefault()
 
-        if (password !== password2) {
+        if (password !== verifiedPassword) {
             return console.log('passwords do not match');
             // TODO check if there is a way to check passwords match before button submit? 
             // Will need a notification to alert user if passwords do not match
@@ -38,7 +38,7 @@ const RegistrationForm = () => {
             email,  
             username,
             password, 
-            password2
+            verifiedPassword
           }
   
           console.log('user data', data);
@@ -95,9 +95,9 @@ const RegistrationForm = () => {
         <Form.Control type="password" placeholder="Password" name="password" onChange={(e) => {setPassword(e.target.value)}} />
         </Form.Group>
 
-        <Form.Group controlId="password2">
+        <Form.Group controlId="verifiedPassword">
         <Form.Label>Confirm Password</Form.Label>
-        <Form.Control type="password" placeholder="Confirm Password" name="password2" onChange={(e) => {setPassword2(e.target.value)}}/>
+        <Form.Control type="password" placeholder="Confirm Password" name="verifiedPassword" onChange={(e) => {setVerifiedPassword(e.target.value)}}/>
         </Form.Group>
 
         <Button variant="primary" type="submit">
