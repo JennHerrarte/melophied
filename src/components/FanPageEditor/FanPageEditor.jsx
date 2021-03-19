@@ -1,14 +1,18 @@
 import DetailEditor from '../DetailEditor/DetailEditor'
 import TrackListEditor from '../TrackListEditor/TrackListEditor'
 import AlbumListEditor from '../AlbumListEditor/AlbumListEditor'
+import ShowListEditor from '../ShowListEditor/ShowListEditor'
 
 const FanPageEditor = () => {
     return(
         <div className="FanPageEditor">
             Fan Page Editor
             <DetailEditor />
-            <TrackListEditor />
-            <AlbumListEditor />
+            <div className="FanPageEditor__list-editors-wrapper d-flex justify-content-around" >
+                <TrackListEditor />
+                <AlbumListEditor />
+                <ShowListEditor />
+            </div>
             {/* 
             Checklist:
             DONE 1. Detail Editor
