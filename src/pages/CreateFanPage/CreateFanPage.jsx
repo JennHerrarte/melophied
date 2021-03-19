@@ -42,7 +42,7 @@ const CreateFanPage = () => {
                 setArtists={ setArtists } 
                 setArtistData={ setArtistData }/>
                 :
-                <FanPageEditor />
+                <FanPageEditor token={token} artistData={artistData} />
             }
         </div>
     )

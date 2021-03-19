@@ -1,12 +1,26 @@
+import {useState, useEffect} from 'react'
+
 import DetailEditor from '../DetailEditor/DetailEditor'
 import TrackListEditor from '../TrackListEditor/TrackListEditor'
 import AlbumListEditor from '../AlbumListEditor/AlbumListEditor'
 import ShowListEditor from '../ShowListEditor/ShowListEditor'
+import Spotify from '../../services/spotify'
 
-const FanPageEditor = () => {
+const FanPageEditor = ({token, artistData}) => {
+
+    const [trackList, setTrackList] = useState([])
+    const [albumList, setAlbumList] = useState([])
+    const [showList, setShowList] = useState([])
+
+    useState(() => {
+
+    }, [])
+
+    // use getAlbums(token, artistId) and getTracks(token, artistId) to fetch tracks and albums
+
     return(
         <div className="FanPageEditor">
-            Fan Page Editor
+            Creating Fan Page for {artistData.name}
             <DetailEditor />
             <div className="FanPageEditor__list-editors-wrapper d-flex justify-content-around" >
                 <TrackListEditor />
