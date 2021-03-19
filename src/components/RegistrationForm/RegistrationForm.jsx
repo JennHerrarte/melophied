@@ -107,7 +107,7 @@ const RegistrationForm = () => {
         </p>
 
         </Container> */}
-
+        <main className="RegistrationForm">
         <div className="outer">
         <div className="inner">
         <form onSubmit={registrationHandler}>
@@ -149,7 +149,7 @@ const RegistrationForm = () => {
             </form>
             </div>
             </div>
-        
+        </main>
 </> 
     )
 }
