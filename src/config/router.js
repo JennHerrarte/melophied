@@ -8,7 +8,7 @@ import ExplorePage from '../pages/ExplorePage/ExplorePage'
 
 const Routes = ({currentUser}) => (
     <Switch>
-        <Route exact path="/" render={(props) =>  <HomePage currentUser={currentUser}/>  }/>
+        <Route exact path="/" render={() =>  <HomePage currentUser={currentUser}/>  }/>
         <Route path="/register" component={RegistrationPage} />
         <Route path="/login" component={ LoginPage } />
         <Route path="/fanpage" component={ FanPage } />

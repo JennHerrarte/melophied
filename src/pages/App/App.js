@@ -5,7 +5,6 @@ import './App.css';
 import Routes from '../../config/router'
 import Navbar from '../../components/Navbar/Navbar'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import HomePage from '../../pages/HomePage/HomePage';
 
 
 function App() {
