@@ -17,16 +17,6 @@ const Albums = () => {
                 <li>The Slow Rush</li>
             </ol>
           </Card.Text>
-          <Card.Title>Spotify Top 5</Card.Title>
-          <Card.Text>
-          <ol>
-                <li>Currents</li>
-                <li>The Slow Rush</li>
-                <li>Lonerism</li>
-                <li>InnerSpeaker</li>
-                <li>Live Versions</li>
-            </ol>
-          </Card.Text>
         </Card.Body>
       </Card>
     )
