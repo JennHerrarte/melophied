@@ -1,5 +1,5 @@
 const ArtistTopTracks = ({topTracks}) => {
-    console.log(topTracks)
+   
     return(
         <div className='ArtistTopTracks'>
             <ul> 
