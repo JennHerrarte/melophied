@@ -3,7 +3,7 @@
 const UserFanPages = () => {
     return (
         <div>
-        <h1>My fan pages</h1>
+        <h1>My Fan Pages</h1>
         <ul>
             <li>FanPage 1</li>
             <li>FanPage 2</li>
