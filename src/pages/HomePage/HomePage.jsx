@@ -7,23 +7,12 @@ import FanPageCardsContainer from '../../components/FanPageCardsContainer/FanPag
 
 const HomePage = ({currentUser}) => {
 
-    // NOTE TESTING SPOTIFY SEARCH API, WILL NEED TO MOVE IT TO CREATEFANPAGE ONCE THE PAGE IS CREATED.
-
-        // fetch token and store it into state (Will need to import useState, useEffect from react and Spotify class from services folder)
         const [token, setToken] = useState('')
-        const [artists, setArtists] = useState([])
 
         // fetch spotify token when the home page loads
         useEffect(() => {
             fetchToken()
         }, [])
-
-        // fetch artists matching search query when token is loaded
-        useEffect(() => {
-            if (token) {
-                fetchArtists(token, 'Taylor Swift')
-            }
-        }, [token])
 
         // feth spotify token and set it to token state
         const fetchToken = async () => {
@@ -31,17 +20,7 @@ const HomePage = ({currentUser}) => {
             const res = await Spotify.getToken()
 
             setToken(res.data.access_token)
-        }
-
-        // feth artist array from spotify and set it to artists state
-        const fetchArtists = async (token, artist) => {
-            const res = await Spotify.searchArtists(token, artist)
-
-            setArtists(res.data.artists.items)
-        }
-        // -----------------------------------    
-    
-    // --------------------------------------------------------------------------------------------------------------------------------------------   
+        }     
         
     return (
         <div className="HomePage">
