@@ -9,17 +9,13 @@ const UserTracks = ({topTracks}) => {
           <h1 className='maincardtitle'>Tracks</h1>
           <Card.Title>My Top 5 Tracks</Card.Title>
           <Card.Text>
-          <ul> 
-                {
-                topTracks.map((track, idx) => {
-                    return(
-                   <li>{track.name}</li>
-                    )
-                })
-                
-                }
-
-            </ul>
+          <ol>
+                <li>Solitude is Bliss</li>
+                <li>Eventually</li>
+                <li>Alter Ego</li>
+                <li>Mind Michief</li>
+                <li>Patience</li>
+            </ol>
           </Card.Text>
         </Card.Body>
       </Card>
