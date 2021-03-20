@@ -3,6 +3,7 @@ import jwtDecode from 'jwt-decode'
 import UserFanPages from '../../components/UserFanPages/UserFanPages'
 import UserTopArtists from '../../components/UserTopArtists/UserTopArtists'
 import EditUserProfile from '../../components/EditUserProfile/EditUserProfile'
+import './UserProfilePage.css'
 
 const UserProfilePage = ({currentUser}) => {
 
@@ -16,11 +17,11 @@ const UserProfilePage = ({currentUser}) => {
     
 
     return (
-    <div>
-        <h1>{username}</h1>
-        <EditUserProfile username={username}/>
-        <UserFanPages/>
-        <UserTopArtists/>
+    <div className="UserProfilePage">
+        <h1 className="username">{username}</h1>
+        <EditUserProfile  className="editButton" username={username}/>
+        <UserFanPages className="UserFanPages"/>
+        <UserTopArtists className="UserTopArtists"/>
     </div>
     )
 }
