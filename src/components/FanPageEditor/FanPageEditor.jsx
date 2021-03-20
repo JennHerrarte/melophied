@@ -80,13 +80,13 @@ const FanPageEditor = ({token, artistData, currentUser}) => {
                 <AlbumListEditor albumData={albumData} albumList={albumList} setAlbumList={setAlbumList} />
             </div>
             {
-                trackList.length === 5 && albumList.length === 5 ?
+                pageTitle && pageDetail && trackList.length === 5 && albumList.length === 5 ?
                 <button className="btn btn-success" onClick={() => {createPage(data)}}>
                     Create Page
                 </button>
                 :
                 <button className="btn btn-danger" disabled>
-                    Add more tracks or albums!
+                    Finish completing the page editor!
                 </button>
             }
             
