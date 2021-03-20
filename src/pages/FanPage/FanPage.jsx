@@ -6,6 +6,7 @@ import UserShows from '../../components/UserShows/UserShows'
 import Kevin from '../FanPage/testimages/Kevin.png' 
 import ArtistTopTracksContainer from '../../components/ArtistTopTracksContainer/ArtistTopTracksContainer'
 import Spotify from '../../services/spotify'
+import FanPageAPI from '../../Models/FanPageAPI'
 
 
 import './FanPage.css'
@@ -13,6 +14,7 @@ import './FanPage.css'
 const FanPage = () => {
 
     const [token, setToken ] = useState('');
+    const [pageData, setPageData] = useState({})
     const [topTracks, setTopTracks] = useState([]);
     const [userAlbums, setUserAlbums] = useState([]);
     const [userTracks, setUserTracks] = useState([]);
@@ -29,7 +31,7 @@ const FanPage = () => {
 
     useEffect(() => {
         if(token) {
-            fetchPageData(token, '06HL4z0CvFAxyc27GXpf02');
+            fetchPageData('605664f0e8bf720015451414');
         }
     }, [token]) 
 
@@ -57,7 +59,9 @@ const FanPage = () => {
 
 
     const fetchPageData = async(pageId) => {
-        const res = await FanPage.show(pageId)
+        const res = await FanPageAPI.show(pageId)
+
+        setPageData(res.data.foundFanPage)
     }
 
 

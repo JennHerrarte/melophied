@@ -15,7 +15,7 @@ class FanPageAPI {
 
   /* get one fanPage */
   static show = ( pageId ) => {
-    return axios.get(`${BASE_URL}/melophied/fanPage/show/${pageId}`);
+    return axios.get(`${BASE_URL}/melophied/fanPage/${pageId}`);
   }
 
   /* create fanPage */
