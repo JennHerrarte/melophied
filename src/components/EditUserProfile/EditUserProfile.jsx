@@ -1,8 +1,10 @@
 import {Button} from 'react-bootstrap'
+import User from '../../Models/User'
 
 // on edit button click, allow user to edit username / top 5 artists 
 const editProfileHandler = () => {
-    console.log('edit clicked')
+    
+    
 }
 
 const EditUserProfile = ({username}) => {

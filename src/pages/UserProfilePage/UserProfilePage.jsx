@@ -5,6 +5,7 @@ import UserTopArtists from '../../components/UserTopArtists/UserTopArtists'
 import EditUserProfile from '../../components/EditUserProfile/EditUserProfile'
 import './UserProfilePage.css'
 
+
 const UserProfilePage = ({currentUser}) => {
 
     const [username, setUsername] = useState('')
