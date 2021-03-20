@@ -3,7 +3,6 @@ import {useParams} from 'react-router-dom'
 import FanPageBio from '../../components/FanPageBio/FanPageBio'
 import UserAlbums from '../../components/UserAlbums/UserAlbums'
 import UserTracks from '../../components/UserTracks/UserTracks'
-import UserShows from '../../components/UserShows/UserShows'
 import Kevin from '../FanPage/testimages/Kevin.png' 
 import ArtistTopTracksContainer from '../../components/ArtistTopTracksContainer/ArtistTopTracksContainer'
 import Spotify from '../../services/spotify'
@@ -38,15 +37,6 @@ const FanPage = () => {
 
         setToken(res.data.access_token)
     }
-    
-    // response is 
-    // res.data.tracks[idx] {
-    //     id,
-    //     name,
-    //     artists,
-    //     album.images, 
-    // }
-
  
     const fetchTopTracks = async(token, artistId) => {
         const res = await Spotify.getTopTracks(token, artistId)
@@ -75,7 +65,6 @@ const FanPage = () => {
             <div className="FanPageBody">
                 <UserTracks userTracks={pageData.trackList}/>
                 <UserAlbums userAlbums={pageData.albumList}/>
-                <UserShows/>
             </div>
         </div>
     )
