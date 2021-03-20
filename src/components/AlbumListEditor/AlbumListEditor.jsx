@@ -4,7 +4,7 @@ const AlbumListEditor = ({albumData, albumList, setAlbumList}) => {
 
         NOTE album data
         
-        albumData {
+        ARRAY albumData[idx] {
             id,
             name,
             artists,
@@ -17,7 +17,12 @@ const AlbumListEditor = ({albumData, albumList, setAlbumList}) => {
 
     return (
         <div className="AlbumListEditor d-flex flex-column">
-            AlbumList
+            <div className="AlbumListEditor__user-selection">
+                User Selection
+            </div>
+            <div className="AlbumListEditor__spotify-data">
+                Albumlist
+            </div>
         </div>
     )
 }
