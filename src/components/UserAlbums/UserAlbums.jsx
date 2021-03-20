@@ -1,9 +1,9 @@
 
 import { Card } from 'react-bootstrap'
-import './Albums.css'
+import './UserAlbums.css'
 
-const Albums = ({userTopAlbums}) => {
-  console.log(userTopAlbums)
+const UserAlbums = ({userAlbums}) => {
+
     return(
         <Card style={{ width: '25rem', height: '40rem' }}>
         <Card.Body>
@@ -12,7 +12,7 @@ const Albums = ({userTopAlbums}) => {
           <Card.Text>
           <ol>
           {
-                userTopAlbums.map((album, idx) => {
+                userAlbums.map((album, idx) => {
                     return(
                     <div>
                    <li>{album.name} <img src={album.images[0].url}/></li>
@@ -31,4 +31,4 @@ const Albums = ({userTopAlbums}) => {
     )
 }
 
-export default Albums; 
+export default UserAlbums; 
