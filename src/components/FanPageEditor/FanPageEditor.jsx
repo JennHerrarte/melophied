@@ -7,25 +7,62 @@ import ShowListEditor from '../ShowListEditor/ShowListEditor'
 import Spotify from '../../services/spotify'
 
 const FanPageEditor = ({token, artistData}) => {
+    // state for data from API
+    const [trackData, setTrackData] = useState([])
+    const [albumData, setAlbumData] = useState([])
 
+    // state for user input
     const [trackList, setTrackList] = useState([])
     const [albumList, setAlbumList] = useState([])
     const [showList, setShowList] = useState([])
 
     useState(() => {
-
+        fetchMediaData(token, artistData)
     }, [])
 
-    // use getAlbums(token, artistId) and getTracks(token, artistId) to fetch tracks and albums
+    async function fetchMediaData (token, artistData) {
+
+        const res1 = await Spotify.getTracks(token, artistData.id)
+
+        const res2 = await Spotify.getAlbums(token, artistData.id)
+
+        setTrackData(res1)
+        setAlbumData(res2.data.items)
+
+        /* 
+
+        NOTE track data
+
+        trackData {
+            id,
+            name,
+            artists,
+            preview_url,
+            external_urls.spotify,
+        }
+
+        NOTE album data
+        
+        albumData {
+            id,
+            name,
+            artists,
+            images,
+            release_date,
+            total_tracks
+        }
+        
+        */
+    }    
 
     return(
         <div className="FanPageEditor">
             Creating Fan Page for {artistData.name}
             <DetailEditor />
             <div className="FanPageEditor__list-editors-wrapper d-flex justify-content-around" >
-                <TrackListEditor />
-                <AlbumListEditor />
-                <ShowListEditor />
+                <TrackListEditor trackData={trackData} trackList={trackList} setTrackList={setTrackList} />
+                <AlbumListEditor albumData={albumData} albumList={albumList} setAlbumList={setAlbumList} />
+                <ShowListEditor showList={showList} setShowList={setShowList} />
             </div>
             {/* 
             Checklist:
