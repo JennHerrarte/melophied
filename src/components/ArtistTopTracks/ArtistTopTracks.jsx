@@ -1,16 +1,28 @@
-const ArtistTopTracks = () => {
+const ArtistTopTracks = ({topTracks}) => {
+   
     return(
         <div className='ArtistTopTracks'>
-            <p>I am the artist top tracks!</p>
-            <ul>
-                <li>Coding is my life</li>
-                <li>Coding broke my heart</li>
-                <li>Coding is amazing </li>
-                <li>I can't live without coding</li>
-                <li>Coding is my best friend</li>
+            <ul> 
+                {
+                topTracks.map((track, idx) => {
+                    return(
+                   <li>{track.name}</li>
+                    )
+                })
+                
+                }
+
             </ul>
         </div>
     )
 }
 
 export default ArtistTopTracks;
+
+ // response is 
+    // res.data.tracks[idx] {
+    //     id,
+    //     name,
+    //     artists,
+    //     album.images, 
+    // }
