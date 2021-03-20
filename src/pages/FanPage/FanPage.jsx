@@ -64,14 +64,13 @@ const FanPage = () => {
                 pageData.artistData ?
                 <>
                 <div className='FanPage__banner' >
-                    <h1 className='artistTitle'>{pageData.pageTitle}</h1>
                     {
                         pageData.artistData.artistImage ?
                         <div className="artistPortrait" style={{backgroundImage: `url(${pageData.artistData.artistImage})`, backgroundSize: 'cover'}}></div>
                         :
                         <div className="artistPortrait" style={{backgroundImage: `url(${musicianImg})`, backgroundSize: 'cover'}}></div>
                     }
-                    
+                    <h1 className='artistTitle'>{pageData.pageTitle}</h1>                    
                 </div>
 
 

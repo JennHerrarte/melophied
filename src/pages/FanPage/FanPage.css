@@ -25,9 +25,8 @@
   color: white;
   display: flex;
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 6rem;
+  font-size: 3rem;
   justify-content: center;
-  margin-top: 50px;
 }
 
 .FanPageBody {
@@ -45,5 +44,6 @@
 }
 
 .FanPage__banner .artistPortrait {
-  width: 300px;
+  width: 150px;
+  height: 150px;
 }
