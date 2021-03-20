@@ -4,8 +4,15 @@ import './ArtistTopTracksContainer.css'
 const ArtistTopTracksContainer = ({topTracks}) => {
     return(
         <div className='attc'>
-            <p>I am the container that holds the artist top tracks</p>
-            <ArtistTopTracks topTracks={topTracks}/>
+            <p>Artist Top Tracks</p>
+            {
+                topTracks.length > 0 ?
+                <ArtistTopTracks topTracks={topTracks}/>
+                :
+                <p>LOADING DATA...</p>
+
+            }
+            
         </div>
     )
 }
