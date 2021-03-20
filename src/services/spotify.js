@@ -37,7 +37,7 @@ class Spotify {
 
     static getAlbums = async (token, artistId) => {
 
-        return axios(`${BASE_URL}/artists/${artistId}/albums?include_groups=album&limit=5`, {
+        return axios(`${BASE_URL}/artists/${artistId}/albums?include_groups=album`, {
             headers: {
                 'Authorization' : `Bearer ${token}`
             },

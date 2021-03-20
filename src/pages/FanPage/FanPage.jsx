@@ -6,7 +6,7 @@ import UserShows from '../../components/UserShows/UserShows'
 import Kevin from '../FanPage/testimages/Kevin.png' 
 import ArtistTopTracksContainer from '../../components/ArtistTopTracksContainer/ArtistTopTracksContainer'
 import Spotify from '../../services/spotify'
-
+import { Image } from 'react-bootstrap'
 import './FanPage.css'
 
 const FanPage = () => {
@@ -65,8 +65,12 @@ const FanPage = () => {
 
     return (
         <div className="FanPage">
+            <div className='header'>
               <img src={Kevin} className="Kevin" fluid alt="Kevin"/>
-            <h1 className='artistTitle'>Tame Impala</h1>
+              <h1 className='artistTitle'>Tame Impala</h1>
+              </div>
+
+
             <FanPageBio/>
             <ArtistTopTracksContainer topTracks={topTracks} />
             <div className="FanPageBody">
