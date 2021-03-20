@@ -14,7 +14,7 @@ const UserTracks = ({userTracks}) => {
               userTracks ?
               <ol>
                   {
-                    userTracks.map((track) => <li>{track.name}</li> )
+                    userTracks.map((track, idx) => <li key={`track${idx}`}>{track.name}</li> )
                   }
               </ol>
               :

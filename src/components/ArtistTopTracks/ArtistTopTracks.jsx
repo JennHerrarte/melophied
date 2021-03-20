@@ -6,7 +6,7 @@ const ArtistTopTracks = ({topTracks}) => {
                 {
                 topTracks.map((track, idx) => {
                     return(
-                   <li>{track.name}</li>
+                   <li key={`topTrack${idx}`}>{track.name}</li>
                     )
                 })
                 
