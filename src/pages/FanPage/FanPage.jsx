@@ -3,7 +3,7 @@ import {useParams} from 'react-router-dom'
 import FanPageBio from '../../components/FanPageBio/FanPageBio'
 import UserAlbums from '../../components/UserAlbums/UserAlbums'
 import UserTracks from '../../components/UserTracks/UserTracks'
-import Kevin from '../FanPage/testimages/Kevin.png' 
+import musicianImg from '../FanPage/testimages/musician.jpg' 
 import ArtistTopTracksContainer from '../../components/ArtistTopTracksContainer/ArtistTopTracksContainer'
 import Spotify from '../../services/spotify'
 import FanPageAPI from '../../Models/FanPageAPI'
@@ -22,11 +22,17 @@ const FanPage = () => {
 
     useEffect(() => {
             fetchToken();
-            fetchPageData(pageId);
     }, []) 
 
     useEffect(() => {
+        if(token) {
+            fetchPageData(pageId);
+        }
+    }, [token])
+
+    useEffect(() => {
         if(pageData && token) {
+            fetchPageData(pageId);
             fetchTopTracks(token, pageData.artistData.id);
         }
     }, [pageData]) 
@@ -54,18 +60,31 @@ const FanPage = () => {
 
     return (
         <div className="FanPage">
-            <div className='header'>
-              <img src={Kevin} className="Kevin" fluid alt="Kevin"/>
-              <h1 className='artistTitle'>{pageData.pageTitle}</h1>
-              </div>
+            {
+                pageData.artistData ?
+                <>
+                <div className='FanPage__banner' >
+                    <h1 className='artistTitle'>{pageData.pageTitle}</h1>
+                    {
+                        pageData.artistData.artistImage ?
+                        <div className="artistPortrait" style={{backgroundImage: `url(${pageData.artistData.artistImage})`, backgroundSize: 'cover'}}></div>
+                        :
+                        <div className="artistPortrait" style={{backgroundImage: `url(${musicianImg})`, backgroundSize: 'cover'}}></div>
+                    }
+                    
+                </div>
 
 
-            <FanPageBio pageData={pageData}/>
-            <ArtistTopTracksContainer topTracks={topTracks} />
-            <div className="FanPageBody">
-                <UserTracks userTracks={pageData.trackList}/>
-                <UserAlbums userAlbums={pageData.albumList}/>
-            </div>
+                <FanPageBio pageData={pageData}/>
+                <ArtistTopTracksContainer topTracks={topTracks} />
+                <div className="FanPageBody">
+                    <UserTracks userTracks={pageData.trackList}/>
+                    <UserAlbums userAlbums={pageData.albumList}/>
+                </div>
+                </>
+                :
+                <h2>LOADING DATA...</h2>
+            }
         </div>
     )
 }
