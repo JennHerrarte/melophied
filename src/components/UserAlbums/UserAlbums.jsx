@@ -10,21 +10,16 @@ const UserAlbums = ({userAlbums}) => {
         <h1 className='maincardtitle'>Albums</h1>
         <Card.Title>My Top 5</Card.Title>
           <Card.Text>
-          <ol>
           {
-                userAlbums.map((album, idx) => {
-                    return(
-                    <div>
-                   <li>{album.name} <img src={album.images[0].url}/></li>
-                      
-                
-               
-                   </div>
-                    )
-                })
-                
-                }
-            </ol>
+              userAlbums ?
+              <ol>
+                  {
+                    userAlbums.map((album, idx) => <li key={`album${idx}`}>{album.name}</li> )
+                  }
+              </ol>
+              :
+              <h2>LOADING</h2>
+            }
           </Card.Text>
         </Card.Body>
       </Card>

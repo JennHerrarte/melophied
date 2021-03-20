@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const BASE_URL = process.env.REACT_APP_API_URL
 
-class User {
+class UserAPI {
 
     // when invoking this method, will need to pass the user's registration data
     static register = ( userData ) => {
@@ -25,4 +25,4 @@ class User {
 
 }
 
-export default User;
+export default UserAPI;

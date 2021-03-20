@@ -5,7 +5,7 @@ import DetailEditor from '../DetailEditor/DetailEditor'
 import TrackListEditor from '../TrackListEditor/TrackListEditor'
 import AlbumListEditor from '../AlbumListEditor/AlbumListEditor'
 import Spotify from '../../services/spotify'
-import FanPage from '../../Models/FanPage'
+import FanPage from '../../Models/FanPageAPI'
 
 const FanPageEditor = ({token, artistData, currentUser}) => {
 

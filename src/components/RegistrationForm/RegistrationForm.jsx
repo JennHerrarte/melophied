@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Form, Button, Container} from 'react-bootstrap';
 import {useState} from 'react';
 import {Link, useHistory} from 'react-router-dom';
-import User from '../../Models/User';
+import UserAPI from '../../Models/UserAPI';
 import './RegistrationForm.css';
 
 
@@ -42,7 +42,7 @@ const RegistrationForm = () => {
             verifiedPassword
           }
 
-          await User.register(data)
+          await UserAPI.register(data)
   
           history.push('/login');
   
@@ -56,57 +56,6 @@ const RegistrationForm = () => {
 
     return (
         <>
-        {/* <Container>
-        <h1>Register for a Melophied Fan Account</h1>
-
-        <Form onSubmit={registrationHandler}>
-
-        <Form.Group controlId="firstName">
-        <Form.Label>First Name</Form.Label>
-        <Form.Control type="text" placeholder="First Name" name="firstName" onChange={(e) => {setFirstName(e.target.value)}}/>
-        </Form.Group>
-
-        <Form.Group controlId="lastName">
-        <Form.Label>Last Name</Form.Label>
-        <Form.Control type="text" placeholder="Last Name" name="lastName" onChange={(e) => {setLastName(e.target.value)}}/>
-        </Form.Group>
-
-        <Form.Group controlId="email">
-        <Form.Label>Email</Form.Label>
-        <Form.Control type="email" placeholder="Email" name="email" onChange={(e) => {setEmail(e.target.value)}} />
-        <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
-        </Form.Text>
-        </Form.Group>
-
-        
-        <Form.Group controlId="username">
-        <Form.Label>Username</Form.Label>
-        <Form.Control type="text" placeholder="Enter Username" name="username" onChange={(e) => {setUsername(e.target.value)}} />
-        </Form.Group>
-
-        <Form.Group controlId="password">
-        <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="Password" name="password" onChange={(e) => {setPassword(e.target.value)}} />
-        </Form.Group>
-
-        <Form.Group controlId="verifiedPassword">
-        <Form.Label>Confirm Password</Form.Label>
-        <Form.Control type="password" placeholder="Confirm Password" name="verifiedPassword" onChange={(e) => {setVerifiedPassword(e.target.value)}}/>
-        </Form.Group>
-
-        <Button variant="primary" type="submit">
-            Submit
-        </Button>
-
-        </Form>
-       
-        <p>
-        Already have a Melophied account? 
-        <Link to="/login">Log in here</Link>
-        </p>
-
-        </Container> */}
         <main className="RegistrationForm">
         <div className="outer">
         <div className="inner">

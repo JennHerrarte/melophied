@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const BASE_URL = process.env.REACT_APP_API_URL
 
-class FanPage {
+class FanPageAPI {
   /* get all fanPages */
   static all = () => {
     return axios.get( `${BASE_URL}/melophied/fanPage/all`);
@@ -15,7 +15,7 @@ class FanPage {
 
   /* get one fanPage */
   static show = ( pageId ) => {
-    return axios.get(`${BASE_URL}/melophied/fanPage/show/${pageId}`);
+    return axios.get(`${BASE_URL}/melophied/fanPage/${pageId}`);
   }
 
   /* create fanPage */
@@ -46,4 +46,4 @@ class FanPage {
   }
 }
 
-export default FanPage;
+export default FanPageAPI;
