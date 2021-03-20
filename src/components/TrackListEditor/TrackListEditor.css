@@ -1,0 +1,35 @@
+.TrackListEditor {
+  width: 33.33%;
+}
+
+.TrackListEditor__user-selection {
+  height: 150px;
+  overflow: hidden;
+}
+
+.TrackListEditor__spotify-data {
+  height: 200px;
+  overflow-y: auto;
+}
+
+.TrackListEditor__track {
+  cursor: pointer;
+}
+
+.TrackListEditor__track.selected {
+  background-color: #c8c8c8;
+}
+
+.TrackListEditor__track.disable-click {
+  background-color: #eeeeee;
+  color: white;
+  cursor: unset;
+}
+
+.TrackListEditor__track.disable-click:hover {
+  background-color: #eeeeee;
+}
+
+.TrackListEditor__track:hover {
+  background-color: #f1f1f1;
+}

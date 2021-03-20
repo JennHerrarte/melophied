@@ -9,12 +9,6 @@
   overflow-y: auto;
 }
 
-.ArtistSelector div {
-  width: 100%;
-  height: 200px;
-  overflow-y: auto;
-}
-
 .ArtistSelector__artist {
   cursor: pointer;
   margin: 0px;
