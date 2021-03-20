@@ -1,11 +1,11 @@
 import ArtistTopTracks from "../ArtistTopTracks/ArtistTopTracks"
 import './ArtistTopTracksContainer.css'
 
-const ArtistTopTracksContainer = () => {
+const ArtistTopTracksContainer = ({topTracks}) => {
     return(
         <div className='attc'>
             <p>I am the container that holds the artist top tracks</p>
-            <ArtistTopTracks/>
+            <ArtistTopTracks topTracks={topTracks}/>
         </div>
     )
 }

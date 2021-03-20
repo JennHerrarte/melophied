@@ -99,7 +99,7 @@ class Spotify {
 
     static getTopTracks = (token, artistId) => {
 
-        return axios(`${BASE_URL}/artists/${artistId}/top-tracks`, {
+        return axios(`${BASE_URL}/artists/${artistId}/top-tracks?market=US`, {
             headers: {
                 'Authorization' : `Bearer ${token}`
             },
