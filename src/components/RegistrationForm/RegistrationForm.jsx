@@ -3,6 +3,8 @@ import {Form, Button, Container} from 'react-bootstrap';
 import {useState} from 'react';
 import {Link, useHistory} from 'react-router-dom';
 import User from '../../Models/User';
+import './RegistrationForm.css';
+
 
 const RegistrationForm = () => {
 
@@ -11,7 +13,7 @@ const RegistrationForm = () => {
     const [email, setEmail]=useState('')
     const [username, setUsername]=useState('')
     const [password, setPassword]=useState('')
-    const [password2, setPassword2]=useState('')
+    const [verifiedPassword, setVerifiedPassword]=useState('')
 
     const history = useHistory();
     
@@ -19,10 +21,9 @@ const RegistrationForm = () => {
 
         e.preventDefault()
 
-        if (password !== password2) {
+        if (password !== verifiedPassword) {
             return console.log('passwords do not match');
-            // TODO check if there is a way to check passwords match before button submit? 
-            // Will need a notification to alert user if passwords do not match
+
         }
   
         submitRegistrationData()
@@ -38,16 +39,10 @@ const RegistrationForm = () => {
             email,  
             username,
             password, 
-            password2
+            verifiedPassword
           }
-  
-          console.log('user data', data);
-         
-          await User.register(data)
-  
-          // TODO check if email or username already exists. if yes, return error
 
-         
+          await User.register(data)
   
           history.push('/login');
   
@@ -61,7 +56,7 @@ const RegistrationForm = () => {
 
     return (
         <>
-        <Container>
+        {/* <Container>
         <h1>Register for a Melophied Fan Account</h1>
 
         <Form onSubmit={registrationHandler}>
@@ -95,9 +90,9 @@ const RegistrationForm = () => {
         <Form.Control type="password" placeholder="Password" name="password" onChange={(e) => {setPassword(e.target.value)}} />
         </Form.Group>
 
-        <Form.Group controlId="password2">
+        <Form.Group controlId="verifiedPassword">
         <Form.Label>Confirm Password</Form.Label>
-        <Form.Control type="password" placeholder="Confirm Password" name="password2" onChange={(e) => {setPassword2(e.target.value)}}/>
+        <Form.Control type="password" placeholder="Confirm Password" name="verifiedPassword" onChange={(e) => {setVerifiedPassword(e.target.value)}}/>
         </Form.Group>
 
         <Button variant="primary" type="submit">
@@ -111,7 +106,50 @@ const RegistrationForm = () => {
         <Link to="/login">Log in here</Link>
         </p>
 
-        </Container>
+        </Container> */}
+        <main className="RegistrationForm">
+        <div className="outer">
+        <div className="inner">
+        <form onSubmit={registrationHandler}>
+        <h3>Register</h3>
+        <div className="form-group firstName">
+                    <label>First name</label>
+                    <input type="text" className="form-control" name="firstName"placeholder="First name" onChange={(e) => {setFirstName(e.target.value)}}/>
+                </div>
+
+                <div className="form-group lastName">
+                    <label>Last name</label>
+                    <input type="text" className="form-control" name="lastName" placeholder="Last name" onChange={(e) => {setLastName(e.target.value)}}/>
+                </div>
+
+                <div className="form-group email">
+                    <label>Email</label>
+                    <input type="email" className="form-control" placeholder="Enter email" name="email" onChange={(e) => {setEmail(e.target.value)}}/>
+                </div>
+
+                <div className="form-group username">
+                    <label>Username</label>
+                    <input type="text" className="form-control" placeholder="Create username" name="username" onChange={(e) => {setUsername(e.target.value)}}/>
+                </div>
+
+                <div className="form-group password">
+                    <label>Password</label>
+                    <input type="password" className="form-control" placeholder="Enter password" name="password" onChange={(e) => {setPassword(e.target.value)}}/>
+                </div>
+
+                <div className="form-group verifiedPassword">
+                    <label>Password</label>
+                    <input type="password" className="form-control" placeholder="Confirm password" name="verifiedPassword" onChange={(e) => {setVerifiedPassword(e.target.value)}}/>
+                </div>
+
+                <button type="submit" className="btn btn-dark btn-lg btn-block">Register</button>
+                <p className="forgot-password text-right">
+                    Already registered <Link to="/login">log in?</Link>
+                </p>
+            </form>
+            </div>
+            </div>
+        </main>
 </> 
     )
 }

@@ -1,8 +1,11 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import {Button} from 'react-bootstrap';
 import {useState, useEffect} from 'react'
+import {Link} from 'react-router-dom';
 import Spotify from '../../services/spotify'
 import FanPageCardsContainer from '../../components/FanPageCardsContainer/FanPageCardsContainer'
 
-const HomePage = () => {
+const HomePage = ({currentUser}) => {
 
     // NOTE TESTING SPOTIFY SEARCH API, WILL NEED TO MOVE IT TO CREATEFANPAGE ONCE THE PAGE IS CREATED.
 
@@ -39,12 +42,29 @@ const HomePage = () => {
         // -----------------------------------    
     
     // --------------------------------------------------------------------------------------------------------------------------------------------   
-
+        
     return (
         <div className="HomePage">
             <h1>Hello World!</h1>
             <p>These are my top 5 fan pages</p>
             <FanPageCardsContainer/>
+            <Button className="exploreButton">Explore</Button>
+            <section>
+                {/* if currentUser is found (localStorage's uid), will be routed to create page. If not, will be routed to login */}
+                {
+                    currentUser ? 
+                    (
+                        <Link to="/create">
+                            <Button>Create</Button>
+                        </Link>
+                    ) : 
+                    (
+                        <Link to="/login">
+                            <Button>Create</Button>
+                        </Link>
+                    )
+                }
+            </section>    
         </div>
     )
 }
