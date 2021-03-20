@@ -1,4 +1,5 @@
 import ArtistTopTracks from "../ArtistTopTracks/ArtistTopTracks"
+import './ArtistTopTracksContainer.css'
 
 const ArtistTopTracksContainer = () => {
     return(
