@@ -28,31 +28,7 @@ const FanPageEditor = ({token, artistData}) => {
 
         setTrackData(res1)
         setAlbumData(res2.data.items)
-
-        /* 
-
-        NOTE track data
-
-        trackData {
-            id,
-            name,
-            artists,
-            preview_url,
-            external_urls.spotify,
-        }
-
-        NOTE album data
         
-        albumData {
-            id,
-            name,
-            artists,
-            images,
-            release_date,
-            total_tracks
-        }
-        
-        */
     }    
 
     return(
