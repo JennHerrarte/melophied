@@ -28,13 +28,21 @@ class FanPage {
   }
 
   /* update fanPage */
-  static update = ( pageId, pageData ) => {
-    return axios.put(`${BASE_URL}/melohpied/fanpage/${pageId}/update`, pageData );
+  static update = ( pageId, pageData, userToken ) => {
+    return axios.put(`${BASE_URL}/melohpied/fanpage/${pageId}/update`, pageData, {
+      headers: {
+        'Authorization': `Bearer ${userToken}`
+      }
+    } );
   }
 
   /* delete fanPage */
-  static destroy = ( pageId ) => {
-    return axios.delete(`${BASE_URL}/melohpied/fanpage/${pageId}/delete`);
+  static delete = ( pageId, userToken ) => {
+    return axios.delete(`${BASE_URL}/melohpied/fanpage/${pageId}/delete`, {
+      headers: {
+        'Authorization': `Bearer ${userToken}`
+      }
+    });
   }
 }
 
