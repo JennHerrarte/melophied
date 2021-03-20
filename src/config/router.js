@@ -15,7 +15,7 @@ const Routes = ({currentUser}) => (
         <Route path="/fanpage" component={ FanPage } />
         <Route path="/about" component={ AboutPage } />
         <Route path="/explore" component={ ExplorePage } />
-        <Route path="/create" component={ CreateFanPage } />
+        <Route path="/create" render={ () => <CreateFanPage currentUser={currentUser} />} />
     </Switch>
 )
 

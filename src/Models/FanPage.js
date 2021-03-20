@@ -19,8 +19,12 @@ class FanPage {
   }
 
   /* create fanPage */
-  static create = ( pageData ) => {
-    return axios.post(`${BASE_URL}/melohpied/fanpage/create`, pageData );
+  static create = ( pageData, userToken ) => {
+    return axios.post(`${BASE_URL}/melohpied/fanpage/create`, pageData, {
+      headers: {
+        'Authorization': `Bearer ${userToken}`
+      }
+    } );
   }
 
   /* update fanPage */

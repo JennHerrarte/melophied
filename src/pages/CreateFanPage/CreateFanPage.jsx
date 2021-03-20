@@ -4,7 +4,7 @@ import FanPageEditor from '../../components/FanPageEditor/FanPageEditor'
 import ArtistSelector from '../../components/ArtistSelector/ArtistSelector'
 import Spotify from '../../services/spotify'
 
-const CreateFanPage = () => {
+const CreateFanPage = ({currentUser}) => {
 
     const [token, setToken] = useState('')
     const [artistData, setArtistData] = useState({name: '', id: ''})
@@ -42,7 +42,7 @@ const CreateFanPage = () => {
                 setArtists={ setArtists } 
                 setArtistData={ setArtistData }/>
                 :
-                <FanPageEditor token={token} artistData={artistData} />
+                <FanPageEditor token={token} artistData={artistData} currentUser={currentUser} />
             }
         </div>
     )
