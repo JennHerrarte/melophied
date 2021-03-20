@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react'
+import {useHistory} from 'react-router-dom'
 
 import DetailEditor from '../DetailEditor/DetailEditor'
 import TrackListEditor from '../TrackListEditor/TrackListEditor'
@@ -17,6 +18,8 @@ const FanPageEditor = ({token, artistData, currentUser}) => {
     const [pageDetail, setPageDetail] = useState('')
     const [trackList, setTrackList] = useState([])
     const [albumList, setAlbumList] = useState([])
+
+    const history = useHistory()
 
     const data = {
         artistData,
@@ -59,7 +62,9 @@ const FanPageEditor = ({token, artistData, currentUser}) => {
 
             const res = await FanPage.create(data, currentUser)
 
-            console.log(res);
+            const pageId = res.data.fanPage._id
+
+            history.push(`/fanpage/${pageId}`)
 
         } catch (error) {
             console.log(error);
@@ -74,9 +79,17 @@ const FanPageEditor = ({token, artistData, currentUser}) => {
                 <TrackListEditor trackData={trackData} trackList={trackList} setTrackList={setTrackList} />
                 <AlbumListEditor albumData={albumData} albumList={albumList} setAlbumList={setAlbumList} />
             </div>
-            <button className="btn btn-success" onClick={() => {createPage(data)}}>
-                Create Page
-            </button>
+            {
+                trackList.length === 5 && albumList.length === 5 ?
+                <button className="btn btn-success" onClick={() => {createPage(data)}}>
+                    Create Page
+                </button>
+                :
+                <button className="btn btn-danger" disabled>
+                    Add more tracks or albums!
+                </button>
+            }
+            
         </div>
     )
 }
