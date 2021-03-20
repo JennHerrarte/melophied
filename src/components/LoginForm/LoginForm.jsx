@@ -35,7 +35,7 @@ const LoginForm = () => {
         password,
       };
 
-      if (rememberMe === true && username && password) {
+      if (rememberMe && username && password) {
         localStorage.setItem('username', username)
         localStorage.setItem('rememberMe', rememberMe)
       } else {
@@ -95,7 +95,7 @@ const LoginForm = () => {
               type="checkbox"
               name="rememberMe"
               value={rememberMe}
-              checked={rememberMe}
+              checked={JSON.parse(rememberMe)}
               onChange={(e) => {
                 setRememberMe(!rememberMe);
               }}

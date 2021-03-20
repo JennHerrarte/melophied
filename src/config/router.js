@@ -7,9 +7,9 @@ import AboutPage from '../pages/AboutPage/AboutPage'
 import ExplorePage from '../pages/ExplorePage/ExplorePage'
 import CreateFanPage from '../pages/CreateFanPage/CreateFanPage'
 
-const Routes = () => (
+const Routes = ({currentUser}) => (
     <Switch>
-        <Route exact path="/" component={ HomePage } />
+        <Route exact path="/" render={() =>  <HomePage currentUser={currentUser}/>  }/>
         <Route path="/register" component={RegistrationPage} />
         <Route path="/login" component={ LoginPage } />
         <Route path="/fanpage" component={ FanPage } />

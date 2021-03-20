@@ -21,12 +21,14 @@ function App() {
 
   }
 
+  
+
   return (
     <div className="App">
       <Navbar currentUser={ currentUser } logout={ logout } />
       <main>
         <Routes currentUser={ currentUser }
-          setCurrentUser={ setCurrentUser } />
+          setCurrentUser={ setCurrentUser } />  
       </main>
     </div>
   );

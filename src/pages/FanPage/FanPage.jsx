@@ -3,7 +3,7 @@ import Albums from '../../components/Albums/Albums'
 import UserTracks from '../../components/UserTracks/UserTracks'
 import UserShows from '../../components/UserShows/UserShows'
 import Kevin from '../FanPage/testimages/Kevin.png' 
-import ArtistTopTracks from '../../components/ArtistTopTracks/ArtistTopTracks'
+import ArtistTopTracksContainer from '../../components/ArtistTopTracksContainer/ArtistTopTracksContainer'
 
 import './FanPage.css'
 
@@ -13,7 +13,7 @@ const FanPage = () => {
               <img src={Kevin} className="Kevin" fluid alt="Kevin"/>
             <h1 className='artistTitle'>Tame Impala</h1>
             <FanPageBio/>
-            <ArtistTopTracks/>
+            <ArtistTopTracksContainer/>
             <div className="FanPageBody">
                 <UserTracks/>
                 <Albums/>
