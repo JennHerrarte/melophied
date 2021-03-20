@@ -4,7 +4,8 @@
 
 .card-body {
     font-size: 22px;
-    background-color: #EAAC8B;
+    background-color: #ffffff;
+    box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
  
 }
 .card-title {
@@ -13,4 +14,8 @@
 }
 .maincardtitle {
     color: #B56576;
+}
+
+img {
+    width: 100px;
 }
