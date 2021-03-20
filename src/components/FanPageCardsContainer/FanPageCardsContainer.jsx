@@ -2,10 +2,21 @@
 
 import FanPageCard from  '../FanPageCard/FanPageCard'
 
-const FanPageCardsContainer = () => {
+const FanPageCardsContainer = ({topFiveFanPages}) => {
+
+// currently top 5 fan pages just showing ID, will need to update this
+
     return(
         <div className='FanPageCardsContainer'>
-            <p>This container holds all the fan page cards</p>
+            <ul>
+                {
+                    topFiveFanPages.map((page,idx) => {
+                        return(
+                        <li key={`Top5${idx}`}>Top Five Fan Page ID:{page._id}</li>
+                        )
+                    })
+                }
+            </ul>
             <FanPageCard/>
         </div>
     )   
