@@ -1,8 +1,17 @@
+import {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 import Dropdown from 'react-bootstrap/Dropdown'
+import jwtDecode from 'jwt-decode'
 
 const Navbar = ({ currentUser, logout }) => {
+    const [username, setUsername] = useState('')
+
+    useEffect(() => {
+        // decode username and set it as current username
+        if (currentUser) setUsername(jwtDecode(currentUser).username)
+    }, [currentUser])
+
     return (
         <nav className="nav d-flex justify-content-between">
             <section className="nav__links">
@@ -17,7 +26,7 @@ const Navbar = ({ currentUser, logout }) => {
                     (
                         <Dropdown>
                             <Dropdown.Toggle variant="success" id="dropdown-basic">
-                                username
+                                {username}
                             </Dropdown.Toggle>
 
                             <Dropdown.Menu>
