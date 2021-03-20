@@ -2,7 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Form, Button, Container } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
-import User from "../../Models/User";
+import UserAPI from "../../Models/UserAPI";
 
 const LoginForm = () => {
   const [username, setUsername] = useState('');
@@ -43,7 +43,7 @@ const LoginForm = () => {
         localStorage.removeItem('rememberMe')
       }
 
-      const res = await User.login(data);
+      const res = await UserAPI.login(data);
 
       localStorage.setItem('uid', res.data.userJWT )
 
