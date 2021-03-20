@@ -39,7 +39,7 @@ const TrackListEditor = ({trackData, trackList, setTrackList}) => {
 
                     <div
                     className="TrackListEditor__track disable-click" 
-                    key={`data${idx}`}>
+                    key={`track-data${idx}`}>
 
                         {track.name}
 
@@ -63,7 +63,7 @@ const TrackListEditor = ({trackData, trackList, setTrackList}) => {
 
                     }} 
                     className="TrackListEditor__track" 
-                    key={`data${idx}`}>
+                    key={`track-data${idx}`}>
 
                         {track.name}
 

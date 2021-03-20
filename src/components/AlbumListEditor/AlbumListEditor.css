@@ -1,0 +1,35 @@
+.AlbumListEditor {
+  width: 33.33%;
+}
+
+.AlbumListEditor__user-selection {
+  height: 150px;
+  overflow: hidden;
+}
+
+.AlbumListEditor__spotify-data {
+  height: 200px;
+  overflow-y: auto;
+}
+
+.AlbumListEditor__album {
+  cursor: pointer;
+}
+
+.AlbumListEditor__album.selected {
+  background-color: #c8c8c8;
+}
+
+.AlbumListEditor__album.disable-click {
+  background-color: #eeeeee;
+  color: white;
+  cursor: unset;
+}
+
+.AlbumListEditor__album.disable-click:hover {
+  background-color: #eeeeee;
+}
+
+.AlbumListEditor__album:hover {
+  background-color: #f1f1f1;
+}
