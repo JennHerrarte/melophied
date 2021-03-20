@@ -5,12 +5,12 @@ const BASE_URL = process.env.REACT_APP_API_URL
 class FanPageAPI {
   /* get all fanPages */
   static all = () => {
-    return axios.get( `${BASE_URL}/melophied/fanPage/all`);
+    return axios.get( `${BASE_URL}/melophied/explore`);
   }
 
   /* get top five fanPages */
   static topFive = () => {
-    return axios.get( `${BASE_URL}/melophied/fanPage/topfive`);
+    return axios.get( `${BASE_URL}/melophied/topfive`);
   }
 
   /* get one fanPage */
