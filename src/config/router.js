@@ -6,16 +6,18 @@ import FanPage from '../pages/FanPage/FanPage'
 import AboutPage from '../pages/AboutPage/AboutPage'
 import ExplorePage from '../pages/ExplorePage/ExplorePage'
 import CreateFanPage from '../pages/CreateFanPage/CreateFanPage'
+import UserProfilePage from '../pages/UserProfilePage/UserProfilePage'
 
 const Routes = ({currentUser}) => (
     <Switch>
         <Route exact path="/" render={() =>  <HomePage currentUser={currentUser}/>  }/>
-        <Route path="/register" component={RegistrationPage} />
+        <Route path="/register" component={ RegistrationPage } />
         <Route path="/login" component={ LoginPage } />
         <Route path="/fanpage" component={ FanPage } />
         <Route path="/about" component={ AboutPage } />
         <Route path="/explore" component={ ExplorePage } />
         <Route path="/create" component={ CreateFanPage } />
+        <Route path="/profile" render={() =>  <UserProfilePage currentUser={currentUser}/> }/>
     </Switch>
 )
 
