@@ -11,20 +11,14 @@ const UserAlbums = ({userAlbums}) => {
         <Card.Title>My Top 5</Card.Title>
           <Card.Text>
           <ol>
-          {
-                userAlbums.map((album, idx) => {
-                    return(
-                    <div>
-                   <li>{album.name} <img src={album.images[0].url}/></li>
-                      
-                
-               
-                   </div>
-                    )
-                })
-                
-                }
-            </ol>
+          
+              <li>Solitude is Bliss</li>
+              <li>Eventually</li>
+              <li>Alter Ego</li>
+              <li>Mind Michief</li>
+              <li>Patience</li>
+          
+          </ol>
           </Card.Text>
         </Card.Body>
       </Card>

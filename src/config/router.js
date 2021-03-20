@@ -13,7 +13,7 @@ const Routes = ({currentUser}) => (
         <Route exact path="/" render={() =>  <HomePage currentUser={currentUser}/>  }/>
         <Route path="/register" component={ RegistrationPage } />
         <Route path="/login" component={ LoginPage } />
-        <Route path="/fanpage" component={ FanPage } />
+        <Route path="/fanpage/:id" component={ FanPage } />
         <Route path="/about" component={ AboutPage } />
         <Route path="/explore" component={ ExplorePage } />
         <Route path="/create" render={ () => <CreateFanPage currentUser={currentUser} />} />

@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react'
+import {useParams} from 'react-router-dom'
 import FanPageBio from '../../components/FanPageBio/FanPageBio'
 import UserAlbums from '../../components/UserAlbums/UserAlbums'
 import UserTracks from '../../components/UserTracks/UserTracks'
@@ -14,26 +15,22 @@ import './FanPage.css'
 const FanPage = () => {
 
     const [token, setToken ] = useState('');
-    const [pageData, setPageData] = useState({})
     const [topTracks, setTopTracks] = useState([]);
-    const [userAlbums, setUserAlbums] = useState([]);
-    const [userTracks, setUserTracks] = useState([]);
+    const [pageData, setPageData] = useState({})
+
+    const params = useParams()
+    const pageId = params.id
 
     useEffect(() => {
             fetchToken();
+            fetchPageData(pageId);
     }, []) 
 
     useEffect(() => {
-        if(token) {
-            fetchTopTracks(token, '06HL4z0CvFAxyc27GXpf02');
+        if(pageData && token) {
+            fetchTopTracks(token, pageData.artistData.id);
         }
-    }, [token]) 
-
-    useEffect(() => {
-        if(token) {
-            fetchPageData('605664f0e8bf720015451414');
-        }
-    }, [token]) 
+    }, [pageData]) 
 
 
     const fetchToken = async() => {
@@ -69,15 +66,15 @@ const FanPage = () => {
         <div className="FanPage">
             <div className='header'>
               <img src={Kevin} className="Kevin" fluid alt="Kevin"/>
-              <h1 className='artistTitle'>Tame Impala</h1>
+              <h1 className='artistTitle'>{pageData.pageTitle}</h1>
               </div>
 
 
-            <FanPageBio/>
+            <FanPageBio pageData={pageData}/>
             <ArtistTopTracksContainer topTracks={topTracks} />
             <div className="FanPageBody">
-                <UserTracks userTracks={userTracks}/>
-                <UserAlbums userAlbums={userAlbums}/>
+                <UserTracks userTracks={pageData.trackList}/>
+                <UserAlbums userAlbums={pageData.albumList}/>
                 <UserShows/>
             </div>
         </div>
