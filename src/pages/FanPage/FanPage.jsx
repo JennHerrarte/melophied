@@ -58,7 +58,7 @@ const FanPage = () => {
               <img src={Kevin} className="Kevin" fluid alt="Kevin"/>
               <h1 className='artistTitle'>{pageData.pageTitle}</h1>
               </div>
-
+             
 
             <FanPageBio pageData={pageData}/>
             <ArtistTopTracksContainer topTracks={topTracks} />
