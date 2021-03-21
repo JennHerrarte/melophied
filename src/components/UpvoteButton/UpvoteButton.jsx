@@ -7,7 +7,14 @@ const UpvoteButton = ({userId, pageData}) => {
             {
                 // show upvote button if user logged in, show login button if user not logged in
                 userId ?
-                <Button variant="outline-warning">Upvote</Button>
+                <>
+                    {
+                        pageData.upvote.includes(userId) ?
+                        <Button variant="outline-danger">Devote</Button>
+                        :
+                        <Button variant="outline-warning">Upvote</Button>
+                    }
+                </>
                 :
                 <Link to="/login">
                     <Button variant="outline-warning">Upvote</Button>
