@@ -6,7 +6,7 @@ import UserTracks from '../../components/UserTracks/UserTracks'
 import ArtistTopTracksContainer from '../../components/ArtistTopTracksContainer/ArtistTopTracksContainer'
 import Spotify from '../../services/spotify'
 import FanPageAPI from '../../Models/FanPageAPI'
-import UpVoteButton from '../../components/UpVoteButton/UpVoteButton'
+
 
 import './FanPage.css'
 
@@ -61,7 +61,7 @@ const FanPage = () => {
              
 
             <FanPageBio pageData={pageData}/>
-            <UpVoteButton/>
+     
             <ArtistTopTracksContainer topTracks={topTracks} />
             <div className="FanPageBody">
                 <UserTracks userTracks={pageData.trackList}/>
