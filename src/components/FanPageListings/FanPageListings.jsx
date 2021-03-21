@@ -9,4 +9,5 @@ const FanPageListings = ({allFanPages}) => {
     )
 }
 
+
 export default FanPageListings;
