@@ -7,7 +7,7 @@ import Spotify from '../../services/spotify'
 const CreateFanPage = ({currentUser}) => {
 
     const [token, setToken] = useState('')
-    const [artistData, setArtistData] = useState({name: '', id: ''})
+    const [artistData, setArtistData] = useState({name: '', id: '', artistImage: ''})
     const [artists, setArtists] = useState([])
 
     // fetch spotify token when the home page loads

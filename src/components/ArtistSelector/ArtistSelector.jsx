@@ -15,7 +15,7 @@ const ArtistSelector = ({token, fetchArtists, artists, setArtists, setArtistData
                     {/* show clickable paragraph for each artists in the array. When artist is clicked, sets the ID of the artist for the FanPage */}
                     {
                         artists.map((artist) => <p className="ArtistSelector__artist" key={artist.id} onClick={() => {
-                            setArtistData({name: artist.name, id: artist.id})
+                            setArtistData({name: artist.name, id: artist.id, artistImage: artist.images[0].url})
                         }}>{artist.name}</p> )
                     }
 

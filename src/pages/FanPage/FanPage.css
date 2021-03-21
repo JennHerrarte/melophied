@@ -1,44 +1,49 @@
-
-    /* font-family: 'Josefin Sans', sans-serif; */
-    /* font-family: 'Roboto', sans-serif; */
+/* font-family: 'Josefin Sans', sans-serif; */
+/* font-family: 'Roboto', sans-serif; */
 /* body {
     background-color: #355070;
 } */
 
-.FanPage{
-    background: #12c2e9;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
-}
-.Kevin {
-    width: 50em;
-    
-    
-  
+.FanPage {
+  background: #12c2e9; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #f64f59,
+    #c471ed,
+    #12c2e9
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #f64f59,
+    #c471ed,
+    #12c2e9
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .artistTitle {
-    align-items: center;
-    color:  white;
-    display: flex;
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 6rem;
-    justify-content: center;
-    margin-top: 50px;
-  
+  align-items: center;
+  color: white;
+  display: flex;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 3rem;
+  justify-content: center;
 }
 
 .FanPageBody {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin-bottom: 50px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-bottom: 50px;
 }
 
-.header {
-    background-color: black;
-    display: flex;
-    flex-direction: row;
+.FanPage__banner {
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+}
+
+.FanPage__banner .artistPortrait {
+  width: 150px;
+  height: 150px;
 }
