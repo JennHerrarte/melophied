@@ -3,7 +3,6 @@ import {useParams} from 'react-router-dom'
 import FanPageBio from '../../components/FanPageBio/FanPageBio'
 import UserAlbums from '../../components/UserAlbums/UserAlbums'
 import UserTracks from '../../components/UserTracks/UserTracks'
-import Kevin from '../FanPage/testimages/Kevin.png' 
 import ArtistTopTracksContainer from '../../components/ArtistTopTracksContainer/ArtistTopTracksContainer'
 import Spotify from '../../services/spotify'
 import FanPageAPI from '../../Models/FanPageAPI'
@@ -55,7 +54,7 @@ const FanPage = () => {
     return (
         <div className="FanPage">
             <div className='header'>
-              <img src={Kevin} className="Kevin" fluid alt="Kevin"/>
+         
               <h1 className='artistTitle'>{pageData.pageTitle}</h1>
              
               </div>
