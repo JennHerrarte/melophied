@@ -1,9 +1,8 @@
 import Button from 'react-bootstrap/Button'
 
-const FanPageButtons = ({userId, pageData}) => {
-
+const UpvoteButton = ({userId, pageData}) => {
     return (
-        <div className="FanPageButtons d-flex justify-content-between">
+        <>
             {
                 // show upvote button if user logged in, show login button if user not logged in
                 userId ?
@@ -12,10 +11,8 @@ const FanPageButtons = ({userId, pageData}) => {
                 <Button variant="outline-warning">Login</Button>
 
             }
-            <Button variant="outline-warning">Edit</Button>
-        </div>
+        </>
     )
-
 }
 
-export default FanPageButtons
+export default UpvoteButton

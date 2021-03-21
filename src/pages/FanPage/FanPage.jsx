@@ -3,7 +3,7 @@ import {useParams} from 'react-router-dom'
 import FanPageBio from '../../components/FanPageBio/FanPageBio'
 import UserAlbums from '../../components/UserAlbums/UserAlbums'
 import UserTracks from '../../components/UserTracks/UserTracks'
-import FanPageButtons from '../../components/FanPageButtons/FanPageButtons'
+import FanPageHeader from '../../components/FanPageHeader/FanPageHeader'
 import FanPageBanner from '../../components/FanPageBanner/FanPageBanner'
 import ArtistTopTracksContainer from '../../components/ArtistTopTracksContainer/ArtistTopTracksContainer'
 import Spotify from '../../services/spotify'
@@ -68,7 +68,7 @@ const FanPage = ({currentUser}) => {
 
     return (
         <div className="FanPage">
-            <FanPageButtons userId={userId} pageData={pageData} />
+            <FanPageHeader userId={userId} pageData={pageData} />
             {
                 pageData.artistData ?
                 <>
