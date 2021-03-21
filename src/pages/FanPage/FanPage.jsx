@@ -7,7 +7,7 @@ import Kevin from '../FanPage/testimages/Kevin.png'
 import ArtistTopTracksContainer from '../../components/ArtistTopTracksContainer/ArtistTopTracksContainer'
 import Spotify from '../../services/spotify'
 import FanPageAPI from '../../Models/FanPageAPI'
-
+import UpVoteButton from '../../components/UpVoteButton/UpVoteButton'
 
 import './FanPage.css'
 
@@ -57,10 +57,12 @@ const FanPage = () => {
             <div className='header'>
               <img src={Kevin} className="Kevin" fluid alt="Kevin"/>
               <h1 className='artistTitle'>{pageData.pageTitle}</h1>
+             
               </div>
              
 
             <FanPageBio pageData={pageData}/>
+            <UpVoteButton/>
             <ArtistTopTracksContainer topTracks={topTracks} />
             <div className="FanPageBody">
                 <UserTracks userTracks={pageData.trackList}/>
