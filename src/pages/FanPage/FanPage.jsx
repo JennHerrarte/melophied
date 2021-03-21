@@ -3,7 +3,8 @@ import {useParams} from 'react-router-dom'
 import FanPageBio from '../../components/FanPageBio/FanPageBio'
 import UserAlbums from '../../components/UserAlbums/UserAlbums'
 import UserTracks from '../../components/UserTracks/UserTracks'
-import musicianImg from '../FanPage/testimages/musician.jpg' 
+import FanPageButtons from '../../components/FanPageButtons/FanPageButtons'
+import FanPageBanner from '../../components/FanPageBanner/FanPageBanner'
 import ArtistTopTracksContainer from '../../components/ArtistTopTracksContainer/ArtistTopTracksContainer'
 import Spotify from '../../services/spotify'
 import FanPageAPI from '../../Models/FanPageAPI'
@@ -11,7 +12,7 @@ import FanPageAPI from '../../Models/FanPageAPI'
 
 import './FanPage.css'
 
-const FanPage = () => {
+const FanPage = ({currentUser}) => {
 
     const [token, setToken ] = useState('');
     const [topTracks, setTopTracks] = useState([]);
@@ -60,18 +61,11 @@ const FanPage = () => {
 
     return (
         <div className="FanPage">
+            <FanPageButtons currentUser={currentUser} pageData={pageData} />
             {
                 pageData.artistData ?
                 <>
-                <div className='FanPage__banner' >
-                    {
-                        pageData.artistData.artistImage ?
-                        <div className="artistPortrait" style={{backgroundImage: `url(${pageData.artistData.artistImage})`, backgroundSize: 'cover'}}></div>
-                        :
-                        <div className="artistPortrait" style={{backgroundImage: `url(${musicianImg})`, backgroundSize: 'cover'}}></div>
-                    }
-                    <h1 className='artistTitle'>{pageData.pageTitle}</h1>                    
-                </div>
+                <FanPageBanner pageData={pageData} />
 
 
                 <FanPageBio pageData={pageData}/>
