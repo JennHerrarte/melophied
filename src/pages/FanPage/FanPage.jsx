@@ -3,19 +3,21 @@ import {useParams} from 'react-router-dom'
 import FanPageBio from '../../components/FanPageBio/FanPageBio'
 import UserAlbums from '../../components/UserAlbums/UserAlbums'
 import UserTracks from '../../components/UserTracks/UserTracks'
-import musicianImg from '../FanPage/testimages/musician.jpg' 
+import FanPageHeader from '../../components/FanPageHeader/FanPageHeader'
 import ArtistTopTracksContainer from '../../components/ArtistTopTracksContainer/ArtistTopTracksContainer'
 import Spotify from '../../services/spotify'
 import FanPageAPI from '../../Models/FanPageAPI'
+import jwtDecode from 'jwt-decode'
 
 
 import './FanPage.css'
 
-const FanPage = () => {
+const FanPage = ({currentUser}) => {
 
     const [token, setToken ] = useState('');
     const [topTracks, setTopTracks] = useState([]);
     const [pageData, setPageData] = useState({})
+    const [userId, setUserId] = useState('')
 
     const params = useParams()
     const pageId = params.id
@@ -35,7 +37,12 @@ const FanPage = () => {
             fetchPageData(pageId);
             fetchTopTracks(token, pageData.artistData.id);
         }
-    }, [pageData]) 
+    }, [pageData])
+
+    useEffect(() => {
+        // decode userId and set it as current userId
+        if (currentUser) setUserId(jwtDecode(currentUser)._id)
+    }, [currentUser])
 
 
     const fetchToken = async() => {
@@ -61,25 +68,18 @@ const FanPage = () => {
     return (
         <div className="FanPage">
             {
-                pageData.artistData ?
+                Object.entries(pageData).length !== 0 ?
                 <>
-                <div className='FanPage__banner' >
-                    {
-                        pageData.artistData.artistImage ?
-                        <div className="artistPortrait" style={{backgroundImage: `url(${pageData.artistData.artistImage})`, backgroundSize: 'cover'}}></div>
-                        :
-                        <div className="artistPortrait" style={{backgroundImage: `url(${musicianImg})`, backgroundSize: 'cover'}}></div>
-                    }
-                    <h1 className='artistTitle'>{pageData.pageTitle}</h1>                    
-                </div>
-
-
+                <FanPageHeader userId={userId} pageData={pageData} />
+                
                 <FanPageBio pageData={pageData}/>
                 <ArtistTopTracksContainer topTracks={topTracks} />
+
                 <div className="FanPageBody">
                     <UserTracks userTracks={pageData.trackList}/>
                     <UserAlbums userAlbums={pageData.albumList}/>
                 </div>
+
                 </>
                 :
                 <h2>LOADING DATA...</h2>

@@ -7,17 +7,19 @@ import AboutPage from '../pages/AboutPage/AboutPage'
 import ExplorePage from '../pages/ExplorePage/ExplorePage'
 import CreateFanPage from '../pages/CreateFanPage/CreateFanPage'
 import UserProfilePage from '../pages/UserProfilePage/UserProfilePage'
+import EditFanPage from '../pages/EditFanPage/EditFanPage'
 
 const Routes = ({currentUser}) => (
     <Switch>
         <Route exact path="/" render={() =>  <HomePage currentUser={currentUser}/>  }/>
         <Route path="/register" component={ RegistrationPage } />
         <Route path="/login" component={ LoginPage } />
-        <Route path="/fanpage/:id" component={ FanPage } />
         <Route path="/about" component={ AboutPage } />
         <Route path="/explore" component={ ExplorePage } />
-        <Route path="/create" render={ () => <CreateFanPage currentUser={currentUser} />} />
         <Route path="/profile" render={() =>  <UserProfilePage currentUser={currentUser}/> }/>
+        <Route path="/fanpage/create" render={ () => <CreateFanPage currentUser={currentUser} />} />
+        <Route path="/fanpage/:id/edit" render={() =>  <EditFanPage currentUser={currentUser}/> }/>
+        <Route path="/fanpage/:id" render={ () => <FanPage currentUser={currentUser}/> } />
     </Switch>
 )
 

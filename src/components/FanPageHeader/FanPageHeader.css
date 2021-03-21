@@ -1,0 +1,13 @@
+.FanPageHeader {
+  background-color: black;
+}
+
+.FanPageHeader__banner {
+  display: flex;
+  flex-direction: row;
+}
+
+.FanPageHeader__banner .artistPortrait {
+  width: 150px;
+  height: 150px;
+}
