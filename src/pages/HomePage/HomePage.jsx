@@ -36,7 +36,7 @@ const HomePage = ({currentUser}) => {
                 {
                     currentUser ? 
                     (
-                        <Link to="/create">
+                        <Link to="/fanpage/create">
                             <Button>Create</Button>
                         </Link>
                     ) : 
