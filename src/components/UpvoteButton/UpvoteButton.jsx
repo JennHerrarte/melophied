@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 
 const UpvoteButton = ({userId, pageData}) => {
@@ -8,7 +9,9 @@ const UpvoteButton = ({userId, pageData}) => {
                 userId ?
                 <Button variant="outline-warning">Upvote</Button>
                 :
-                <Button variant="outline-warning">Login</Button>
+                <Link to="/login">
+                    <Button variant="outline-warning">Upvote</Button>
+                </Link>
 
             }
         </>
