@@ -8,6 +8,7 @@ import FanPageBanner from '../../components/FanPageBanner/FanPageBanner'
 import ArtistTopTracksContainer from '../../components/ArtistTopTracksContainer/ArtistTopTracksContainer'
 import Spotify from '../../services/spotify'
 import FanPageAPI from '../../Models/FanPageAPI'
+import jwtDecode from 'jwt-decode'
 
 
 import './FanPage.css'
@@ -17,6 +18,7 @@ const FanPage = ({currentUser}) => {
     const [token, setToken ] = useState('');
     const [topTracks, setTopTracks] = useState([]);
     const [pageData, setPageData] = useState({})
+    const [userId, setUserId] = useState('')
 
     const params = useParams()
     const pageId = params.id
@@ -36,7 +38,12 @@ const FanPage = ({currentUser}) => {
             fetchPageData(pageId);
             fetchTopTracks(token, pageData.artistData.id);
         }
-    }, [pageData]) 
+    }, [pageData])
+
+    useEffect(() => {
+        // decode userId and set it as current userId
+        if (currentUser) setUserId(jwtDecode(currentUser)._id)
+    }, [currentUser])
 
 
     const fetchToken = async() => {
@@ -61,7 +68,7 @@ const FanPage = ({currentUser}) => {
 
     return (
         <div className="FanPage">
-            <FanPageButtons currentUser={currentUser} pageData={pageData} />
+            <FanPageButtons userId={userId} pageData={pageData} />
             {
                 pageData.artistData ?
                 <>
