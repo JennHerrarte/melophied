@@ -57,7 +57,7 @@ const EditFanPage = ({currentUser}) => {
                 setArtists={ setArtists } 
                 setArtistData={ setArtistData }/>
                 :
-                <FanPageEditor token={token} artistData={artistData} currentUser={currentUser} />
+                <FanPageEditor token={token} artistData={artistData} currentUser={currentUser} pageData={pageData} />
             }
         </div>
     )
