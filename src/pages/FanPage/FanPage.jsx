@@ -4,7 +4,6 @@ import FanPageBio from '../../components/FanPageBio/FanPageBio'
 import UserAlbums from '../../components/UserAlbums/UserAlbums'
 import UserTracks from '../../components/UserTracks/UserTracks'
 import FanPageHeader from '../../components/FanPageHeader/FanPageHeader'
-import FanPageBanner from '../../components/FanPageBanner/FanPageBanner'
 import ArtistTopTracksContainer from '../../components/ArtistTopTracksContainer/ArtistTopTracksContainer'
 import Spotify from '../../services/spotify'
 import FanPageAPI from '../../Models/FanPageAPI'
@@ -68,19 +67,19 @@ const FanPage = ({currentUser}) => {
 
     return (
         <div className="FanPage">
-            <FanPageHeader userId={userId} pageData={pageData} />
             {
-                pageData.artistData ?
+                Object.entries(pageData).length !== 0 ?
                 <>
-                <FanPageBanner pageData={pageData} />
-
-
+                <FanPageHeader userId={userId} pageData={pageData} />
+                
                 <FanPageBio pageData={pageData}/>
                 <ArtistTopTracksContainer topTracks={topTracks} />
+
                 <div className="FanPageBody">
                     <UserTracks userTracks={pageData.trackList}/>
                     <UserAlbums userAlbums={pageData.albumList}/>
                 </div>
+
                 </>
                 :
                 <h2>LOADING DATA...</h2>
