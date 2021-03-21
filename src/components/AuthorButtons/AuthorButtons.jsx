@@ -5,7 +5,10 @@ const AuthorButtons = ({userId, pageData}) => {
         <>
             {
                 userId === pageData.author ?
-                <Button variant="outline-warning">Edit</Button>
+                <div className="AuthorButtons">
+                    <Button variant="outline-warning">Edit</Button>
+                    <Button variant="outline-danger">Delete</Button>
+                </div>
                 :
                 ''
             }
