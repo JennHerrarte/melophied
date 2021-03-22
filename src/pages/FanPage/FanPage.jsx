@@ -64,13 +64,18 @@ const FanPage = ({currentUser}) => {
         setPageData(res.data.foundFanPage)
     }
 
+    const deletePageData = async (pageId, userToken) => {
+        const res = await FanPageAPI.delete(pageId, userToken)
+        console.log(res);
+    }
+
 
     return (
         <div className="FanPage">
             {
                 Object.entries(pageData).length !== 0 ?
                 <>
-                <FanPageHeader userId={userId} pageData={pageData} />
+                <FanPageHeader currentUser={currentUser} userId={userId} pageData={pageData} deletePageData={deletePageData} />
                 
                 <FanPageBio pageData={pageData}/>
                 <ArtistTopTracksContainer topTracks={topTracks} />

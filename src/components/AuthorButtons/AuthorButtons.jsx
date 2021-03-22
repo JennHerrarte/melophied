@@ -1,7 +1,7 @@
 import {Link} from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 
-const AuthorButtons = ({userId, pageData}) => {
+const AuthorButtons = ({currentUser, userId, pageData, deletePageData}) => {
     return(
         <>
             {
@@ -11,7 +11,8 @@ const AuthorButtons = ({userId, pageData}) => {
                         <Button 
                         variant="outline-warning">Edit</Button>
                     </Link>
-                    <Button variant="outline-danger">Delete</Button>
+                    <Button variant="outline-danger" 
+                    onClick={() => deletePageData(pageData._id, currentUser)}>Delete</Button>
                 </div>
                 :
                 ''
