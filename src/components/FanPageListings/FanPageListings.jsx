@@ -19,8 +19,7 @@ const FanPageListings = ({allFanPages}) => {
                                 <Card.Text>
                                     {page.pageTitle}
                                 </Card.Text>
-                                {/* TODO change route to be based on ID of fanpage */}
-                                <Link to='/fanpage/:id'>
+                                <Link to={`/fanpage/${page._id}`}>
                                     <Button variant="primary">Visit Fan Page</Button>
                                 </Link>
                                 </Card.Body>
