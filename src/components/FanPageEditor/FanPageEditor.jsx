@@ -77,6 +77,19 @@ const FanPageEditor = ({token, artistData, currentUser, pageData}) => {
         }
     }
 
+    const editPage = async (data) => {
+        
+        try {
+
+            const res = await FanPage.update(pageData._id, data, currentUser)
+
+            // history.push(`/fanpage/${pageData._id}`)
+
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     return(
         <div className="FanPageEditor d-flex flex-column">
             { pageData ? 'Editing' : 'Creating'} Fan Page for {artistData.name}
@@ -89,7 +102,7 @@ const FanPageEditor = ({token, artistData, currentUser, pageData}) => {
             </div>
             {
                 pageTitle && trackList.length === 5 && albumList.length === 5 ?
-                <button className="btn btn-success" onClick={() => {createPage(data)}}>
+                <button className="btn btn-success" onClick={() => { pageData ? editPage(data) : createPage(data)}}>
                     {pageData ? "Save" : "Create Page" }
                 </button>
                 :
