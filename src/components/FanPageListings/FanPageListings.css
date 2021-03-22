@@ -1,12 +1,10 @@
 .FanPageListings {
-    
-    
+    align-content: center;
+    justify-content: center;
     
 }
 
 .FanPageListings h1{
-    align-content: center;
-    justify-content: center;
     text-align: center;
     
 }
@@ -17,5 +15,6 @@
     justify-content: center;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     margin: auto;
+    
     
 }
