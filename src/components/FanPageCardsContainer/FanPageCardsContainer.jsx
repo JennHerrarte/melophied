@@ -5,6 +5,8 @@ import FanPageCard from  '../FanPageCard/FanPageCard'
 // TODO currently top 5 fan pages just showing ID, will need to update this
 
 const FanPageCardsContainer = ({topFiveFanPages}) => {
+
+    console.log(topFiveFanPages, "top5")
     return(
         <div className='FanPageCardsContainer'>
             <ul>
