@@ -1,14 +1,13 @@
 import {Card, Button} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
+import './FanPageListings.css'
 
 const FanPageListings = ({allFanPages}) => {
-
-    console.log(allFanPages, "All Fan Pages")
 
     return(
         <div className='FanPageListings'>
         <h1>Explore All Fan Pages</h1>
-            
+            <div className='FanPageListingsCard'>
             {
                     allFanPages.map((page,idx) => {
                         return(
@@ -28,7 +27,7 @@ const FanPageListings = ({allFanPages}) => {
                         
                     })
                 }
-        
+            </div>    
         </div>
     )
 }
