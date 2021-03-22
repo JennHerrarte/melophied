@@ -7,7 +7,7 @@ import AlbumListEditor from '../AlbumListEditor/AlbumListEditor'
 import Spotify from '../../services/spotify'
 import FanPage from '../../Models/FanPageAPI'
 
-const FanPageEditor = ({token, artistData, currentUser}) => {
+const FanPageEditor = ({token, artistData, currentUser, pageData}) => {
 
     // state for data from API
     const [trackData, setTrackData] = useState([])
@@ -31,6 +31,12 @@ const FanPageEditor = ({token, artistData, currentUser}) => {
 
     useState(() => {
         fetchMediaData(token, artistData)
+        if (pageData) {
+            setPageTitle(pageData.pageTitle)
+            setPageDetail(pageData.pageDetail)
+            setTrackList(pageData.trackList)
+            setAlbumList(pageData.albumList)
+        }
     }, [])
 
     async function fetchMediaData (token, artistData) {
@@ -71,18 +77,33 @@ const FanPageEditor = ({token, artistData, currentUser}) => {
         }
     }
 
+    const editPage = async (data) => {
+        
+        try {
+
+            const res = await FanPage.update(pageData._id, data, currentUser)
+
+            // history.push(`/fanpage/${pageData._id}`)
+
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     return(
         <div className="FanPageEditor d-flex flex-column">
-            Creating Fan Page for {artistData.name}
-            <DetailEditor setPageTitle={setPageTitle} setPageDetail={setPageDetail} />
+            { pageData ? 'Editing' : 'Creating'} Fan Page for {artistData.name}
+            <DetailEditor pageTitle={pageTitle} setPageTitle={setPageTitle} 
+            pageDetail={pageDetail}
+            setPageDetail={setPageDetail} />
             <div className="FanPageEditor__list-editors-wrapper d-flex justify-content-around" >
                 <TrackListEditor trackData={trackData} trackList={trackList} setTrackList={setTrackList} />
                 <AlbumListEditor albumData={albumData} albumList={albumList} setAlbumList={setAlbumList} />
             </div>
             {
-                pageTitle && pageDetail && trackList.length === 5 && albumList.length === 5 ?
-                <button className="btn btn-success" onClick={() => {createPage(data)}}>
-                    Create Page
+                pageTitle && trackList.length === 5 && albumList.length === 5 ?
+                <button className="btn btn-success" onClick={() => { pageData ? editPage(data) : createPage(data)}}>
+                    {pageData ? "Save" : "Create Page" }
                 </button>
                 :
                 <button className="btn btn-danger" disabled>

@@ -17,6 +17,19 @@ const AlbumListEditor = ({albumData, albumList, setAlbumList}) => {
         
     */
 
+    albumList.forEach( (album) => {
+        
+        albumData.forEach((data) => {
+
+            if (album.id === data.id) {
+                data.selected = true
+            }
+            return
+
+        })
+
+    })
+
     return (
         <div className="AlbumListEditor d-flex flex-column">
             <div className="AlbumListEditor__user-selection">
@@ -54,11 +67,9 @@ const AlbumListEditor = ({albumData, albumList, setAlbumList}) => {
                     // else, show regular div with clickable option that toggles album.selected and its css class 'selected'
                     <div
                     onClick={(e) => {
-                        e.target.classList.toggle('selected')
-
                         // ternary opertaor to add or remove album from albumList based on album.selected
                         album.selected ?  
-                        setAlbumList(albumList.filter(value => value !== album ))
+                        setAlbumList(albumList.filter(value => value.id !== album.id ))
                         :
                         setAlbumList([...albumList, album])
 
@@ -66,7 +77,7 @@ const AlbumListEditor = ({albumData, albumList, setAlbumList}) => {
                         album.selected = !album.selected
 
                     }} 
-                    className="AlbumListEditor__album" 
+                    className={`AlbumListEditor__album ${album.selected ? 'selected' : ''}`} 
                     key={`album-data${idx}`}>
 
                         {album.name}

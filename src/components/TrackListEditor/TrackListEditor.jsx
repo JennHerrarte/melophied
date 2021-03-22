@@ -13,6 +13,19 @@ const TrackListEditor = ({trackData, trackList, setTrackList}) => {
         }
     */
 
+    trackList.forEach( (track) => {
+        
+        trackData.forEach((data) => {
+
+            if (track.id === data.id) {
+                data.selected = true
+            }
+            return
+
+        })
+
+    })
+
     return (
         <div className="TrackListEditor d-flex flex-column">
             <div className="TrackListEditor__user-selection">
@@ -32,7 +45,7 @@ const TrackListEditor = ({trackData, trackList, setTrackList}) => {
             </div>
             <div className="TrackListEditor__spotify-data">
                 {
-                    trackData.map((track, idx) => 
+                    trackData.map((track, idx) =>
 
                     // if trackList reached its max 5 and track.selected is false, then show plain div with click disabled
                     trackList.length >= 5 && track.selected === false ? 
@@ -50,11 +63,9 @@ const TrackListEditor = ({trackData, trackList, setTrackList}) => {
                     // else, show regular div with clickable option that togges track.selected and its css class 'selected'
                     <div
                     onClick={(e) => {
-                        e.target.classList.toggle('selected')
-
                         // ternary opertaor to add or remove track from trackList based on track.selected
                         track.selected ?  
-                        setTrackList(trackList.filter(value => value !== track ))
+                        setTrackList(trackList.filter(value => value.id !== track.id ))
                         :
                         setTrackList([...trackList, track])
 
@@ -62,7 +73,7 @@ const TrackListEditor = ({trackData, trackList, setTrackList}) => {
                         track.selected = !track.selected
 
                     }} 
-                    className="TrackListEditor__track" 
+                    className={`TrackListEditor__track ${track.selected ? 'selected' : ''}`} 
                     key={`track-data${idx}`}>
 
                         {track.name}
