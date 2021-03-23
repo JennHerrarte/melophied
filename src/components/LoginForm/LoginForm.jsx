@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Form, Button, Container } from "react-bootstrap";
+import { Form, Button, Container, Alert } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import UserAPI from "../../Models/UserAPI";
@@ -9,6 +9,7 @@ const LoginForm = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe]=useState(false);
+  const [error, setError]=useState(null);
 
   const history = useHistory();
 
@@ -26,6 +27,7 @@ const LoginForm = () => {
   };
 
   const submitLoginData = async () => {
+
     try {
       const data = {
         username,
@@ -49,8 +51,9 @@ const LoginForm = () => {
       window.location.reload(false)
 
     } catch (error) {
-
+      setError('Incorrect username or password')
       return console.log(error);
+      
     }
   };
   
@@ -143,7 +146,17 @@ const LoginForm = () => {
                         <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
                     </div>
                 </div>
+                
+                
 
+                {
+                  error ? 
+                  <Alert variant="danger" onClose={() => setError(null)} dismissible>
+                    <Alert.Heading>{error}</Alert.Heading>
+                  </Alert> 
+                  : ''
+                }
+                  
                 <button type="submit" className="btn btn-dark btn-lg btn-block">Sign in</button>
                 <p className="forgot-password text-right">
                     Don't have an account? <Link to="/register">register</Link>
