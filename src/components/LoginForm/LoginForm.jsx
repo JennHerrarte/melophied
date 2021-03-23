@@ -3,6 +3,7 @@ import { Form, Button, Container } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import UserAPI from "../../Models/UserAPI";
+import './LoginForm.css'
 
 const LoginForm = () => {
   const [username, setUsername] = useState('');
@@ -23,10 +24,6 @@ const LoginForm = () => {
 
     submitLoginData();
   };
-
-  // TODO Local Storage function to store userId if contact has checked "remember me" on login form 
-  // const lsRememberMe
-
 
   const submitLoginData = async () => {
     try {
@@ -57,8 +54,9 @@ const LoginForm = () => {
     }
   };
   
-  return (
-    <div className="LoginForm">
+  
+
+    {/* <div className="LoginForm">
       <Container>
         <h1>Log in to your Melophied Fan Account</h1>
 
@@ -113,8 +111,49 @@ const LoginForm = () => {
           <Link to="/register">Register here</Link>
         </p>
       </Container>
-    </div>
-  );
+    </div> */}
+
+    return (
+      <>
+    <main className="LoginForm">
+        <div className="outer">
+        <div className="inner">
+        <form onSubmit={loginHandler}>
+        <h3>Log in to your Melophied account</h3>
+        
+
+                <div className="form-group username">
+                    <label>Username or Email</label>
+                    <input type="text" className="form-control" placeholder="Enter username or email" name="username" onChange={(e) => {setUsername(e.target.value)}} value={username}/>
+                </div>
+
+                <div className="form-group password">
+                    <label>Password</label>
+                    <input type="password" className="form-control" placeholder="Enter password" name="password" onChange={(e) => {setPassword(e.target.value)}}/>
+                </div>
+
+                <div className="form-group">
+                    <div className="custom-control custom-checkbox">
+                        <input type="checkbox" id="customCheck1"
+                              className="custom-control-input"
+                              name="rememberMe"
+                              value={rememberMe}
+                              checked={JSON.parse(rememberMe)}
+                              onChange={(e) => {setRememberMe(!rememberMe)}}/>
+                        <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
+                    </div>
+                </div>
+
+                <button type="submit" className="btn btn-dark btn-lg btn-block">Sign in</button>
+                <p className="forgot-password text-right">
+                    Don't have an account? <Link to="/register">register</Link>
+                </p>
+            </form>
+            </div>
+            </div>
+        </main>
+    </>
+  )
 };
 
 export default LoginForm;
