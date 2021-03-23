@@ -1,5 +1,4 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Form, Button, Container} from 'react-bootstrap';
 import {useState} from 'react';
 import {Link, useHistory} from 'react-router-dom';
 import UserAPI from '../../Models/UserAPI';
