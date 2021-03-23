@@ -16,13 +16,27 @@ class UserAPI {
 
     // when invoking this method, will need to pass the user's token (local storage's uid)
     static profile = ( token ) => {
-        return axios.get(`${BASE_URL}/auth/profile`, {
+        return axios.get(`${BASE_URL}/auth/user`, {
             headers: {
             authorization: `Bearer ${token}`
             }
         });
     }
 
+    // my attempt to get all fan pages belonging to a specfic user 
+
+    // static allUserPages = ( token ) => {
+    //     return axios.get(`${BASE_URL}/auth/profile`, {
+    //         headers: {
+    //         authorization: `Bearer ${token}`
+    //         }
+    //     });
+    // }
+
+// recentPages
+// 
+
 }
 
 export default UserAPI;
+

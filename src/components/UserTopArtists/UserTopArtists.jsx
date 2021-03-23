@@ -1,17 +1,22 @@
 //TODO function to fetch user's top artists
 
-const UserTopArtists = () => {
+const UserTopArtists = ({userTopArtists}) => {
     return (
         <div>
             <h1>My Top Artists</h1>
             <ul>
-                <li>My Top Artist 1</li>
-                <li>My Top Artist 2</li>
-                <li>My Top Artist 3</li>
-                <li>My Top Artist 4</li>
-                <li>My Top Artist 5</li>
-            </ul>
+           {
+               userTopArtists.map((page, idx) => {
+                return(
+                
+                    <li key={idx}>top user artist goes here</li>
+                  
+                    ) 
+               })
+           } 
+        </ul>
         </div>
+        
     )
 }
 

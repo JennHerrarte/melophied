@@ -1,15 +1,28 @@
-import {Button} from 'react-bootstrap'
+import {Link} from 'react-router-dom'
+import Button from 'react-bootstrap/Button'
 
-// on edit button click, allow user to edit username / top 5 artists 
-const editProfileHandler = () => {
-    
-}
+const EditUserProfile = ({username, userData}) => {
 
-const EditUserProfile = ({username}) => {
+  
 
-    return (
-        <Button onClick={editProfileHandler}>Edit</Button>
+    return(
+    <>
+    {
+        username === userData.username ?
+        <div className="EditProfile">
+           <Link to={`/profile/${userData._id}/edit`}>
+        <Button 
+        variant="outline-warning">Edit</Button>
+        </Link>
+        </div>
+        :
+        ''
+    }
+    </>
     )
-}
+};
+
 
 export default EditUserProfile;
+
+

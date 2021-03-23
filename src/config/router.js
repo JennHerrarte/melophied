@@ -17,6 +17,9 @@ const Routes = ({currentUser}) => (
         <Route path="/about" component={ AboutPage } />
         <Route path="/explore" component={ ExplorePage } />
         <Route path="/profile" render={() =>  <UserProfilePage currentUser={currentUser}/> }/>
+        
+        <Route path="/profile/:id/edit" render={() =>  <UserProfilePage currentUser={currentUser}/> }/>
+        
         <Route path="/fanpage/create" render={ () => <CreateFanPage currentUser={currentUser} />} />
         <Route path="/fanpage/:id/edit" render={() =>  <EditFanPage currentUser={currentUser}/> }/>
         <Route path="/fanpage/:id" render={ () => <FanPage currentUser={currentUser}/> } />
