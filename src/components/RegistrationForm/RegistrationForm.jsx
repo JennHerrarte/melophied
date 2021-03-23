@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Form, Button, Container} from 'react-bootstrap';
+import {Alert} from 'react-bootstrap';
 import {useState} from 'react';
 import {Link, useHistory} from 'react-router-dom';
 import UserAPI from '../../Models/UserAPI';
@@ -14,6 +14,7 @@ const RegistrationForm = () => {
     const [username, setUsername]=useState('')
     const [password, setPassword]=useState('')
     const [verifiedPassword, setVerifiedPassword]=useState('')
+    const [error, setError]=useState(null);
 
     const history = useHistory();
     
@@ -22,7 +23,7 @@ const RegistrationForm = () => {
         e.preventDefault()
 
         if (password !== verifiedPassword) {
-            return console.log('passwords do not match');
+            setError('Passwords do not match')
 
         }
   
@@ -47,7 +48,9 @@ const RegistrationForm = () => {
           history.push('/login');
   
         } catch (error) {
-  
+            
+            setError('Username or email already exists. Please try again.')
+            
           return console.log(error);
   
         }
@@ -87,9 +90,17 @@ const RegistrationForm = () => {
                 </div>
 
                 <div className="form-group verifiedPassword">
-                    <label>Password</label>
+                    <label>Confirm Password</label>
                     <input type="password" className="form-control" placeholder="Confirm password" name="verifiedPassword" onChange={(e) => {setVerifiedPassword(e.target.value)}}/>
                 </div>
+
+                {
+                  error ? 
+                  <Alert variant="danger" onClose={() => setError(null)} dismissible>
+                    <Alert.Heading>{error}</Alert.Heading>
+                  </Alert> 
+                  : ''
+                }
 
                 <button type="submit" className="btn btn-dark btn-lg btn-block">Register</button>
                 <p className="forgot-password text-right">
