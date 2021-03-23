@@ -146,8 +146,6 @@ const LoginForm = () => {
                         <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
                     </div>
                 </div>
-                
-                
 
                 {
                   error ? 
