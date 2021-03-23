@@ -23,20 +23,18 @@ class UserAPI {
         });
     }
 
-    // my attempt to get all fan pages belonging to a specfic user 
-
-    // static allUserPages = ( token ) => {
-    //     return axios.get(`${BASE_URL}/auth/profile`, {
-    //         headers: {
-    //         authorization: `Bearer ${token}`
-    //         }
-    //     });
-    // }
-
-// recentPages
-// 
+     /* update user profile */
+    static updateProfile = ( userID, token, userData) => {
+    return axios.put(`${BASE_URL}/auth/updateProfile/${userID}`, userData, {
+      headers: {
+        authorization: `Bearer ${token}`
+      }
+    } );
+  }
 
 }
+
+
 
 export default UserAPI;
 
