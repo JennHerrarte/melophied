@@ -1,19 +1,16 @@
 import {useState, useEffect} from 'react'
 import jwtDecode from 'jwt-decode'
 import UserFanPages from '../../components/UserFanPages/UserFanPages'
-import UserTopArtists from '../../components/UserTopArtists/UserTopArtists'
 import UserAPI from '../../Models/UserAPI'
 import {Link} from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 import './UserProfilePage.css'
 
 const UserProfilePage = ({currentUser}) => {
-
+ 
     const [username, setUsername] = useState('')
     const [ userData, setUserData] = useState([])
     const [ recentUserPages, setRecentUserPages] = useState([])
-    const [ userTopArtists, setUserTopArtists] = useState([])
-  
 
     useEffect(() => {
         // decode username and set it as current username
@@ -31,18 +28,13 @@ const UserProfilePage = ({currentUser}) => {
 
         setUserData(res.data.foundUser)
         setRecentUserPages(res.data.foundUser.recentPages)
-        setUserTopArtists(res.data.foundUser.userTopArtists)
-     
     }
-
 
     return (
     <div className="UserProfilePage">
         <h1 className="username">{username}</h1>
-   
         <Link to={`/profile/edit`}><Button variant="outline-warning">Edit</Button></Link>
         <UserFanPages className="UserFanPages" recentUserPages={recentUserPages} />
-        <UserTopArtists className="UserTopArtists" userTopArtists={userTopArtists}/>
     </div>
     )
 }
