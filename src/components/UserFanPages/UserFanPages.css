@@ -10,16 +10,17 @@
     margin: 10px;
     align-items: center;
     justify-content: space-evenly 
+    
 
 }
 
 a.pageLink {
     text-decoration: none;
-    color: #FCA7A5;
     margin-top: 10px;
     align-items: center;
     justify-content: center;
     display: flex;
+    color: black;
 }
 
 .artistAvatar  {
@@ -38,6 +39,7 @@ a.pageLink {
     background-color: #A76286;
     padding: 30px;
     border-radius: 5px;
+   
    
     
 }

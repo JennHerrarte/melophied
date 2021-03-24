@@ -2,19 +2,24 @@
     text-align: center;
     padding-bottom: 10px;
     background-color: #5A3E79;
+   
+    font-family: 'Train One', cursive;
 }
 
 .firstName {
     padding-top: 50px;
     padding-bottom: 50px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .username {
     margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .btn.edit {
     margin-bottom: 50px;
+    font-family: 'Roboto', sans-serif;
 }
 
 
