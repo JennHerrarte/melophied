@@ -2,9 +2,10 @@ import {useState, useEffect} from 'react'
 import jwtDecode from 'jwt-decode'
 import UserFanPages from '../../components/UserFanPages/UserFanPages'
 import UserTopArtists from '../../components/UserTopArtists/UserTopArtists'
-import EditUserProfile from '../../components/EditUserProfile/EditUserProfile'
-import './UserProfilePage.css'
 import UserAPI from '../../Models/UserAPI'
+import {Link} from 'react-router-dom'
+import Button from 'react-bootstrap/Button'
+import './UserProfilePage.css'
 
 const UserProfilePage = ({currentUser}) => {
 
@@ -38,7 +39,8 @@ const UserProfilePage = ({currentUser}) => {
     return (
     <div className="UserProfilePage">
         <h1 className="username">{username}</h1>
-        <EditUserProfile username={username} userData={userData} />
+   
+        <Link to={`/profile/edit`}><Button variant="outline-warning">Edit</Button></Link>
         <UserFanPages className="UserFanPages" recentUserPages={recentUserPages} />
         <UserTopArtists className="UserTopArtists" userTopArtists={userTopArtists}/>
     </div>

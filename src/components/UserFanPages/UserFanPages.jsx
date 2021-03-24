@@ -1,7 +1,7 @@
 //TODO function to pull user's fan pages
 
 const UserFanPages = ({recentUserPages}) => {
-
+console.log(recentUserPages)
     return (
         <div>
         <h1>My fan pages</h1>
