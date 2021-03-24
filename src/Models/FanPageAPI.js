@@ -47,7 +47,7 @@ class FanPageAPI {
 
   /* delete fanPage */
   static delete = ( pageId, userToken ) => {
-    return axios.delete(`${BASE_URL}/melophied/fanPage/${pageId}/delete`, {
+    return axios.delete(`${BASE_URL}/melophied/fanPage/delete/${pageId}`, {
       headers: {
         'Authorization': `Bearer ${userToken}`
       }

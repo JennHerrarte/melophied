@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react'
-import {useParams} from 'react-router-dom'
+import {useParams, useHistory} from 'react-router-dom'
 import FanPageBio from '../../components/FanPageBio/FanPageBio'
 import UserAlbums from '../../components/UserAlbums/UserAlbums'
 import UserTracks from '../../components/UserTracks/UserTracks'
@@ -20,6 +20,7 @@ const FanPage = ({currentUser}) => {
     const [userId, setUserId] = useState('')
 
     const params = useParams()
+    const history = useHistory()
     const pageId = params.id
 
     useEffect(() => {
@@ -65,7 +66,8 @@ const FanPage = ({currentUser}) => {
 
     const deletePage = async (pageId, userToken) => {
         const res = await FanPageAPI.delete(pageId, userToken)
-        console.log(res);
+        
+        history.push('/')
     }
 
     const upvotePage = async () => {
