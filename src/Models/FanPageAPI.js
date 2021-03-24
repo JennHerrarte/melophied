@@ -38,7 +38,7 @@ class FanPageAPI {
 
   /* upvote fanPage */
   static upvote = ( pageId, userToken ) => {
-    return axios.put(`${BASE_URL}/melophied/fanPage/upvote/${pageId}`, {
+    return axios.put(`${BASE_URL}/melophied/fanPage/upvote/${pageId}`, {placeholder:'placeholder'}, {
       headers: {
         'Authorization': `Bearer ${userToken}`
       }

@@ -9,7 +9,7 @@ const FanPageHeader = ({currentUser, userId, pageData, deletePage, upvotePage })
         <>
             <div className="FanPageHeader">
                 <div className="FanPageHeader__buttons d-flex justify-content-between">
-                    <UpvoteButton userId={userId} pageData={pageData} upvotePage={upvotePage} />
+                    <UpvoteButton currentUser={currentUser} userId={userId} pageData={pageData} upvotePage={upvotePage} />
                     <AuthorButtons currentUser={currentUser} userId={userId} pageData={pageData} deletePage={deletePage} />
                 </div>
                 <FanPageBanner pageData={pageData} />

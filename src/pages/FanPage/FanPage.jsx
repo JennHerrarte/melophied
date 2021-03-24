@@ -70,11 +70,12 @@ const FanPage = ({currentUser}) => {
         history.push('/')
     }
 
-    const upvotePage = async () => {
+    const upvotePage = async (pageId, userToken) => {
         
         try {
+            const res = await FanPageAPI.upvote(pageId, userToken)
 
-            const res = await FanPageAPI.upvote(pageData._id, currentUser)
+            setPageData(res.data.updatedFanPage)
 
         } catch (error) {
             console.log(error);
