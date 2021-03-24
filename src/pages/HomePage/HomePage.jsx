@@ -23,7 +23,7 @@ const HomePage = ({currentUser}) => {
 
     return (
         <div className="HomePage">
-            <h1>Hello World!</h1>
+            <h1>Welcome to Melophied</h1>
             <p>These are my top 5 fan pages</p>
             <FanPageCardsContainer topFiveFanPages={topFiveFanPages}/>
             <Link to="/explore">
@@ -31,7 +31,7 @@ const HomePage = ({currentUser}) => {
             </Link>
             
             
-            <section>
+            
                 {/* if currentUser is found (localStorage's uid), will be routed to create page. If not, will be routed to login */}
                 {
                     currentUser ? 
@@ -46,7 +46,7 @@ const HomePage = ({currentUser}) => {
                         </Link>
                     )
                 }
-            </section>    
+               
         </div>
     )
 }
