@@ -3,14 +3,14 @@ import AuthorButtons from '../AuthorButtons/AuthorButtons'
 import FanPageBanner from '../../components/FanPageBanner/FanPageBanner'
 import './FanPageHeader.css'
 
-const FanPageHeader = ({currentUser, userId, pageData, deletePageData }) => {
+const FanPageHeader = ({currentUser, userId, pageData, deletePage, upvotePage }) => {
 
     return (
         <>
             <div className="FanPageHeader">
                 <div className="FanPageHeader__buttons d-flex justify-content-between">
-                    <UpvoteButton userId={userId} pageData={pageData} />
-                    <AuthorButtons currentUser={currentUser} userId={userId} pageData={pageData} deletePageData={deletePageData} />
+                    <UpvoteButton userId={userId} pageData={pageData} upvotePage={upvotePage} />
+                    <AuthorButtons currentUser={currentUser} userId={userId} pageData={pageData} deletePage={deletePage} />
                 </div>
                 <FanPageBanner pageData={pageData} />
             </div>

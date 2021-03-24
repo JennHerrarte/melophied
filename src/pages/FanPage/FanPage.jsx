@@ -34,7 +34,6 @@ const FanPage = ({currentUser}) => {
 
     useEffect(() => {
         if(pageData && token) {
-            fetchPageData(pageId);
             fetchTopTracks(token, pageData.artistData.id);
         }
     }, [pageData])
@@ -64,9 +63,20 @@ const FanPage = ({currentUser}) => {
         setPageData(res.data.foundFanPage)
     }
 
-    const deletePageData = async (pageId, userToken) => {
+    const deletePage = async (pageId, userToken) => {
         const res = await FanPageAPI.delete(pageId, userToken)
         console.log(res);
+    }
+
+    const upvotePage = async () => {
+        
+        try {
+
+            const res = await FanPageAPI.upvote(pageData._id, currentUser)
+
+        } catch (error) {
+            console.log(error);
+        }
     }
 
 
@@ -75,7 +85,7 @@ const FanPage = ({currentUser}) => {
             {
                 Object.entries(pageData).length !== 0 ?
                 <>
-                <FanPageHeader currentUser={currentUser} userId={userId} pageData={pageData} deletePageData={deletePageData} />
+                <FanPageHeader currentUser={currentUser} userId={userId} pageData={pageData} deletePage={deletePage} upvotePage={upvotePage} />
                 
                 <FanPageBio pageData={pageData}/>
                 <ArtistTopTracksContainer topTracks={topTracks} />

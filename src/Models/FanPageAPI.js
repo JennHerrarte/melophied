@@ -29,7 +29,16 @@ class FanPageAPI {
 
   /* update fanPage */
   static update = ( pageId, pageData, userToken ) => {
-    return axios.put(`${BASE_URL}/melophied/fanPage/${pageId}/update`, pageData, {
+    return axios.put(`${BASE_URL}/melophied/fanPage/update/${pageId}`, pageData, {
+      headers: {
+        'Authorization': `Bearer ${userToken}`
+      }
+    } );
+  }
+
+  /* upvote fanPage */
+  static upvote = ( pageId, userToken ) => {
+    return axios.put(`${BASE_URL}/melophied/fanPage/upvote/${pageId}`, {
       headers: {
         'Authorization': `Bearer ${userToken}`
       }
