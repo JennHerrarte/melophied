@@ -23,5 +23,8 @@ a.pageLink {
 }
 
 .artistAvatar  {
-    width: 200px;
+    height: auto;
+    max-height: 200px;
+    width: auto;
+    max-width: 200px;
 }
