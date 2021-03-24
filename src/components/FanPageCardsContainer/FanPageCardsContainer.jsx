@@ -6,18 +6,22 @@ import FanPageCard from  '../FanPageCard/FanPageCard'
 
 const FanPageCardsContainer = ({topFiveFanPages}) => {
 
-    console.log(topFiveFanPages, "top5")
+  // console.log(topFiveFanPages, "top5")
+
+
     return(
         <div className='FanPageCardsContainer'>
-            <ul>
+              <ul>
                 {
-                    topFiveFanPages.map((page,idx) => {
+                    topFiveFanPages.map((page, idx) => {
                         return(
-                        <li key={`Top5${idx}`}>Top Five Fan Page ID:{page._id}</li>
+                        <li key={`Top5-upvotes-${idx}`}>Total Upvotes:{page.len}</li>
+                        
                         )
                     })
                 }
-            </ul>
+               
+            </ul>  
             <FanPageCard/>
         </div>
     )   

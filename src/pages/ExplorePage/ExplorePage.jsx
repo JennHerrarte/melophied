@@ -24,6 +24,7 @@ const ExplorePage = () => {
 
     const fetchTopFiveFanPages = async () => {
         const res = await FanPageAPI.topFive()
+        console.log(res.data.topFivePages.artistData)
 
         setTopFiveFanPages(res.data.topFivePages)
     }
