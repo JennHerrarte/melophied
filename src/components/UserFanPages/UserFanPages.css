@@ -15,7 +15,7 @@
 
 a.pageLink {
     text-decoration: none;
-    color: black;
+    color: #FCA7A5;
     margin-top: 10px;
     align-items: center;
     justify-content: center;
@@ -27,4 +27,17 @@ a.pageLink {
     max-height: 200px;
     width: auto;
     max-width: 200px;
+}
+
+.myFanPages {
+    margin-bottom: 30px;
+    color: #FCA7A5;
+}
+
+.UserFanPages {
+    background-color: #A76286;
+    padding: 30px;
+    border-radius: 5px;
+   
+    
 }

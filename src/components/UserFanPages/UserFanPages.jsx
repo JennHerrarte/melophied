@@ -6,7 +6,7 @@ const UserFanPages = ({recentUserPages}) => {
 console.log(recentUserPages)
     return (
         <div>
-        <h1>My fan pages</h1>
+        <h1 class='myFanPages'>My Fan Pages</h1>
      
 
            <Container className='UserFanPages'>
