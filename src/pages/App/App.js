@@ -24,7 +24,7 @@ function App() {
   
 
   return (
-    <div className="App">
+    <div className="App container">
       <Navbar currentUser={ currentUser } logout={ logout } />
       <main>
         <Routes currentUser={ currentUser }
