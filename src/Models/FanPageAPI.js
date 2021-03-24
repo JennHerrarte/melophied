@@ -29,7 +29,16 @@ class FanPageAPI {
 
   /* update fanPage */
   static update = ( pageId, pageData, userToken ) => {
-    return axios.put(`${BASE_URL}/melophied/fanPage/${pageId}/update`, pageData, {
+    return axios.put(`${BASE_URL}/melophied/fanPage/update/${pageId}`, pageData, {
+      headers: {
+        'Authorization': `Bearer ${userToken}`
+      }
+    } );
+  }
+
+  /* upvote fanPage */
+  static upvote = ( pageId, userToken ) => {
+    return axios.put(`${BASE_URL}/melophied/fanPage/upvote/${pageId}`, {placeholder:'placeholder'}, {
       headers: {
         'Authorization': `Bearer ${userToken}`
       }
@@ -38,7 +47,7 @@ class FanPageAPI {
 
   /* delete fanPage */
   static delete = ( pageId, userToken ) => {
-    return axios.delete(`${BASE_URL}/melophied/fanPage/${pageId}/delete`, {
+    return axios.delete(`${BASE_URL}/melophied/fanPage/delete/${pageId}`, {
       headers: {
         'Authorization': `Bearer ${userToken}`
       }

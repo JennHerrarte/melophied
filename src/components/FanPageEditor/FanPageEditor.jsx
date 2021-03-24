@@ -83,7 +83,7 @@ const FanPageEditor = ({token, artistData, currentUser, pageData}) => {
 
             const res = await FanPage.update(pageData._id, data, currentUser)
 
-            // history.push(`/fanpage/${pageData._id}`)
+            history.push(`/fanpage/${pageData._id}`)
 
         } catch (error) {
             console.log(error);

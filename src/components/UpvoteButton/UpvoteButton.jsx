@@ -1,7 +1,7 @@
 import {Link} from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 
-const UpvoteButton = ({userId, pageData}) => {
+const UpvoteButton = ({currentUser, userId, pageData, upvotePage}) => {
     return (
         <>
             {
@@ -10,9 +10,9 @@ const UpvoteButton = ({userId, pageData}) => {
                 <>
                     {
                         pageData.upvote.includes(userId) ?
-                        <Button variant="outline-danger">Devote {pageData.upvote.length}</Button>
+                        <Button variant="outline-danger" onClick={() => {upvotePage(pageData._id, currentUser )}}>Devote {pageData.upvote.length}</Button>
                         :
-                        <Button variant="outline-warning">Upvote {pageData.upvote.length}</Button>
+                        <Button variant="outline-warning" onClick={() => {upvotePage(pageData._id, currentUser )}}>Upvote {pageData.upvote.length}</Button>
                     }
                 </>
                 :
