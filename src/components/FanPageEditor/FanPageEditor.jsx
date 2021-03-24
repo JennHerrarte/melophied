@@ -116,3 +116,4 @@ const FanPageEditor = ({token, artistData, currentUser, pageData}) => {
 }
 
 export default FanPageEditor
+

@@ -1,14 +1,20 @@
-//TODO function to pull user's last 4 created fan pages
+//TODO function to pull user's fan pages
 
-const UserFanPages = () => {
+const UserFanPages = ({recentUserPages}) => {
+console.log(recentUserPages)
     return (
         <div>
         <h1>My fan pages</h1>
         <ul>
-            <li>FanPage 1</li>
-            <li>FanPage 2</li>
-            <li>FanPage 3</li>
-            <li>FanPage 4</li>
+           {
+               recentUserPages.map((page, idx) => {
+                return(
+                
+                    <li key={idx}>Fan Page:{page.pageTitle} {page.artistData.id}</li>
+                  
+                    ) 
+               })
+           } 
         </ul>
         </div>
     )
