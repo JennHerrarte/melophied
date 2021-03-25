@@ -1,21 +1,32 @@
-//TODO function to pull user's fan pages
+import {Container, Image, Row, Col} from 'react-bootstrap'
+import './UserFanPages.css'
+import {Link} from 'react-router-dom'
 
 const UserFanPages = ({recentUserPages}) => {
 console.log(recentUserPages)
     return (
         <div>
-        <h1>My fan pages</h1>
-        <ul>
-           {
+        <h1 class='myFanPages'>My Fan Pages</h1>
+     
+
+           <Container className='UserFanPages'>
+                <Row className='row'>
+              
+                {
                recentUserPages.map((page, idx) => {
                 return(
-                
-                    <li key={idx}>Fan Page:{page.pageTitle} {page.artistData.id}</li>
-                  
+                    <div className="ArtistDiv">
+                    <Image className='artistAvatar' src={page.artistData.artistImage} rounded />
+                    <Link className="pageLink" to={`/fanpage/${page._id}`} key={idx}>{page.pageTitle}</Link>
+                    </div>
                     ) 
                })
-           } 
-        </ul>
+            }
+           
+            </Row>
+            </Container>
+        
+          
         </div>
     )
 }

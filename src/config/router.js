@@ -8,7 +8,7 @@ import ExplorePage from '../pages/ExplorePage/ExplorePage'
 import CreateFanPage from '../pages/CreateFanPage/CreateFanPage'
 import UserProfilePage from '../pages/UserProfilePage/UserProfilePage'
 import EditFanPage from '../pages/EditFanPage/EditFanPage'
-import EditUserProfile from '../components/EditUserProfile/EditUserProfile'
+import EditUserProfile from '../pages/EditUserProfile/EditUserProfile'
 
 const Routes = ({currentUser}) => (
     <Switch>

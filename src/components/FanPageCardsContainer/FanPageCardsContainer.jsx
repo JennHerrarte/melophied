@@ -13,7 +13,7 @@ const FanPageCardsContainer = ({topFiveFanPages}) => {
                 {
                     topFiveFanPages.map((page,idx) => {
                         return(
-                        <li key={`Top5${idx}`}>Top Five Fan Page ID:{page._id}</li>
+                            <li key={`Top5${idx}`}>Top Five Fan Page ID:{page._id.id}</li>
                         )
                     })
                 }
