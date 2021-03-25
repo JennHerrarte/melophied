@@ -31,10 +31,10 @@ const FanPageCardsContainer = () => {
                             
                             <Link to={`/fanpage/${page._id.id}`}>
                                 <Image className="TopFiveImage" style={{ width: '12rem', height: '12rem', borderRadius: '50%', margin: '5px', padding: '5px'}} variant="top" src={page._id.artistData.artistImage} />
-                                <Card className="TopFiveCard" style={{ width: '12rem', height: '11rem' , backgroundColor: 'transparent', border: 'none'}}>
+                                <Card className="TopFiveCard" style={{ width: '12rem', height: '8rem' , backgroundColor: 'transparent', border: 'none', justifyContent: 'center'}}>
                                 <Card.Body>
-                                <Card.Title >{page._id.artistData.name}</Card.Title>
-                                <Card.Text>
+                                <Card.Title style={{fontSize: '18px', textAlign: 'center'}}>{page._id.artistData.name}</Card.Title>
+                                <Card.Text style={{fontSize: '14px', textAlign: 'center'}}>
                                     {page._id.pageTitle}
                                 </Card.Text>
                                 </Card.Body>
