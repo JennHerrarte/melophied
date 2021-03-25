@@ -17,7 +17,7 @@ const ArtistSelector = ({token, fetchArtists, artists, setArtists, setArtistData
                         artists.map((artist) => <p className="ArtistSelector__artist" key={artist.id} onClick={() => {
                             setArtistData({name: artist.name, id: artist.id, artistImage: artist.images[0].url})
                         }}
-                        onMouseEnter={() => {setBackground(artist.images[0].url)}}
+                        onMouseEnter={artist.images.length ? () => {setBackground(artist.images[0].url)} : ''}
                         >{artist.name}</p> )
                     }
 
