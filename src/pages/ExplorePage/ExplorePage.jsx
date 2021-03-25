@@ -2,6 +2,7 @@ import FanPageCardsContainer from '../../components/FanPageCardsContainer/FanPag
 import FanPageListings from '../../components/FanPageListings/FanPageListings'
 import FanPageAPI from '../../Models/FanPageAPI'
 import {useState, useEffect} from 'react'
+import './ExplorePage.css'
 
 const ExplorePage = () => {
 
@@ -22,7 +23,7 @@ const ExplorePage = () => {
 
 
     return(
-        <div className>
+        <div className="ExplorePage container">
             <FanPageCardsContainer />
             <FanPageListings allFanPages={allFanPages}/>
         </div>

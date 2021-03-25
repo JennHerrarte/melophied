@@ -8,9 +8,9 @@
     display: grid;
     align-content: center;
     justify-content: center;
-    grid-template-columns: 2fr 2fr 2fr 2fr 2fr;
-    margin: 10px;
-    padding: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    margin: auto;
+    padding: auto;
     
 }
 
