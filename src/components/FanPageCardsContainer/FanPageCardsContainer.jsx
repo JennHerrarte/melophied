@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 import FanPageAPI from '../../Models/FanPageAPI'
-import {Card, Button} from 'react-bootstrap'
+import {Card, Image} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import './FanPageCardsContainer.css'
 
@@ -16,7 +16,6 @@ const FanPageCardsContainer = () => {
 
     const fetchTopFiveFanPages = async () => {
         const res = await FanPageAPI.topFive()
-
         setTopFiveFanPages(res.data.topFivePages)
     }
 
@@ -29,19 +28,18 @@ const FanPageCardsContainer = () => {
                 {
                     topFiveFanPages.map((page, idx) => {
                         return(
-
-                            <Card style={{ width: '18rem' }}>
-                                <Card.Img variant="top" src={page._id.artistData.artistImage} />
+                            
+                            <Link to={`/fanpage/${page._id.id}`}>
+                                <Image style={{ width: '15rem', height: '15rem', borderRadius: '50%'}} variant="top" src={page._id.artistData.artistImage} />
+                                <Card style={{ width: '15rem', height: '11rem' , backgroundColor: 'transparent', border: 'none'}}>
                                 <Card.Body>
-                                <Card.Title>{page._id.artistData.name}</Card.Title>
+                                <Card.Title >{page._id.artistData.name}</Card.Title>
                                 <Card.Text>
                                     {page._id.pageTitle}
                                 </Card.Text>
-                                <Link to={`/fanpage/${page._id.id}`}>
-                                    <Button variant="primary">Visit Fan Page</Button>
-                                </Link>
                                 </Card.Body>
-                            </Card>
+                                </Card>
+                            </Link>
                             
                         )
                     })
