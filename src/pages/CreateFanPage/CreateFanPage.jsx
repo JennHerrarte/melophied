@@ -10,7 +10,7 @@ const CreateFanPage = ({currentUser}) => {
     const [token, setToken] = useState('')
     const [artistData, setArtistData] = useState({name: '', id: '', artistImage: ''})
     const [artists, setArtists] = useState([])
-    const [background, setBackground] = useState('')
+    const [background, setBackground] = useState(require('../../images/concert-image.jpg').default)
 
     // fetch spotify token when the home page loads
     useEffect(() => {
