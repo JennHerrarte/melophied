@@ -9,12 +9,14 @@
     align-content: center;
     justify-content: center;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    margin: auto;
-    padding: auto;
+    margin: 10px;
+    padding: 10px;
     
 }
 
 .FanPageCardsContainer-cards a:hover{
     text-decoration: none;
     opacity: 0.9;
+    padding: 10px;
 }
+

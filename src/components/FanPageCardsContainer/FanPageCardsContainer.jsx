@@ -22,7 +22,7 @@ const FanPageCardsContainer = () => {
 
     return(
         <div className='FanPageCardsContainer'>
-        <h1>Current Top Five Fan Pages</h1>
+        <h3>Current Top Five Fan Pages</h3>
         <div className='FanPageCardsContainer-cards'>
              
                 {
@@ -30,8 +30,8 @@ const FanPageCardsContainer = () => {
                         return(
                             
                             <Link to={`/fanpage/${page._id.id}`}>
-                                <Image style={{ width: '15rem', height: '15rem', borderRadius: '50%'}} variant="top" src={page._id.artistData.artistImage} />
-                                <Card style={{ width: '15rem', height: '11rem' , backgroundColor: 'transparent', border: 'none'}}>
+                                <Image className="TopFiveImage" style={{ width: '12rem', height: '12rem', borderRadius: '50%', margin: '5px', padding: '5px'}} variant="top" src={page._id.artistData.artistImage} />
+                                <Card className="TopFiveCard" style={{ width: '12rem', height: '11rem' , backgroundColor: 'transparent', border: 'none'}}>
                                 <Card.Body>
                                 <Card.Title >{page._id.artistData.name}</Card.Title>
                                 <Card.Text>
