@@ -1,7 +1,6 @@
 import {useState, useEffect} from 'react'
 import FanPageAPI from '../../Models/FanPageAPI'
 import {Card, Button} from 'react-bootstrap'
-import FanPageCard from  '../FanPageCard/FanPageCard'
 import {Link} from 'react-router-dom'
 import './FanPageCardsContainer.css'
 
@@ -38,7 +37,7 @@ const FanPageCardsContainer = () => {
                                 <Card.Text>
                                     {page._id.pageTitle}
                                 </Card.Text>
-                                <Link to={`/fanpage/${page._id}`}>
+                                <Link to={`/fanpage/${page._id.id}`}>
                                     <Button variant="primary">Visit Fan Page</Button>
                                 </Link>
                                 </Card.Body>
