@@ -16,7 +16,7 @@ console.log(recentUserPages)
                recentUserPages.map((page, idx) => {
                 return(
                     <div className="ArtistDiv">
-                    <Image className='artistAvatar' src={page.artistData.artistImage} rounded />
+                    <Link className="pageLink" to={`/fanpage/${page._id}`} ><Image className='artistAvatar' src={page.artistData.artistImage} rounded /></Link> 
                     <Link className="pageLink" to={`/fanpage/${page._id}`} key={idx}>{page.pageTitle}</Link>
                     </div>
                     ) 
