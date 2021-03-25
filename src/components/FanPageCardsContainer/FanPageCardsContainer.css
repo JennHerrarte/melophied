@@ -1,0 +1,13 @@
+.FanPageCardsContainer {
+    align-content: center;
+    justify-content: center;
+    
+}
+
+.FanPageCardsContainer-cards {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    margin: auto;
+}

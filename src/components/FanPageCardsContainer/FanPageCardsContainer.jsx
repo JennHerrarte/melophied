@@ -3,6 +3,7 @@ import FanPageAPI from '../../Models/FanPageAPI'
 import {Card, Button} from 'react-bootstrap'
 import FanPageCard from  '../FanPageCard/FanPageCard'
 import {Link} from 'react-router-dom'
+import './FanPageCardsContainer.css'
 
 const FanPageCardsContainer = () => {
 
@@ -24,7 +25,8 @@ const FanPageCardsContainer = () => {
     return(
         <div className='FanPageCardsContainer'>
         <h1>Current Top Five Fan Pages</h1>
-              <ul>
+        <div className='FanPageCardsContainer-cards'>
+             
                 {
                     topFiveFanPages.map((page, idx) => {
                         return(
@@ -46,7 +48,8 @@ const FanPageCardsContainer = () => {
                     })
                 }
                
-            </ul>  
+              
+            </div>
         </div>
     )   
 }
