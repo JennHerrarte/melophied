@@ -10,7 +10,7 @@ import UserProfilePage from '../pages/UserProfilePage/UserProfilePage'
 import EditFanPage from '../pages/EditFanPage/EditFanPage'
 import EditUserProfile from '../pages/EditUserProfile/EditUserProfile'
 
-const Routes = ({currentUser}) => (
+const Routes = ({currentUser, setCurrentUser}) => (
     <Switch>
         <Route exact path="/" render={() =>  <HomePage currentUser={currentUser}/>  }/>
         <Route path="/register" component={ RegistrationPage } />
@@ -19,7 +19,7 @@ const Routes = ({currentUser}) => (
         <Route path="/explore" component={ ExplorePage } />
         <Route exact path="/profile" render={() =>  <UserProfilePage currentUser={currentUser} /> }/>
         
-        <Route path="/profile/edit" render={() =>  <EditUserProfile currentUser={currentUser} /> }/>
+        <Route path="/profile/edit" render={() =>  <EditUserProfile currentUser={currentUser} setCurrentUser={setCurrentUser} /> }/>
         
         <Route path="/fanpage/create" render={ () => <CreateFanPage currentUser={currentUser} />} />
         <Route path="/fanpage/:id/edit" render={() =>  <EditFanPage currentUser={currentUser}/> }/>

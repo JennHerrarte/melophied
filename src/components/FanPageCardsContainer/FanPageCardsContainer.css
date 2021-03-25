@@ -1,0 +1,20 @@
+.FanPageCardsContainer {
+    align-content: center;
+    justify-content: center;
+    
+}
+
+.FanPageCardsContainer-cards {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    grid-template-columns: 2fr 2fr 2fr 2fr 2fr;
+    margin: 10px;
+    padding: 10px;
+    
+}
+
+.FanPageCardsContainer-cards a:hover{
+    text-decoration: none;
+    opacity: 0.9;
+}

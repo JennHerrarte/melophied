@@ -9,7 +9,6 @@ const HomePage = ({currentUser}) => {
     return (
         <div className="HomePage">
             <h1>Welcome to Melophied</h1>
-            <p>Top Five User Created Fan Pages</p>
             <div>
             <FanPageCardsContainer />
             </div>
