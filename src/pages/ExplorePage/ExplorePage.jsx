@@ -6,12 +6,10 @@ import {useState, useEffect} from 'react'
 const ExplorePage = () => {
 
     const [allFanPages, setAllFanPages]=useState([])
-    const [topFiveFanPages, setTopFiveFanPages]=useState([])
 
     useEffect(() => {
         
         fetchAllFanPages()
-        fetchTopFiveFanPages()
 
     }, [])
 
@@ -22,16 +20,10 @@ const ExplorePage = () => {
         setAllFanPages(res.data.allPages)
     }
 
-    const fetchTopFiveFanPages = async () => {
-        const res = await FanPageAPI.topFive()
-
-        setTopFiveFanPages(res.data.topFivePages)
-    }
 
     return(
         <div className>
-            <p>I am the explore page so please explore me</p>
-            <FanPageCardsContainer topFiveFanPages={topFiveFanPages}/>
+            <FanPageCardsContainer />
             <FanPageListings allFanPages={allFanPages}/>
         </div>
     )

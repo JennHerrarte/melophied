@@ -1,0 +1,21 @@
+.HomePage {
+    background-image: url('../../images/concert-image.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+
+}   
+
+.HomePage h1 {
+    color: white;
+}
+
+.HomePage p {
+    color: white;
+}
