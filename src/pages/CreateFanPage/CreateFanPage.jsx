@@ -10,6 +10,7 @@ const CreateFanPage = ({currentUser}) => {
     const [token, setToken] = useState('')
     const [artistData, setArtistData] = useState({name: '', id: '', artistImage: ''})
     const [artists, setArtists] = useState([])
+    const [background, setBackground] = useState('')
 
     // fetch spotify token when the home page loads
     useEffect(() => {
@@ -32,7 +33,7 @@ const CreateFanPage = ({currentUser}) => {
     }
 
     return (
-        <div className="CreateFanPage">
+        <div className="CreateFanPage" style={{backgroundImage: `url(${background})`}}>
             {/* if no artist is selected yet, show ArtistSelector. Once artist is selected, show FanPageEditor */}
             {
                 artistData.name === '' ?
@@ -41,7 +42,8 @@ const CreateFanPage = ({currentUser}) => {
                 fetchArtists={ fetchArtists } 
                 artists={ artists } 
                 setArtists={ setArtists } 
-                setArtistData={ setArtistData }/>
+                setArtistData={ setArtistData }
+                setBackground={ setBackground }/>
                 :
                 <FanPageEditor token={token} artistData={artistData} currentUser={currentUser} />
             }
