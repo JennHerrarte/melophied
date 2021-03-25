@@ -42,7 +42,6 @@ const FanPageCardsContainer = () => {
                                 </Card.Body>
                             </Card>
                             
-
                         )
                     })
                 }

@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react'
-import {useParams} from 'react-router-dom'
+import {useParams, useHistory} from 'react-router-dom'
 import FanPageBio from '../../components/FanPageBio/FanPageBio'
 import UserAlbums from '../../components/UserAlbums/UserAlbums'
 import UserTracks from '../../components/UserTracks/UserTracks'
@@ -20,6 +20,7 @@ const FanPage = ({currentUser}) => {
     const [userId, setUserId] = useState('')
 
     const params = useParams()
+    const history = useHistory()
     const pageId = params.id
 
     useEffect(() => {
@@ -34,7 +35,6 @@ const FanPage = ({currentUser}) => {
 
     useEffect(() => {
         if(pageData && token) {
-            fetchPageData(pageId);
             fetchTopTracks(token, pageData.artistData.id);
         }
     }, [pageData])
@@ -64,9 +64,22 @@ const FanPage = ({currentUser}) => {
         setPageData(res.data.foundFanPage)
     }
 
-    const deletePageData = async (pageId, userToken) => {
+    const deletePage = async (pageId, userToken) => {
         const res = await FanPageAPI.delete(pageId, userToken)
-        console.log(res);
+        
+        history.push('/')
+    }
+
+    const upvotePage = async (pageId, userToken) => {
+        
+        try {
+            const res = await FanPageAPI.upvote(pageId, userToken)
+
+            setPageData(res.data.updatedFanPage)
+
+        } catch (error) {
+            console.log(error);
+        }
     }
 
 
@@ -75,7 +88,7 @@ const FanPage = ({currentUser}) => {
             {
                 Object.entries(pageData).length !== 0 ?
                 <>
-                <FanPageHeader currentUser={currentUser} userId={userId} pageData={pageData} deletePageData={deletePageData} />
+                <FanPageHeader currentUser={currentUser} userId={userId} pageData={pageData} deletePage={deletePage} upvotePage={upvotePage} />
                 
                 <FanPageBio pageData={pageData}/>
                 <ArtistTopTracksContainer topTracks={topTracks} />

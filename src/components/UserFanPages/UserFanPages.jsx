@@ -1,15 +1,32 @@
-//TODO function to pull user's last 4 created fan pages
+import {Container, Image, Row, Col} from 'react-bootstrap'
+import './UserFanPages.css'
+import {Link} from 'react-router-dom'
 
-const UserFanPages = () => {
+const UserFanPages = ({recentUserPages}) => {
+console.log(recentUserPages)
     return (
         <div>
-        <h1>My fan pages</h1>
-        <ul>
-            <li>FanPage 1</li>
-            <li>FanPage 2</li>
-            <li>FanPage 3</li>
-            <li>FanPage 4</li>
-        </ul>
+        <h1 class='myFanPages'>My Fan Pages</h1>
+     
+
+           <Container className='UserFanPages'>
+                <Row className='row'>
+              
+                {
+               recentUserPages.map((page, idx) => {
+                return(
+                    <div className="ArtistDiv">
+                    <Link className="pageLink" to={`/fanpage/${page._id}`} ><Image className='artistAvatar' src={page.artistData.artistImage} rounded /></Link> 
+                    <Link className="pageLink" to={`/fanpage/${page._id}`} key={idx}>{page.pageTitle}</Link>
+                    </div>
+                    ) 
+               })
+            }
+           
+            </Row>
+            </Container>
+        
+          
         </div>
     )
 }
