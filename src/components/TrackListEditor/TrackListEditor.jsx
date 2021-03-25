@@ -76,7 +76,7 @@ const TrackListEditor = ({trackData, trackList, setTrackList}) => {
                     className={`TrackListEditor__track ${track.selected ? 'selected' : ''}`} 
                     key={`track-data${idx}`}>
 
-                        {track.name}
+                        {track.name.substring(0, 20)}
 
                     </div>)
                 }
