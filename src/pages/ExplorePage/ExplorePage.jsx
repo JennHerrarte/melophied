@@ -23,7 +23,6 @@ const ExplorePage = () => {
 
     return(
         <div className>
-            <p>I am the explore page so please explore me</p>
             <FanPageCardsContainer />
             <FanPageListings allFanPages={allFanPages}/>
         </div>
