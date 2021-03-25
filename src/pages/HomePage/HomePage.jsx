@@ -1,33 +1,17 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import {Button} from 'react-bootstrap';
-import {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom';
 import FanPageCardsContainer from '../../components/FanPageCardsContainer/FanPageCardsContainer'
-import FanPageAPI from '../../Models/FanPageAPI'
 import './HomePage.css'
 
 const HomePage = ({currentUser}) => {
-
-    const [topFiveFanPages, setTopFiveFanPages]=useState([])
-
-    useEffect(() => {
-        
-        fetchTopFiveFanPages()
-
-    }, [])
-
-    const fetchTopFiveFanPages = async () => {
-        const res = await FanPageAPI.topFive()
-
-        setTopFiveFanPages(res.data.topFivePages)
-    }
 
     return (
         <div className="HomePage">
             <h1>Welcome to Melophied</h1>
             <p>Top Five User Created Fan Pages</p>
             <div>
-            <FanPageCardsContainer topFiveFanPages={topFiveFanPages}/>
+            <FanPageCardsContainer />
             </div>
             <Link to="/explore">
             <Button className="exploreButton">Explore</Button>

@@ -1,12 +1,24 @@
-// this component holds the fan page cards for the home component
-
+import {useState, useEffect} from 'react'
+import FanPageAPI from '../../Models/FanPageAPI'
+import {Card, Button} from 'react-bootstrap'
 import FanPageCard from  '../FanPageCard/FanPageCard'
+import {Link} from 'react-router-dom'
 
-// TODO currently top 5 fan pages just showing ID, will need to update this
+const FanPageCardsContainer = () => {
 
-const FanPageCardsContainer = ({topFiveFanPages}) => {
+  const [topFiveFanPages, setTopFiveFanPages]=useState([])
 
-  // console.log(topFiveFanPages, "top5")
+    useEffect(() => {
+        
+        fetchTopFiveFanPages()
+
+    }, [])
+
+    const fetchTopFiveFanPages = async () => {
+        const res = await FanPageAPI.topFive()
+
+        setTopFiveFanPages(res.data.topFivePages)
+    }
 
 
     return(
@@ -15,14 +27,26 @@ const FanPageCardsContainer = ({topFiveFanPages}) => {
                 {
                     topFiveFanPages.map((page, idx) => {
                         return(
-                        <li key={`Top5-upvotes-${idx}`}>Total Upvotes:{page.len}</li>
-                        
+
+                            <Card style={{ width: '18rem' }}>
+                                <Card.Img variant="top" src={page._id.artistData.artistImage} />
+                                <Card.Body>
+                                <Card.Title>{page._id.artistData.name}</Card.Title>
+                                <Card.Text>
+                                    {page._id.pageTitle}
+                                </Card.Text>
+                                <Link to={`/fanpage/${page._id}`}>
+                                    <Button variant="primary">Visit Fan Page</Button>
+                                </Link>
+                                </Card.Body>
+                            </Card>
+                            
+
                         )
                     })
                 }
                
             </ul>  
-            <FanPageCard/>
         </div>
     )   
 }
