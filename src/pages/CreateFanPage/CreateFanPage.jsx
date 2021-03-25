@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import FanPageEditor from '../../components/FanPageEditor/FanPageEditor'
 import ArtistSelector from '../../components/ArtistSelector/ArtistSelector'
 import Spotify from '../../services/spotify'
+import './CreateFanPage.css'
 
 const CreateFanPage = ({currentUser}) => {
 
