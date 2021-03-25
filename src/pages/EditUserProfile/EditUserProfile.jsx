@@ -5,7 +5,7 @@ import {useHistory, Link} from 'react-router-dom';
 import UserAPI from '../../Models/UserAPI';
 import jwtDecode from 'jwt-decode'
 
-const EditUserProfile = ({currentUser}) => {
+const EditUserProfile = ({currentUser, setCurrentUser}) => {
     
     const [username, setUsername]=useState('')
     const [ userData, setUserData] = useState([])
@@ -39,6 +39,10 @@ const EditUserProfile = ({currentUser}) => {
             const res = await UserAPI.updateProfile(userData._id, currentUser, data)
   
             setUserData(res.data.updatedUser)
+            
+            localStorage.setItem('uid', res.data.userJWT )
+
+            setCurrentUser(localStorage.getItem('uid'))
 
             history.push('/profile')
   
