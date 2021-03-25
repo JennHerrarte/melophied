@@ -4,6 +4,10 @@
     
 }
 
+.FanPageCardsContainer h3 {
+    text-align: center;
+}
+
 .FanPageCardsContainer-cards {
     display: grid;
     align-content: center;

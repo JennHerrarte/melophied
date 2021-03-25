@@ -4,9 +4,15 @@
     
 }
 
-.FanPageListings h1{
+.FanPageListings h3{
     text-align: center;
     
+}
+
+.FanPageListings button {
+    background-color: #9E43AA;
+    border: #9E43AA;
+    font-style: bold;
 }
 
 .FanPageListingsCard{
