@@ -3,7 +3,7 @@ import './ArtistTopTracksContainer.css'
 
 const ArtistTopTracksContainer = ({topTracks}) => {
     return(
-        <div className='attc'>
+        <div className='attc container'>
             <p>Artist Top Tracks</p>
             {
                 topTracks.length > 0 ?

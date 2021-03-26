@@ -1,0 +1,8 @@
+.ArtistTopTracks li {
+    display: flex;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    align-items: center;
+    margin: 10px;
+    font-size: 20px;
+}
