@@ -9,6 +9,9 @@ body {
     'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #44318D;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2A1B3D, #44318D,, #D83F87);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2A1B3D, #44318D, #D83F87); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 code {
