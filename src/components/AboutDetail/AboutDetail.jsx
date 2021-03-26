@@ -20,15 +20,15 @@ const AboutDetail = () => {
                 <div className="dev-team-roster">
                     <ul>
                         Front End Team
-                        <li>Jennifer Herrarte</li>
-                        <li>Megan Matthews</li>
-                        <li>Chuck Hyun Choi</li>
+                        <li><a href="https://www.linkedin.com/in/jenniferherrarte/">Jennifer Herrarte</a></li>
+                        <li><a href="https://www.linkedin.com/in/meganmatthews44/">Megan Matthews</a></li>
+                        <li><a href="https://www.linkedin.com/in/chuckchoi/">Chuck Hyun Choi</a></li>
                     </ul>
                     <ul>
                         Back End Team
-                        <li>Gregory Harper</li>
-                        <li>Arifur Rahmen</li>
-                        <li>Raul Rodriguez</li>
+                        <li><a href="https://www.linkedin.com/in/gregory-harper-71592067/">Gregory Harper</a></li>
+                        <li><a href="https://www.linkedin.com/in/arifurrahma/">Arifur Rahmen</a></li>
+                        <li><a href="https://www.linkedin.com/in/raulirodriguez/">Raul Rodriguez</a></li>
                     </ul>
                 </div>
                 

@@ -1,59 +1,64 @@
-* { 
-    box-sizing: border-box; 
-    margin: 0;
-    padding: 0;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 .welcome {
-
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    font-family: 'Laila', sans-serif;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  font-family: 'Laila', sans-serif;
 }
 
 .info {
-    font-family: 'Roboto', sans-serif;
-    display: flex;
-    justify-content: center;
-    margin-left: 50px;
-    margin-right: 50px;
-    color: white;
-
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: center;
+  margin-left: 50px;
+  margin-right: 50px;
+  color: white;
 }
 
 .logo {
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    align-items: center;
-    width: 200px;
-
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  align-items: center;
+  width: 200px;
 }
 
 .dev-team-roster {
-    display: flex;
-    justify-content: space-around !important;
-    color: white;
-
+  display: flex;
+  justify-content: space-around !important;
+  color: white;
 }
 
-.dev-team-detail  { 
-    width: 30%; 
-    text-align: center; 
-    color: white;
+.dev-team-roster a {
+  color: white;
+}
+
+.dev-team-roster a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.dev-team-detail {
+  width: 30%;
+  text-align: center;
+  color: white;
 }
 
 .dev-team-detail p {
-    color: white;
-    font-family: 'Laila', sans-serif;
+  color: white;
+  font-family: 'Laila', sans-serif;
 }
 
 .dropdown-toggle {
-    background-color: #39CCCC;
-    border-color:  #39CCCC;
+  background-color: #39cccc;
+  border-color: #39cccc;
 }
 
 .btn:hover {
-border-color: #ff00ff;
-background-color:#ff00ff;
+  border-color: #ff00ff;
+  background-color: #ff00ff;
 }
