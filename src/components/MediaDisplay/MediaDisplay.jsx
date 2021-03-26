@@ -1,6 +1,6 @@
 import './MediaDisplay.css'
 
-const MediaDisplay = ({displayTrackData}) => {
+const MediaDisplay = ({displayTrackData, displayAlbumData}) => {
 
     const convertMs = (millis) => {
         const minutes = Math.floor(millis / 60000);
@@ -21,7 +21,10 @@ const MediaDisplay = ({displayTrackData}) => {
     return (
         <div className="MediaDisplay d-flex flex-column">
             {
-                Object.keys(displayTrackData).length ? 
+                Object.keys(displayTrackData).length || Object.keys(displayAlbumData).length  ? 
+                <>
+                {
+                Object.keys(displayTrackData).length ?
                 <>
                 <div className="MediaDisplay__img d-flex flex-column justify-content-around align-items-center">
                     <img src={`${displayTrackData.album.images[0].url}`} alt=""/>
@@ -33,6 +36,19 @@ const MediaDisplay = ({displayTrackData}) => {
                     <div className="MediaDisplay__info__trackNum">Track #: {displayTrackData.track_number}</div>
                     <div className="MediaDisplay__info__duration">Duration: {convertMs(displayTrackData.duration_ms)}</div>
                 </div>
+                </>
+                :
+                <>
+                <div className="MediaDisplay__img d-flex flex-column justify-content-around align-items-center">
+                    <img src={`${displayAlbumData.images[0].url}`} alt={displayAlbumData.name}/>
+                </div>
+                <div className="MediaDisplay__info">
+                    <div className="MediaDisplay__info__album">{displayAlbumData.name}</div>
+                    <div className="MediaDisplay__info__year">Release Year: {convertDate(displayAlbumData.release_date)}</div>
+                    <div className="MediaDisplay__info__trackNum">Total Tracks: {displayAlbumData.total_tracks}</div>
+                </div>
+                </>
+                }
                 </>
             :
             ''

@@ -24,6 +24,7 @@ const FanPageEditor = ({token, artistData, currentUser, pageData}) => {
     // state for display
     const [trackId, setTrackId] = useState('')
     const [displayTrackData, setDisplayTrackData] = useState({})
+    const [displayAlbumData, setDisplayAlbumData] = useState({})
 
     const history = useHistory()
 
@@ -117,9 +118,9 @@ const FanPageEditor = ({token, artistData, currentUser, pageData}) => {
             pageDetail={pageDetail}
             setPageDetail={setPageDetail} />
             <div className="FanPageEditor__list-editors-wrapper d-flex justify-content-between" >
-                <TrackListEditor trackData={trackData} trackList={trackList} setTrackList={setTrackList} setTrackId={setTrackId} setDisplayTrackData={setDisplayTrackData} />
-                <MediaDisplay displayTrackData={displayTrackData} />
-                <AlbumListEditor albumData={albumData} albumList={albumList} setAlbumList={setAlbumList} />
+                <TrackListEditor trackData={trackData} trackList={trackList} setTrackList={setTrackList} setTrackId={setTrackId} setDisplayTrackData={setDisplayTrackData} setDisplayAlbumData={setDisplayAlbumData} />
+                <MediaDisplay displayTrackData={displayTrackData} displayAlbumData={displayAlbumData} />
+                <AlbumListEditor albumData={albumData} albumList={albumList} setAlbumList={setAlbumList} setDisplayAlbumData={setDisplayAlbumData} setDisplayTrackData={setDisplayTrackData} />
             </div>
             {
                 pageTitle && trackList.length >= 1 && albumList.length >= 1 ?

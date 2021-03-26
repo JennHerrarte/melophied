@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import './TrackListEditor.css'
 
-const TrackListEditor = ({trackData, trackList, setTrackList, setTrackId, setDisplayTrackData}) => {
+const TrackListEditor = ({trackData, trackList, setTrackList, setTrackId, setDisplayTrackData, setDisplayAlbumData}) => {
     /*
         NOTE track data
 
@@ -88,7 +88,7 @@ const TrackListEditor = ({trackData, trackList, setTrackList, setTrackId, setDis
                         track.selected = !track.selected
 
                     }}
-                    onMouseEnter={() => { playAudio(track.preview_url); setTrackId(track.id)}}
+                    onMouseEnter={() => { playAudio(track.preview_url); setTrackId(track.id); setDisplayAlbumData({})}}
                     onMouseLeave={() => { pauseAudio(track.preview_url); setTrackId(''); setDisplayTrackData({}) }}
                     className={`TrackListEditor__track ${track.selected ? 'selected' : ''}`} 
                     key={`track-data${idx}`}>

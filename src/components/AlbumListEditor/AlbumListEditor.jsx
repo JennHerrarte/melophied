@@ -1,6 +1,6 @@
 import './AlbumListEditor.css'
 
-const AlbumListEditor = ({albumData, albumList, setAlbumList}) => {
+const AlbumListEditor = ({albumData, albumList, setAlbumList, setDisplayAlbumData, setDisplayTrackData}) => {
 
     /* 
 
@@ -78,7 +78,9 @@ const AlbumListEditor = ({albumData, albumList, setAlbumList}) => {
                         // toggle album.selected to true or false
                         album.selected = !album.selected
 
-                    }} 
+                    }}
+                    onMouseEnter={() => { setDisplayAlbumData(album); console.log(album); setDisplayTrackData({}) }}
+                    onMouseLeave={() => { setDisplayAlbumData({}) }}
                     className={`AlbumListEditor__album ${album.selected ? 'selected' : ''}`} 
                     key={`album-data${idx}`}>
 
