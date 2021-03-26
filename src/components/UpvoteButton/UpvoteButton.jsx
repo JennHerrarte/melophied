@@ -10,9 +10,9 @@ const UpvoteButton = ({currentUser, userId, pageData, upvotePage}) => {
                 <>
                     {
                         pageData.upvote.includes(userId) ?
-                        <Button variant="outline-danger" onClick={() => {upvotePage(pageData._id, currentUser )}}>Devote {pageData.upvote.length}</Button>
+                        <Button variant="light" onClick={() => {upvotePage(pageData._id, currentUser )}}>Devote {pageData.upvote.length}</Button>
                         :
-                        <Button variant="outline-warning" onClick={() => {upvotePage(pageData._id, currentUser )}}>Upvote {pageData.upvote.length}</Button>
+                        <Button variant="light" onClick={() => {upvotePage(pageData._id, currentUser )}}>Upvote {pageData.upvote.length}</Button>
                     }
                 </>
                 :
