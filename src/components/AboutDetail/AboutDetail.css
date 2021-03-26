@@ -16,7 +16,8 @@
     display: flex;
     justify-content: center;
     margin-left: 50px;
-    margin-right: 50px
+    margin-right: 50px;
+    color: white;
 
 }
 
@@ -31,7 +32,18 @@
 
 .dev-team-roster {
     display: flex;
-    
     justify-content: space-around !important;
+    color: white;
 
+}
+
+.dev-team-detail  { 
+    width: 30%; 
+    text-align: center; 
+    color: white;
+}
+
+.dev-team-detail p {
+    color: white;
+    font-family: 'Laila', sans-serif;
 }

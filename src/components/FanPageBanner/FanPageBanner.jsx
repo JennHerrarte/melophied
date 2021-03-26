@@ -1,4 +1,6 @@
 import musicianImg from '../../pages/FanPage/testimages/musician.jpg'
+import './FanPageBanner.css'
+
 
 const FanPageBanner = ({pageData}) => {
     return (
