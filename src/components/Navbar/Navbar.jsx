@@ -30,7 +30,7 @@ const Navbar = ({ currentUser, logout }) => {
                 {
                     currentUser ? 
                     (
-                        <Dropdown>
+                        <Dropdown >
                             <Dropdown.Toggle variant="success" id="dropdown-basic">
                                 {username}
                             </Dropdown.Toggle>
