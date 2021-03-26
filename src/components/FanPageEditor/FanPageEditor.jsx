@@ -4,6 +4,7 @@ import {useHistory} from 'react-router-dom'
 import DetailEditor from '../DetailEditor/DetailEditor'
 import TrackListEditor from '../TrackListEditor/TrackListEditor'
 import AlbumListEditor from '../AlbumListEditor/AlbumListEditor'
+import MediaDisplay from '../MediaDisplay/MediaDisplay'
 import Spotify from '../../services/spotify'
 import FanPage from '../../Models/FanPageAPI'
 import './FanPageEditor.css'
@@ -20,6 +21,11 @@ const FanPageEditor = ({token, artistData, currentUser, pageData}) => {
     const [trackList, setTrackList] = useState([])
     const [albumList, setAlbumList] = useState([])
 
+    // state for display
+    const [trackId, setTrackId] = useState('')
+    const [displayTrackData, setDisplayTrackData] = useState({})
+    const [displayAlbumData, setDisplayAlbumData] = useState({})
+
     const history = useHistory()
 
     const data = {
@@ -30,7 +36,7 @@ const FanPageEditor = ({token, artistData, currentUser, pageData}) => {
         albumList,
     }
 
-    useState(() => {
+    useEffect(() => {
         fetchMediaData(token, artistData)
         if (pageData) {
             setPageTitle(pageData.pageTitle)
@@ -39,6 +45,12 @@ const FanPageEditor = ({token, artistData, currentUser, pageData}) => {
             setAlbumList(pageData.albumList)
         }
     }, [])
+
+    useEffect(() => {
+        if (trackId) {
+            fetchTrackData(token, trackId)
+        }
+    }, [trackId])
 
     async function fetchMediaData (token, artistData) {
 
@@ -60,6 +72,14 @@ const FanPageEditor = ({token, artistData, currentUser, pageData}) => {
         } catch (error) {
             console.log(error);
         }
+
+    }
+
+    const fetchTrackData = async (token, trackId) => {
+
+        const res = await Spotify.getTrack(token, trackId)
+
+        setDisplayTrackData(res.data)
 
     }
     
@@ -93,16 +113,17 @@ const FanPageEditor = ({token, artistData, currentUser, pageData}) => {
 
     return(
         <div className="FanPageEditor d-flex flex-column">
-            { pageData ? 'Editing' : 'Creating'} Fan Page for {artistData.name}
+            <h3 className="FanPageEditor_heading">{ pageData ? 'Editing' : 'Creating'} Fan Page for {artistData.name}</h3>
             <DetailEditor pageTitle={pageTitle} setPageTitle={setPageTitle} 
             pageDetail={pageDetail}
             setPageDetail={setPageDetail} />
-            <div className="FanPageEditor__list-editors-wrapper d-flex justify-content-around" >
-                <TrackListEditor trackData={trackData} trackList={trackList} setTrackList={setTrackList} />
-                <AlbumListEditor albumData={albumData} albumList={albumList} setAlbumList={setAlbumList} />
+            <div className="FanPageEditor__list-editors-wrapper d-flex justify-content-between" >
+                <TrackListEditor trackData={trackData} trackList={trackList} setTrackList={setTrackList} setTrackId={setTrackId} setDisplayTrackData={setDisplayTrackData} setDisplayAlbumData={setDisplayAlbumData} />
+                <MediaDisplay displayTrackData={displayTrackData} displayAlbumData={displayAlbumData} />
+                <AlbumListEditor albumData={albumData} albumList={albumList} setAlbumList={setAlbumList} setDisplayAlbumData={setDisplayAlbumData} setDisplayTrackData={setDisplayTrackData} />
             </div>
             {
-                pageTitle && trackList.length === 1 && albumList.length === 1 ?
+                pageTitle && trackList.length >= 1 && albumList.length >= 1 ?
                 <button className="btn btn-success" onClick={() => { pageData ? editPage(data) : createPage(data)}}>
                     {pageData ? "Save" : "Create Page" }
                 </button>
@@ -111,7 +132,7 @@ const FanPageEditor = ({token, artistData, currentUser, pageData}) => {
                     Finish completing the page editor!
                 </button>
             }
-            
+            <audio id="displayAudio" className="d-none" src=""></audio>
         </div>
     )
 }

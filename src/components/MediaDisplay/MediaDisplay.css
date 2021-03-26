@@ -1,0 +1,35 @@
+.MediaDisplay {
+  text-align: center;
+}
+
+.MediaDisplay__img {
+  height: 150px;
+  padding: 5px 10px 5px 10px;
+}
+
+.MediaDisplay__img .trackImg {
+  border-radius: 100%;
+  animation: rotation 5s infinite linear;
+}
+
+/* rotate image */
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.MediaDisplay__img .albumImg {
+  border-radius: 2px;
+}
+
+.MediaDisplay__info {
+  margin-top: 20px;
+}
+
+.MediaDisplay__info__name {
+  font-weight: bold;
+}

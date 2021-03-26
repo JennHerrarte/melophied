@@ -5,3 +5,9 @@
   background-size: cover;
   background-position: center;
 }
+
+.FanPageEditor_heading,
+.FanPageEditor ol,
+.FanPageEditor li {
+  color: #000000;
+}

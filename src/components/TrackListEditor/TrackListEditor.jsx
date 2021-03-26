@@ -1,6 +1,7 @@
+import {useState} from 'react'
 import './TrackListEditor.css'
 
-const TrackListEditor = ({trackData, trackList, setTrackList}) => {
+const TrackListEditor = ({trackData, trackList, setTrackList, setTrackId, setDisplayTrackData, setDisplayAlbumData}) => {
     /*
         NOTE track data
 
@@ -12,6 +13,18 @@ const TrackListEditor = ({trackData, trackList, setTrackList}) => {
             external_urls.spotify,
         }
     */
+
+    const audio = document.getElementById('displayAudio')
+
+    const playAudio = (url) => {
+        audio.src = url
+        audio.play()
+    }
+
+    const pauseAudio = (url) => {
+        audio.pause()
+        audio.currentTime = 0
+    }
 
     trackList.forEach( (track) => {
         
@@ -28,7 +41,7 @@ const TrackListEditor = ({trackData, trackList, setTrackList}) => {
 
     return (
         <div className="TrackListEditor d-flex flex-column">
-            <div className="TrackListEditor__user-selection">
+            <div className="TrackListEditor__user-selection my-1">
                 Selected Tracks
                 {/* display list of tracks selected */}
                 <ol className="TrackListEditor__user-selection__list">
@@ -45,7 +58,7 @@ const TrackListEditor = ({trackData, trackList, setTrackList}) => {
                     }
                 </ol>
             </div>
-            <div className="TrackListEditor__spotify-data">
+            <div className="TrackListEditor__spotify-data my-1">
                 {
                     trackData.map((track, idx) =>
 
@@ -75,6 +88,8 @@ const TrackListEditor = ({trackData, trackList, setTrackList}) => {
                         track.selected = !track.selected
 
                     }}
+                    onMouseEnter={() => { playAudio(track.preview_url); setTrackId(track.id); setDisplayAlbumData({})}}
+                    onMouseLeave={() => { pauseAudio(track.preview_url); setTrackId(''); setDisplayTrackData({}) }}
                     className={`TrackListEditor__track ${track.selected ? 'selected' : ''}`} 
                     key={`track-data${idx}`}>
 
