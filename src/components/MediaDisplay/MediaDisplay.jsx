@@ -27,7 +27,7 @@ const MediaDisplay = ({displayTrackData, displayAlbumData}) => {
                 Object.keys(displayTrackData).length ?
                 <>
                 <div className="MediaDisplay__img d-flex flex-column justify-content-around align-items-center">
-                    <img src={`${displayTrackData.album.images[0].url}`} alt=""/>
+                    <img className="trackImg" src={`${displayTrackData.album.images[0].url}`} alt=""/>
                     <div className="MediaDisplay__info__name">{displayTrackData.name}</div>
                 </div>
                 <div className="MediaDisplay__info">
@@ -40,10 +40,10 @@ const MediaDisplay = ({displayTrackData, displayAlbumData}) => {
                 :
                 <>
                 <div className="MediaDisplay__img d-flex flex-column justify-content-around align-items-center">
-                    <img src={`${displayAlbumData.images[0].url}`} alt={displayAlbumData.name}/>
+                    <img className="albumImg" src={`${displayAlbumData.images[0].url}`} alt={displayAlbumData.name}/>
+                    <div className="MediaDisplay__info__name">{displayAlbumData.name}</div>
                 </div>
                 <div className="MediaDisplay__info">
-                    <div className="MediaDisplay__info__album">{displayAlbumData.name}</div>
                     <div className="MediaDisplay__info__year">Release Year: {convertDate(displayAlbumData.release_date)}</div>
                     <div className="MediaDisplay__info__trackNum">Total Tracks: {displayAlbumData.total_tracks}</div>
                 </div>
