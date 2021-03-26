@@ -3,6 +3,8 @@ import {Link} from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 import Dropdown from 'react-bootstrap/Dropdown'
 import jwtDecode from 'jwt-decode'
+import './Navbar.css'
+import logo from './logo.png'
 
 const Navbar = ({ currentUser, logout }) => {
     const [username, setUsername] = useState('')
@@ -13,8 +15,11 @@ const Navbar = ({ currentUser, logout }) => {
     }, [currentUser])
 
     return (
-        <nav className="nav d-flex justify-content-between">
+        <nav className="nav">
+            
             <section className="nav__links">
+            <img className='nav-logo' src={logo}/>
+            <Link className="nav__link" to="/">Melophied</Link>
                 <Link className="nav__link" to="/">Home</Link>
                 <Link className="nav__link" to="/about">About</Link>
                 <Link className="nav__link" to="/explore">Explore</Link>
