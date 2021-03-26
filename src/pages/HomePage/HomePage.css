@@ -1,6 +1,5 @@
 .HomePage {
     background-image: url('../../images/concert-image.jpg');
-    height: 100vh;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -16,6 +15,9 @@
 
 .HomePage h1 {
     color: white;
+    font-size: 60px;
+    justify-content: center;
+    margin-top: 10vh;
 }
 
 .HomePage-buttons {
