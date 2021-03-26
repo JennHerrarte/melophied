@@ -1,7 +1,28 @@
-.maincardtitle {
+.maincardtitle, .card-title {
     margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.card li {
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    line-height: 60px;
+    font-size: 20px;
 }
 
 .card {
-    
+    margin-bottom: 30px;
+}
+
+.card-title {
+    font-size: 25px;
+    color: #355070
 }
