@@ -61,3 +61,8 @@
   .forgot-password a {
     color: #167bff;
   }
+
+  .RegistrationForm button:hover {
+    background-color: #D83F87;
+    border-color: #D83F87;
+  }
