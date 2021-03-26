@@ -5,7 +5,7 @@
   .LoginForm {
     min-height: 100vh;
     font-weight: 400;
-    
+    margin: 10vh;
   }
 
   .LoginForm h3 {
