@@ -10,7 +10,7 @@ const AuthorButtons = ({currentUser, userId, pageData, deletePage}) => {
                     <Link to={`/fanpage/${pageData._id}/edit`}>
                         <Button>Edit</Button>
                     </Link>
-                    <Button onClick={() => deletePage(pageData._id, currentUser)}>Delete</Button>
+                    <Button className="AuthorButtons__delete" onClick={() => deletePage(pageData._id, currentUser)}>Delete</Button>
                 </div>
                 :
                 ''

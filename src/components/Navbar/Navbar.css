@@ -65,3 +65,13 @@ a:hover {
 .btn-success:not(:disabled):not(.disabled):active:focus {
   box-shadow: 0 0 0 0.2rem rgb(68 49 141 / 50%);
 }
+
+.AuthorButtons__delete {
+  background-color: #44318d;
+  border-color: #44318d;
+}
+
+.AuthorButtons__delete:hover {
+  background-color: red;
+  border-color: red;
+}
