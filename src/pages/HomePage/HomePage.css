@@ -27,15 +27,23 @@
 }
 
 .exploreButton, .createButton {
-    margin: 0 20vh;
     width: 200px;
-    height: 100px;
+    height: 75px;
     font-size: 25px;
     border: white 2px solid;
     background-color: #44318D;
     font-style: bold;
 }
 
+.exploreButton {
+    margin-right: 10vh;
+}
+
+.createButton {
+    margin-left: 10vh;
+}
+
 .exploreButton:hover, .createButton:hover {
     background-color: #2A1B3D;
+    border: white 2px solid;
 }
