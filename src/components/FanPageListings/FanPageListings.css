@@ -10,9 +10,13 @@
 }
 
 .FanPageListings button {
-    background-color: #9E43AA;
+    background-color: #44318D;
     border: #9E43AA;
     font-style: bold;
+}
+
+.FanPageListings button:hover {
+    background-color: #2A1B3D;
 }
 
 .FanPageListingsCard{
