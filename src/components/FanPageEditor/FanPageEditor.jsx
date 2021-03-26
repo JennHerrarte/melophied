@@ -22,7 +22,8 @@ const FanPageEditor = ({token, artistData, currentUser, pageData}) => {
     const [albumList, setAlbumList] = useState([])
 
     // state for display
-    const [displayTrackId, setDisplayTrackId] = useState('')
+    const [trackId, setTrackId] = useState('')
+    const [displayTrackData, setDisplayTrackData] = useState({})
 
     const history = useHistory()
 
@@ -34,7 +35,7 @@ const FanPageEditor = ({token, artistData, currentUser, pageData}) => {
         albumList,
     }
 
-    useState(() => {
+    useEffect(() => {
         fetchMediaData(token, artistData)
         if (pageData) {
             setPageTitle(pageData.pageTitle)
@@ -43,6 +44,12 @@ const FanPageEditor = ({token, artistData, currentUser, pageData}) => {
             setAlbumList(pageData.albumList)
         }
     }, [])
+
+    useEffect(() => {
+        if (trackId) {
+            fetchTrackData(token, trackId)
+        }
+    }, [trackId])
 
     async function fetchMediaData (token, artistData) {
 
@@ -64,6 +71,14 @@ const FanPageEditor = ({token, artistData, currentUser, pageData}) => {
         } catch (error) {
             console.log(error);
         }
+
+    }
+
+    const fetchTrackData = async (token, trackId) => {
+
+        const res = await Spotify.getTrack(token, trackId)
+
+        setDisplayTrackData(res.data)
 
     }
     
@@ -102,8 +117,8 @@ const FanPageEditor = ({token, artistData, currentUser, pageData}) => {
             pageDetail={pageDetail}
             setPageDetail={setPageDetail} />
             <div className="FanPageEditor__list-editors-wrapper d-flex justify-content-between" >
-                <TrackListEditor trackData={trackData} trackList={trackList} setTrackList={setTrackList} setDisplayTrackId={setDisplayTrackId} />
-                <MediaDisplay />
+                <TrackListEditor trackData={trackData} trackList={trackList} setTrackList={setTrackList} setTrackId={setTrackId} setDisplayTrackData={setDisplayTrackData} />
+                <MediaDisplay displayTrackData={displayTrackData} />
                 <AlbumListEditor albumData={albumData} albumList={albumList} setAlbumList={setAlbumList} />
             </div>
             {

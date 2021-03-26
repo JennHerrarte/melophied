@@ -1,6 +1,6 @@
 import './TrackListEditor.css'
 
-const TrackListEditor = ({trackData, trackList, setTrackList, setDisplayTrackId}) => {
+const TrackListEditor = ({trackData, trackList, setTrackList, setTrackId, setDisplayTrackData}) => {
     /*
         NOTE track data
 
@@ -12,6 +12,22 @@ const TrackListEditor = ({trackData, trackList, setTrackList, setDisplayTrackId}
             external_urls.spotify,
         }
     */
+
+    let audio
+
+    const playAudio = (url) => {
+
+        audio = new Audio(url)
+
+        audio.play()
+
+    }
+
+    // const pauseAudio = (url) => {
+
+    //     audio.pause()
+
+    // }
 
     trackList.forEach( (track) => {
         
@@ -75,8 +91,8 @@ const TrackListEditor = ({trackData, trackList, setTrackList, setDisplayTrackId}
                         track.selected = !track.selected
 
                     }}
-                    onMouseEnter={() => {setDisplayTrackId(track.id)}}
-                    onMouseLeave={() => {setDisplayTrackId('')}}
+                    onMouseEnter={() => {setTrackId(track.id); playAudio(track.preview_url)}}
+                    onMouseLeave={() => {setTrackId(''); setDisplayTrackData({})}}
                     className={`TrackListEditor__track ${track.selected ? 'selected' : ''}`} 
                     key={`track-data${idx}`}>
 
