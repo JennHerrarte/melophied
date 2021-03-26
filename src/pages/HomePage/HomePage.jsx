@@ -12,6 +12,7 @@ const HomePage = ({currentUser}) => {
             <div>
             <FanPageCardsContainer />
             </div>
+            <div className="HomePage-buttons">
             <Link to="/explore">
             <Button className="exploreButton">Explore</Button>
             </Link>
@@ -23,16 +24,16 @@ const HomePage = ({currentUser}) => {
                     currentUser ? 
                     (
                         <Link to="/fanpage/create">
-                            <Button>Create</Button>
+                            <Button className="createButton">Create</Button>
                         </Link>
                     ) : 
                     (
                         <Link to="/login">
-                            <Button>Create</Button>
+                            <Button className="createButton">Create</Button>
                         </Link>
                     )
                 }
-               
+                </div>  
         </div>
     )
 }

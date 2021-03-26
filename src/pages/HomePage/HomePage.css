@@ -8,11 +8,27 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    
-
 }   
+
+.HomePage h3 {
+    color: white;
+}
 
 .HomePage h1 {
     color: white;
 }
 
+.HomePage-buttons {
+    display: inline-block;
+    
+}
+
+.exploreButton, .createButton {
+    margin: 0 20vh;
+    width: 200px;
+    height: 100px;
+    font-size: 25px;
+    border: white 2px solid;
+    background-color: #23238E;
+    font-style: bold;
+}
