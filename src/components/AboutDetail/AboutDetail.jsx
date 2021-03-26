@@ -1,5 +1,5 @@
 import './AboutDetail.css'
-import logo from './logo.png'
+import logo from './updatedlogo.png'
 
 const AboutDetail = () => {
     return(
