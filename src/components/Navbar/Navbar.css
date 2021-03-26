@@ -30,28 +30,33 @@ a:hover {
   color: purple;
 }
 
-.dropdown-toggle {
+.dropdown-toggle,
+.btn-primary {
   background-color: #d83f87;
   border-color: #d83f87;
 }
 
-.dropdown-toggle:hover {
+.dropdown-toggle:hover,
+.btn-primary:hover {
   background-color: #44318d;
   border-color: #44318d;
 }
 
-.show > .btn-success.dropdown-toggle {
+.show > .btn-success.dropdown-toggle,
+.btn-primary:not(:disabled):not(.disabled):active {
   background-color: #44318d !important;
   border-color: #44318d !important;
 }
 
-.show > .btn-success.dropdown-toggle:focus {
+.show > .btn-success.dropdown-toggle:focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus {
   background-color: #44318d;
   border-color: #44318d;
   box-shadow: 0 0 0 0.2rem rgb(68 49 141 / 50%);
 }
 
-.btn-success:focus {
+.btn-success:focus,
+.btn-primary:focus {
   background-color: #44318d !important;
   border-color: #44318d !important;
   box-shadow: 0 0 0 0.2rem rgb(68 49 141 / 50%);
