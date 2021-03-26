@@ -1,7 +1,7 @@
 import './MediaDisplay.css'
 
 const MediaDisplay = ({displayTrackData}) => {
-    console.log(displayTrackData);
+
     return (
         <div className="MediaDisplay d-flex flex-column">
             {

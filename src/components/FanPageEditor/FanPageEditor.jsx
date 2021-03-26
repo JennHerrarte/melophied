@@ -131,7 +131,7 @@ const FanPageEditor = ({token, artistData, currentUser, pageData}) => {
                     Finish completing the page editor!
                 </button>
             }
-            
+            <audio id="displayAudio" className="d-none" src=""></audio>
         </div>
     )
 }

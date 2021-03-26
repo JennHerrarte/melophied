@@ -1,3 +1,4 @@
+import {useState} from 'react'
 import './TrackListEditor.css'
 
 const TrackListEditor = ({trackData, trackList, setTrackList, setTrackId, setDisplayTrackData}) => {
@@ -13,21 +14,17 @@ const TrackListEditor = ({trackData, trackList, setTrackList, setTrackId, setDis
         }
     */
 
-    let audio
+        const audio = document.getElementById('displayAudio')
 
-    const playAudio = (url) => {
+        const playAudio = (url) => {
+            audio.src = url
+            audio.play()
+        }
 
-        audio = new Audio(url)
-
-        audio.play()
-
-    }
-
-    // const pauseAudio = (url) => {
-
-    //     audio.pause()
-
-    // }
+        const pauseAudio = (url) => {
+            audio.pause()
+            audio.currentTime = 0
+        }
 
     trackList.forEach( (track) => {
         
@@ -91,8 +88,8 @@ const TrackListEditor = ({trackData, trackList, setTrackList, setTrackId, setDis
                         track.selected = !track.selected
 
                     }}
-                    onMouseEnter={() => {setTrackId(track.id); playAudio(track.preview_url)}}
-                    onMouseLeave={() => {setTrackId(''); setDisplayTrackData({})}}
+                    onMouseEnter={() => { playAudio(track.preview_url); setTrackId(track.id)}}
+                    onMouseLeave={() => { pauseAudio(track.preview_url); setTrackId(''); setDisplayTrackData({}) }}
                     className={`TrackListEditor__track ${track.selected ? 'selected' : ''}`} 
                     key={`track-data${idx}`}>
 
