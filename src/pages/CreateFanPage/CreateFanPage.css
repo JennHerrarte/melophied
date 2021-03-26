@@ -6,6 +6,8 @@
   background-position: center;
 }
 
+body .CreateFanPage,
+body .EditFanPage,
 .FanPageEditor_heading,
 .FanPageEditor ol,
 .FanPageEditor li {
