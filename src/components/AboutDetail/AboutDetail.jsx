@@ -17,7 +17,7 @@ const AboutDetail = () => {
                 <p>
                     Melophied Dev Team:
                 </p>
-                <div className="dev-team-roster d-flex">
+                <div className="dev-team-roster">
                     <ul>
                         Front End Team
                         <li>Jennifer Herrarte</li>

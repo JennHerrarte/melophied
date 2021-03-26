@@ -4,7 +4,7 @@ import './RegistrationPage.css';
 const RegistrationPage = () => {
     return (
         <>
-        <div className="RegistrationPage">
+        <div className="RegistrationPage" container>
         
         <RegistrationForm/>
      
