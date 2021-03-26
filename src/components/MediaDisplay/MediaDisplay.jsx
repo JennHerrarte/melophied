@@ -2,6 +2,22 @@ import './MediaDisplay.css'
 
 const MediaDisplay = ({displayTrackData}) => {
 
+    const convertMs = (millis) => {
+        const minutes = Math.floor(millis / 60000);
+        const seconds = ((millis % 60000) / 1000).toFixed(0);
+
+        //If seconds is less than 10 put a zero in front.
+        return `${minutes}:${(seconds < 10 ? "0" : "")}${seconds}`;
+        
+    }
+
+    const convertDate = (dateStr) => {
+        const date = new Date(dateStr)
+
+        return date.getFullYear().toString()
+    }
+
+
     return (
         <div className="MediaDisplay d-flex flex-column">
             {
@@ -13,10 +29,9 @@ const MediaDisplay = ({displayTrackData}) => {
                 </div>
                 <div className="MediaDisplay__info">
                     <div className="MediaDisplay__info__album">Album: {displayTrackData.album.name}</div>
-                    <div className="MediaDisplay__info__year">Release Year: {displayTrackData.album.release_date}</div>
+                    <div className="MediaDisplay__info__year">Release Year: {convertDate(displayTrackData.album.release_date)}</div>
                     <div className="MediaDisplay__info__trackNum">Track #: {displayTrackData.track_number}</div>
-                    <div className="MediaDisplay__info__duration">Duration: {displayTrackData.duration_ms}</div>
-                    <div className="MediaDisplay__info__link"><a href={displayTrackData.external_urls.spotify} target="_blank" rel="noreferrer">Spotify Link</a></div>
+                    <div className="MediaDisplay__info__duration">Duration: {convertMs(displayTrackData.duration_ms)}</div>
                 </div>
                 </>
             :

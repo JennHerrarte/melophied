@@ -14,17 +14,17 @@ const TrackListEditor = ({trackData, trackList, setTrackList, setTrackId, setDis
         }
     */
 
-        const audio = document.getElementById('displayAudio')
+    const audio = document.getElementById('displayAudio')
 
-        const playAudio = (url) => {
-            audio.src = url
-            audio.play()
-        }
+    const playAudio = (url) => {
+        audio.src = url
+        audio.play()
+    }
 
-        const pauseAudio = (url) => {
-            audio.pause()
-            audio.currentTime = 0
-        }
+    const pauseAudio = (url) => {
+        audio.pause()
+        audio.currentTime = 0
+    }
 
     trackList.forEach( (track) => {
         
