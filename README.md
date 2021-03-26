@@ -22,9 +22,9 @@ Discover new songs by browsing other community created tribute fan pages. Explor
 - I want to be able to register with a username and password to create a user account 
 - I want to be able to log in once I am a registered user
 - I want to be able to edit my user information in my profile
-- I want to be able to see my list of created fan pages and fan pages that I have upvoted on my user profile
+- I want to be able to see my list of created fan pages on my user profile
 - I want to be able to create/update/delete fan page(s) that I have created
-- I want to be able to edit fan page bios and edit my top five songs and albums, and add shows I have attended for that artist
+- I want to be able to edit fan page bios and edit my top five songs and albums
 - I want to be able to explore fan pages in the community 
 - I want to be able to upvote and de-upvote other users’ fan pages 
 - I want to be able to Log out
