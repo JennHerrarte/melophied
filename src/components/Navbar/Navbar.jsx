@@ -18,7 +18,7 @@ const Navbar = ({ currentUser, logout }) => {
         <nav className="nav">
             
             <section className="nav__links">
-            <img className='nav-logo' src={logo}/>
+            <Link to="/"><img className='nav-logo' src={logo}/></Link>
             <Link className="nav__link" to="/">Melophied</Link>
                 <Link className="nav__link" to="/">Home</Link>
                 <Link className="nav__link" to="/about">About</Link>
