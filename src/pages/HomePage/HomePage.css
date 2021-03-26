@@ -29,6 +29,10 @@
     height: 100px;
     font-size: 25px;
     border: white 2px solid;
-    background-color: #23238E;
+    background-color: #44318D;
     font-style: bold;
+}
+
+.exploreButton:hover, .createButton:hover {
+    background-color: #D83F87;
 }
