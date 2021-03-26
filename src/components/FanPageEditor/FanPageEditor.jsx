@@ -4,6 +4,7 @@ import {useHistory} from 'react-router-dom'
 import DetailEditor from '../DetailEditor/DetailEditor'
 import TrackListEditor from '../TrackListEditor/TrackListEditor'
 import AlbumListEditor from '../AlbumListEditor/AlbumListEditor'
+import MediaDisplay from '../MediaDisplay/MediaDisplay'
 import Spotify from '../../services/spotify'
 import FanPage from '../../Models/FanPageAPI'
 import './FanPageEditor.css'
@@ -19,6 +20,9 @@ const FanPageEditor = ({token, artistData, currentUser, pageData}) => {
     const [pageDetail, setPageDetail] = useState('')
     const [trackList, setTrackList] = useState([])
     const [albumList, setAlbumList] = useState([])
+
+    // state for display
+    const [displayTrackId, setDisplayTrackId] = useState('')
 
     const history = useHistory()
 
@@ -98,7 +102,8 @@ const FanPageEditor = ({token, artistData, currentUser, pageData}) => {
             pageDetail={pageDetail}
             setPageDetail={setPageDetail} />
             <div className="FanPageEditor__list-editors-wrapper d-flex justify-content-between" >
-                <TrackListEditor trackData={trackData} trackList={trackList} setTrackList={setTrackList} />
+                <TrackListEditor trackData={trackData} trackList={trackList} setTrackList={setTrackList} setDisplayTrackId={setDisplayTrackId} />
+                <MediaDisplay />
                 <AlbumListEditor albumData={albumData} albumList={albumList} setAlbumList={setAlbumList} />
             </div>
             {

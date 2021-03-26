@@ -97,6 +97,19 @@ class Spotify {
 
     // get top tracks of an artist
 
+    static getTrack = (token, trackId) => {
+
+        return axios(`${BASE_URL}/tracks/${trackId}`, {
+            headers: {
+                'Authorization' : `Bearer ${token}`
+            },
+            method: 'GET'
+        })
+
+    }
+
+    // get top tracks of an artist
+
     static getTopTracks = (token, artistId) => {
 
         return axios(`${BASE_URL}/artists/${artistId}/top-tracks?market=US`, {
@@ -106,7 +119,8 @@ class Spotify {
             method: 'GET'
         })
 
-    };
+    }
+    
 }
 
 export default Spotify

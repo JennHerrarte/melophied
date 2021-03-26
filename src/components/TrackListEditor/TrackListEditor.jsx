@@ -1,6 +1,6 @@
 import './TrackListEditor.css'
 
-const TrackListEditor = ({trackData, trackList, setTrackList}) => {
+const TrackListEditor = ({trackData, trackList, setTrackList, setDisplayTrackId}) => {
     /*
         NOTE track data
 
@@ -75,6 +75,8 @@ const TrackListEditor = ({trackData, trackList, setTrackList}) => {
                         track.selected = !track.selected
 
                     }}
+                    onMouseEnter={() => {setDisplayTrackId(track.id)}}
+                    onMouseLeave={() => {setDisplayTrackId('')}}
                     className={`TrackListEditor__track ${track.selected ? 'selected' : ''}`} 
                     key={`track-data${idx}`}>
 

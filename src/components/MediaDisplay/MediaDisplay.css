@@ -1,0 +1,8 @@
+.MediaDisplay {
+  text-align: center;
+}
+
+.MediaDisplay__img {
+  height: 150px;
+  padding: 5px 10px 5px 10px;
+}
