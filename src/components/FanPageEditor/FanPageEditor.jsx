@@ -102,7 +102,7 @@ const FanPageEditor = ({token, artistData, currentUser, pageData}) => {
                 <AlbumListEditor albumData={albumData} albumList={albumList} setAlbumList={setAlbumList} />
             </div>
             {
-                pageTitle && trackList.length === 5 && albumList.length === 5 ?
+                pageTitle && trackList.length === 1 && albumList.length === 1 ?
                 <button className="btn btn-success" onClick={() => { pageData ? editPage(data) : createPage(data)}}>
                     {pageData ? "Save" : "Create Page" }
                 </button>
