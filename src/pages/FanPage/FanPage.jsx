@@ -62,7 +62,7 @@ const FanPage = ({currentUser}) => {
 
     const fetchPageData = async(pageId) => {
         const res = await FanPageAPI.show(pageId)
-        
+        console.log(pageData)
         setPageData(res.data.foundFanPage)
     }
 

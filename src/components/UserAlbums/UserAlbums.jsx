@@ -2,6 +2,7 @@
 import { Card } from 'react-bootstrap'
 import './UserAlbums.css'
 
+
 const UserAlbums = ({userAlbums, username}) => {
 
     return(
