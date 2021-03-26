@@ -113,7 +113,7 @@ const FanPageEditor = ({token, artistData, currentUser, pageData}) => {
 
     return(
         <div className="FanPageEditor d-flex flex-column">
-            { pageData ? 'Editing' : 'Creating'} Fan Page for {artistData.name}
+            <h3 className="FanPageEditor_heading">{ pageData ? 'Editing' : 'Creating'} Fan Page for {artistData.name}</h3>
             <DetailEditor pageTitle={pageTitle} setPageTitle={setPageTitle} 
             pageDetail={pageDetail}
             setPageDetail={setPageDetail} />
