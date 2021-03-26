@@ -1,3 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Laila:wght@700&family=Roboto:wght@500&display=swap');
+
 main {
   height: calc(100vh - 38px);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Laila', sans-serif;
+  font-weight: bold;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
 }
