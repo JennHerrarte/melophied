@@ -12,6 +12,7 @@ const EditFanPage = ({currentUser}) => {
     const [artistData, setArtistData] = useState({name: '', id: '', artistImage: ''})
     const [artists, setArtists] = useState([])
     const [pageData, setPageData] = useState({})
+    const [background, setBackground] = useState(require('../../images/concert-image.jpg').default)
 
     const params = useParams()
     const pageId = params.id
@@ -21,6 +22,10 @@ const EditFanPage = ({currentUser}) => {
         fetchToken()
         fetchPageData(pageId)
     }, [])
+
+    useEffect(() => {
+        setBackground(artistData.artistImage)
+    }, [artistData])
 
     // feth spotify token and set it to token state
     const fetchToken = async () => {
@@ -46,7 +51,7 @@ const EditFanPage = ({currentUser}) => {
     }
 
     return (
-        <div className="EditFanPage">
+        <div className="EditFanPage" style={{backgroundImage: `url(${background})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
             {/* if no artist is selected yet, show ArtistSelector. Once artist is selected, show FanPageEditor */}
             {
                 artistData.name === '' ?
