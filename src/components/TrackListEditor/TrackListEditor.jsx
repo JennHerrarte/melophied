@@ -31,17 +31,19 @@ const TrackListEditor = ({trackData, trackList, setTrackList}) => {
             <div className="TrackListEditor__user-selection">
                 Selected Tracks
                 {/* display list of tracks selected */}
-                {
-                    trackList.map((track, idx) => 
+                <ol className="TrackListEditor__user-selection__list">
+                    {
+                        trackList.map((track, idx) => 
 
-                    <div  
-                    className="TrackListEditor__selected-tracks" 
-                    key={`track${idx}`}>
+                        <li  
+                        className="TrackListEditor__selected-tracks" 
+                        key={`track${idx}`}>
 
-                        {track.name}
+                            {track.name}
 
-                    </div>)
-                }
+                        </li>)
+                    }
+                </ol>
             </div>
             <div className="TrackListEditor__spotify-data">
                 {
@@ -62,7 +64,7 @@ const TrackListEditor = ({trackData, trackList, setTrackList}) => {
                     
                     // else, show regular div with clickable option that togges track.selected and its css class 'selected'
                     <div
-                    onClick={(e) => {
+                    onClick={() => {
                         // ternary opertaor to add or remove track from trackList based on track.selected
                         track.selected ?  
                         setTrackList(trackList.filter(value => value.id !== track.id ))
@@ -72,7 +74,7 @@ const TrackListEditor = ({trackData, trackList, setTrackList}) => {
                         // toggle track.selected to true or false
                         track.selected = !track.selected
 
-                    }} 
+                    }}
                     className={`TrackListEditor__track ${track.selected ? 'selected' : ''}`} 
                     key={`track-data${idx}`}>
 
