@@ -28,7 +28,7 @@ const TrackListEditor = ({trackData, trackList, setTrackList}) => {
 
     return (
         <div className="TrackListEditor d-flex flex-column">
-            <div className="TrackListEditor__user-selection">
+            <div className="TrackListEditor__user-selection my-1">
                 Selected Tracks
                 {/* display list of tracks selected */}
                 <ol className="TrackListEditor__user-selection__list">
@@ -45,7 +45,7 @@ const TrackListEditor = ({trackData, trackList, setTrackList}) => {
                     }
                 </ol>
             </div>
-            <div className="TrackListEditor__spotify-data">
+            <div className="TrackListEditor__spotify-data my-1">
                 {
                     trackData.map((track, idx) =>
 

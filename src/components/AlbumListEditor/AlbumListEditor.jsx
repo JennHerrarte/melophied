@@ -32,7 +32,7 @@ const AlbumListEditor = ({albumData, albumList, setAlbumList}) => {
 
     return (
         <div className="AlbumListEditor d-flex flex-column">
-            <div className="AlbumListEditor__user-selection">
+            <div className="AlbumListEditor__user-selection my-1">
                 Selected Albums
                 {/* display list of albums selected */}
                 <ol className="AlbumListEditor__user-selection__list">
@@ -49,7 +49,7 @@ const AlbumListEditor = ({albumData, albumList, setAlbumList}) => {
                     }
                 </ol>
             </div>
-            <div className="AlbumListEditor__spotify-data">
+            <div className="AlbumListEditor__spotify-data my-1">
                 {
                     albumData.map((album, idx) => 
 

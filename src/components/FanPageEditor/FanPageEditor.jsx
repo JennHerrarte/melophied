@@ -97,12 +97,12 @@ const FanPageEditor = ({token, artistData, currentUser, pageData}) => {
             <DetailEditor pageTitle={pageTitle} setPageTitle={setPageTitle} 
             pageDetail={pageDetail}
             setPageDetail={setPageDetail} />
-            <div className="FanPageEditor__list-editors-wrapper d-flex justify-content-around" >
+            <div className="FanPageEditor__list-editors-wrapper d-flex justify-content-between" >
                 <TrackListEditor trackData={trackData} trackList={trackList} setTrackList={setTrackList} />
                 <AlbumListEditor albumData={albumData} albumList={albumList} setAlbumList={setAlbumList} />
             </div>
             {
-                pageTitle && trackList.length === 1 && albumList.length === 1 ?
+                pageTitle && trackList.length >= 1 && albumList.length >= 1 ?
                 <button className="btn btn-success" onClick={() => { pageData ? editPage(data) : createPage(data)}}>
                     {pageData ? "Save" : "Create Page" }
                 </button>
