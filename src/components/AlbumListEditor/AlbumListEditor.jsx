@@ -35,17 +35,19 @@ const AlbumListEditor = ({albumData, albumList, setAlbumList}) => {
             <div className="AlbumListEditor__user-selection">
                 Selected Albums
                 {/* display list of albums selected */}
-                {
-                    albumList.map((album, idx) => 
+                <ol className="AlbumListEditor__user-selection__list">
+                    {
+                        albumList.map((album, idx) => 
 
-                    <div  
-                    className="AlbumListEditor__selected-albums" 
-                    key={`album${idx}`}>
+                        <li  
+                        className="AlbumListEditor__selected-albums" 
+                        key={`album${idx}`}>
 
-                        {album.name}
+                            {album.name}
 
-                    </div>)
-                }
+                        </li>)
+                    }
+                </ol>
             </div>
             <div className="AlbumListEditor__spotify-data">
                 {

@@ -7,6 +7,10 @@
   overflow: hidden;
 }
 
+.TrackListEditor__user-selection__list {
+  margin-left: 10px;
+}
+
 .TrackListEditor__spotify-data {
   height: 200px;
   overflow-y: auto;
