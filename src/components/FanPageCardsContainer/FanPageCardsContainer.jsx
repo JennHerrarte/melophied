@@ -1,8 +1,8 @@
 import {useState, useEffect} from 'react'
 import FanPageAPI from '../../Models/FanPageAPI'
-import {Card, Button} from 'react-bootstrap'
-import FanPageCard from  '../FanPageCard/FanPageCard'
+import {Card, Image} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
+import './FanPageCardsContainer.css'
 
 const FanPageCardsContainer = () => {
 
@@ -16,37 +16,37 @@ const FanPageCardsContainer = () => {
 
     const fetchTopFiveFanPages = async () => {
         const res = await FanPageAPI.topFive()
-
         setTopFiveFanPages(res.data.topFivePages)
     }
 
 
     return(
         <div className='FanPageCardsContainer'>
-        <h1>Current Top Five Fan Pages</h1>
-              <ul>
+        <h3>Current Top Five Fan Pages</h3>
+        <div className='FanPageCardsContainer-cards'>
+             
                 {
                     topFiveFanPages.map((page, idx) => {
                         return(
-
-                            <Card style={{ width: '18rem' }}>
-                                <Card.Img variant="top" src={page._id.artistData.artistImage} />
+                            
+                            <Link to={`/fanpage/${page._id.id}`}>
+                                <Image className="TopFiveImage" style={{ width: '12rem', height: '12rem', borderRadius: '50%', margin: '5px', padding: '5px'}} variant="top" src={page._id.artistData.artistImage} />
+                                <Card className="TopFiveCard" style={{ width: '12rem', height: '8rem' , backgroundColor: 'transparent', border: 'none', justifyContent: 'center'}}>
                                 <Card.Body>
-                                <Card.Title>{page._id.artistData.name}</Card.Title>
-                                <Card.Text>
+                                <Card.Title style={{fontSize: '18px', textAlign: 'center'}}>{page._id.artistData.name}</Card.Title>
+                                <Card.Text style={{fontSize: '14px', textAlign: 'center'}}>
                                     {page._id.pageTitle}
                                 </Card.Text>
-                                <Link to={`/fanpage/${page._id}`}>
-                                    <Button variant="primary">Visit Fan Page</Button>
-                                </Link>
                                 </Card.Body>
-                            </Card>
+                                </Card>
+                            </Link>
                             
                         )
                     })
                 }
                
-            </ul>  
+              
+            </div>
         </div>
     )   
 }

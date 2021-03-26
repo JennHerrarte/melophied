@@ -6,13 +6,14 @@ const FanPageListings = ({allFanPages}) => {
 
     return(
         <div className='FanPageListings'>
-        <h1>Explore All Fan Pages</h1>
+        <h3>Explore All Fan Pages</h3>
             <div className='FanPageListingsCard'>
             {
                     allFanPages.map((page,idx) => {
                         return(
-                            <Card style={{ width: '18rem' }}>
-                                <Card.Img variant="top" src={page.artistData.artistImage} />
+                            <Card style={{ width: '18rem', textAlign: 'center'}}>
+                                <Card.Img style={{width: '18rem', height: '18rem'}} variant="top" src={page.artistData.artistImage} />
+                                
                                 <Card.Body>
                                 <Card.Title>{page.artistData.name}</Card.Title>
                                 <Card.Text>
