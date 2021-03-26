@@ -1,0 +1,40 @@
+* { 
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+}
+.welcome {
+
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    font-family: 'Yellowtail', cursive;
+}
+
+.info {
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    margin-left: 50px;
+    margin-right: 50px
+}
+
+.dev-team-detail  {
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 300;
+    flex-direction: column;
+    
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    align-items: center;
+    width: 200px;
+
+}
+
