@@ -8,11 +8,9 @@ const AuthorButtons = ({currentUser, userId, pageData, deletePage}) => {
                 userId === pageData.author ?
                 <div className="AuthorButtons">
                     <Link to={`/fanpage/${pageData._id}/edit`}>
-                        <Button 
-                        variant="outline-warning">Edit</Button>
+                        <Button>Edit</Button>
                     </Link>
-                    <Button variant="outline-danger" 
-                    onClick={() => deletePage(pageData._id, currentUser)}>Delete</Button>
+                    <Button onClick={() => deletePage(pageData._id, currentUser)}>Delete</Button>
                 </div>
                 :
                 ''

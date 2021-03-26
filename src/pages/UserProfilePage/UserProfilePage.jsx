@@ -34,7 +34,7 @@ const UserProfilePage = ({currentUser}) => {
     <div className='UserProfilePage'>
         <h1 className='firstName'>Welcome, {userData.firstName}!</h1>
         <h1 className='username'>{username}</h1>
-        <Link to={`/profile/edit`}><Button className='edit' variant="outline-warning">Edit</Button></Link>
+        <Link to={`/profile/edit`}><Button className='edit' variant="info">Edit</Button></Link>
         <UserFanPages className="UserFanPages" recentUserPages={recentUserPages} />
     </div>
     )

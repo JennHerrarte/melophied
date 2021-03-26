@@ -47,3 +47,13 @@
     color: white;
     font-family: 'Laila', sans-serif;
 }
+
+.dropdown-toggle {
+    background-color: #39CCCC;
+    border-color:  #39CCCC;
+}
+
+.btn:hover {
+border-color: #ff00ff;
+background-color:#ff00ff;
+}
