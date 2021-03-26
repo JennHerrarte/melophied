@@ -18,9 +18,7 @@ const Navbar = ({ currentUser, logout }) => {
         <nav className="nav">
             
             <section className="nav__links">
-            <Link to="/"><img className='nav-logo' src={logo}/></Link>
-            <Link className="nav__link" to="/">Melophied</Link>
-                <Link className="nav__link" to="/">Home</Link>
+            <Link className="nav__link" to="/"><img className='nav-logo' src={logo} alt="logo"/>Melophied</Link>
                 <Link className="nav__link" to="/about">About</Link>
                 <Link className="nav__link" to="/explore">Explore</Link>
                 <Link className="nav__link" to="/fanpage/create">Create</Link>
