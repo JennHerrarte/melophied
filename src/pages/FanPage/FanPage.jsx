@@ -13,7 +13,7 @@ import jwtDecode from 'jwt-decode'
 import './FanPage.css'
 
 const FanPage = ({currentUser}) => {
-
+    
     const [token, setToken ] = useState('');
     const [topTracks, setTopTracks] = useState([]);
     const [pageData, setPageData] = useState({})
@@ -36,6 +36,7 @@ const FanPage = ({currentUser}) => {
     useEffect(() => {
         if(pageData && token) {
             fetchTopTracks(token, pageData.artistData.id);
+         
         }
     }, [pageData])
 
@@ -55,12 +56,13 @@ const FanPage = ({currentUser}) => {
         const res = await Spotify.getTopTracks(token, artistId)
 
         setTopTracks(res.data.tracks)
+
     }
 
 
     const fetchPageData = async(pageId) => {
         const res = await FanPageAPI.show(pageId)
-
+        console.log(pageData)
         setPageData(res.data.foundFanPage)
     }
 
@@ -76,14 +78,17 @@ const FanPage = ({currentUser}) => {
             const res = await FanPageAPI.upvote(pageId, userToken)
 
             setPageData(res.data.updatedFanPage)
+           
 
         } catch (error) {
             console.log(error);
         }
+       
     }
 
 
     return (
+        
         <div className="FanPage">
             {
                 Object.entries(pageData).length !== 0 ?
@@ -94,8 +99,8 @@ const FanPage = ({currentUser}) => {
                 <ArtistTopTracksContainer topTracks={topTracks} />
 
                 <div className="FanPageBody">
-                    <UserTracks userTracks={pageData.trackList}/>
-                    <UserAlbums userAlbums={pageData.albumList}/>
+                    <UserTracks userTracks={pageData.trackList} username={pageData.username}/>
+                    <UserAlbums userAlbums={pageData.albumList} username={pageData.username}/>
                 </div>
 
                 </>

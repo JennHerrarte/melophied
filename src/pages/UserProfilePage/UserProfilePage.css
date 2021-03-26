@@ -1,9 +1,7 @@
 .UserProfilePage{
     text-align: center;
     padding-bottom: 10px;
-    background-color: #5A3E79;
-   
-    font-family: 'Train One', cursive;
+    font-family: 'Roboto', sans-serif;
 }
 
 .firstName {

@@ -17,6 +17,7 @@ a.pageLink {
   justify-content: center;
   display: flex;
   color: black;
+  font-family: 'Laila', sans-serif;
 }
 
 .artistAvatar {
@@ -28,11 +29,11 @@ a.pageLink {
 
 .myFanPages {
   margin-bottom: 30px;
-  color: #fca7a5;
+  color: #E98074;
 }
 
 .UserFanPages {
-  background-color: #a76286;
+  background-color: #E98074;
   padding: 30px;
   border-radius: 5px;
 }

@@ -4,6 +4,7 @@ import {useState, useEffect} from 'react';
 import {useHistory, Link} from 'react-router-dom';
 import UserAPI from '../../Models/UserAPI';
 import jwtDecode from 'jwt-decode'
+import './EditUserProfile.css'
 
 const EditUserProfile = ({currentUser, setCurrentUser}) => {
     

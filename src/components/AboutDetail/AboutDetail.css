@@ -8,25 +8,16 @@
     display: flex;
     justify-content: center;
     margin: 0;
-    font-family: 'Yellowtail', cursive;
+    font-family: 'Laila', sans-serif;
 }
 
 .info {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     display: flex;
     justify-content: center;
     margin-left: 50px;
     margin-right: 50px
-}
 
-.dev-team-detail  {
-    font-family: 'Open Sans', sans-serif;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 300;
-    flex-direction: column;
-    
 }
 
 .logo {
@@ -38,3 +29,9 @@
 
 }
 
+.dev-team-roster {
+    display: flex;
+    
+    justify-content: space-around !important;
+
+}

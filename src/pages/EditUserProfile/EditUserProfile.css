@@ -1,0 +1,21 @@
+.ChangeUsernameForm {
+    margin-top: 100px;
+    
+    
+}
+
+.ChangeUsernameForm h3, p {
+    color: black;
+}
+
+.btn-danger {
+    
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: auto;
+}
+
+.btn-dark {
+    margin-bottom: 10px;
+}
