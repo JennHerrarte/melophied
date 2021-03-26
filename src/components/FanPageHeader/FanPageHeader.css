@@ -5,9 +5,24 @@
 .FanPageHeader__banner {
   display: flex;
   flex-direction: row;
+
 }
 
 .FanPageHeader__banner .artistPortrait {
   width: 150px;
   height: 150px;
 }
+
+.FanPageHeader__buttons {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 26px;
+
+}
+
+.btn {
+  margin-right: 10px;
+}
+
+
