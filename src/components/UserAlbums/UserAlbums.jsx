@@ -2,13 +2,14 @@
 import { Card } from 'react-bootstrap'
 import './UserAlbums.css'
 
-const UserAlbums = ({userAlbums}) => {
+
+const UserAlbums = ({userAlbums, username}) => {
 
     return(
         <Card style={{ width: '25rem', height: '40rem' }}>
         <Card.Body>
         <h1 className='maincardtitle'>Albums</h1>
-        <Card.Title>My Top 5</Card.Title>
+        <Card.Title>{username}'s Top 5</Card.Title>
           <Card.Text>
           {
               userAlbums ?

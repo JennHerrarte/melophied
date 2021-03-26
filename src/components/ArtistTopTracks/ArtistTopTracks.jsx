@@ -1,3 +1,5 @@
+import './ArtistTopTracks.css'
+
 const ArtistTopTracks = ({topTracks}) => {
    
     return(
