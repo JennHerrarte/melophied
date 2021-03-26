@@ -12,8 +12,15 @@ h5,
 h6 {
   font-family: 'Laila', sans-serif;
   font-weight: bold;
+  color: #ffffff;
 }
 
-body {
+body,
+p,
+a,
+ul,
+ol,
+li {
   font-family: 'Roboto', sans-serif;
+  color: #ffffff;
 }
