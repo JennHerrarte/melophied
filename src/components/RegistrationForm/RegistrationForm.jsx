@@ -63,10 +63,10 @@ const RegistrationForm = () => {
         <div className="outer">
         <div className="inner">
         <form onSubmit={registrationHandler}>
-        <h3>Register</h3>
-        <div className="form-group firstName">
+        <h3>Register for a Melophied Account</h3>
+        <div className="form-group">
                     <label>First name</label>
-                    <input type="text" className="form-control" name="firstName"placeholder="First name" onChange={(e) => {setFirstName(e.target.value)}}/>
+                    <input type="text" className="form-control" name="firstName" placeholder="First name" onChange={(e) => {setFirstName(e.target.value)}}/>
                 </div>
 
                 <div className="form-group lastName">
