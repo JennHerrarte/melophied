@@ -10,7 +10,7 @@ const AboutDetail = () => {
             </h1>
             <br/>
             <p className="info">
-            Melophied is the ultimate tribute to your favorite musical artists. We feel that each person has their own unique favorite songs and albums which get shadowed by other “top lists”. In Melophied you show the world what YOUR top 5 songs and albums are for each tribute artist page you create. You can even show details on concerts you have attended for that musical artist. Discover new songs by browsing other community created tribute fan pages. Explore other user’s favorite lists and compare with yours to find new content!
+            Melophied is the ultimate tribute to your favorite musical artists. We feel that each person has their own unique favorite songs and albums which get shadowed by other “top lists”. In Melophied you show the world what YOUR top 5 songs and albums are for each tribute artist page you create. Discover new songs by browsing other community created tribute fan pages. Explore other user’s favorite lists and compare with yours to find new content!
             </p>
             <br/>
             <div className="dev-team-detail">
@@ -27,7 +27,7 @@ const AboutDetail = () => {
                     <ul>
                         Back End Team
                         <li><a href="https://www.linkedin.com/in/gregory-harper-71592067/">Gregory Harper</a></li>
-                        <li><a href="https://www.linkedin.com/in/arifurrahma/">Arifur Rahmen</a></li>
+                        <li><a href="https://www.linkedin.com/in/arifurrahma/">Arifur Rahman</a></li>
                         <li><a href="https://www.linkedin.com/in/raulirodriguez/">Raul Rodriguez</a></li>
                     </ul>
                 </div>
