@@ -22,3 +22,8 @@
   margin-top: 5px;
   padding: 5px 10px 5px 10px;
 }
+
+.disabled-notice-button {
+  background-color: #d83f87 !important;
+  border-color: #d83f87 !important;
+}

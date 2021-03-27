@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react'
-import {useHistory} from 'react-router-dom'
+import {useHistory, Link} from 'react-router-dom'
+import {Button} from 'react-bootstrap';
 
 import DetailEditor from '../DetailEditor/DetailEditor'
 import TrackListEditor from '../TrackListEditor/TrackListEditor'
@@ -123,14 +124,24 @@ const FanPageEditor = ({token, artistData, currentUser, pageData}) => {
                 <AlbumListEditor albumData={albumData} albumList={albumList} setAlbumList={setAlbumList} setDisplayAlbumData={setDisplayAlbumData} setDisplayTrackData={setDisplayTrackData} />
             </div>
             {
+                currentUser ?
+                <>
+                {
                 pageTitle && trackList.length >= 1 && albumList.length >= 1 ?
-                <button className="btn btn-success" onClick={() => { pageData ? editPage(data) : createPage(data)}}>
+                <Button onClick={() => { pageData ? editPage(data) : createPage(data)}}>
                     {pageData ? "Save" : "Create Page" }
-                </button>
+                </Button>
                 :
-                <button className="btn btn-danger" disabled>
+                <Button className="disabled-notice-button" disabled>
                     Finish completing the page editor!
-                </button>
+                </Button>
+                }
+                </>
+                :
+                <Link className="m-auto" to="/login">
+                    <Button>Login to create fan page</Button>
+                </Link>
+
             }
             <audio id="displayAudio" className="d-none" src=""></audio>
         </div>
