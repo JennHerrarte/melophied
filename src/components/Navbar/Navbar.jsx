@@ -21,7 +21,12 @@ const Navbar = ({ currentUser, logout }) => {
             <Link className="nav__link" to="/"><img className='nav-logo' src={logo} alt="logo"/>Melophied</Link>
                 <Link className="nav__link" to="/about">About</Link>
                 <Link className="nav__link" to="/explore">Explore</Link>
-                <Link className="nav__link" to="/fanpage/create">Create</Link>
+                {
+                    currentUser ?
+                    <Link className="nav__link" to="/fanpage/create">Create</Link>
+                    :
+                    ''
+                }
             </section>
             <section className="nav__user">
                 {/* if currentUser is found (localStorage's uid), display user dropdown. If not, show login button */}
