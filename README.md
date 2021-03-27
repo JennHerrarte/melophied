@@ -1,5 +1,7 @@
 # Melophied
 
+- [App Link](https://melophied.herokuapp.com/)
+
 - [Front-end Repository](https://github.com/chuckchoiboi/melophied)
 
 - [Back-end Repository](https://github.com/ifrah1/melophied-server)
@@ -19,14 +21,15 @@ Discover new songs by browsing other community created tribute fan pages. Explor
 **User Stories**
 
 &nbsp;&nbsp;&nbsp;As a user…
-- I want to be able to register with a username and password to create a user account 
+
+- I want to be able to register with a username and password to create a user account
 - I want to be able to log in once I am a registered user
 - I want to be able to edit my user information in my profile
 - I want to be able to see my list of created fan pages on my user profile
 - I want to be able to create/update/delete fan page(s) that I have created
 - I want to be able to edit fan page bios and edit my top five songs and albums
-- I want to be able to explore fan pages in the community 
-- I want to be able to upvote and de-upvote other users’ fan pages 
+- I want to be able to explore fan pages in the community
+- I want to be able to upvote and de-upvote other users’ fan pages
 - I want to be able to Log out
 
 <br/>
@@ -40,11 +43,46 @@ Discover new songs by browsing other community created tribute fan pages. Explor
 ![User Profile Page](https://media.git.generalassemb.ly/user/19097/files/9f490880-84db-11eb-9fd4-ade853cadd25)
 ![About](https://media.git.generalassemb.ly/user/19097/files/11085000-8411-11eb-80c0-a3e15496c5d5)
 ![Explore Page](https://media.git.generalassemb.ly/user/19097/files/11a0e680-8411-11eb-9dad-6c03cb7f632c)
-![Create Fan Page](https://media.git.generalassemb.ly/user/19097/files/11a0e680-8411-11eb-888e-2d5f3e13979c)
-![Fan Page Detail](https://media.git.generalassemb.ly/user/19097/files/11a0e680-8411-11eb-916d-0fd28f02ccef)
+![Create Fan Page](https://media.git.generalassemb.ly/user/19097/files/935d2f00-8e69-11eb-8ee1-de52cf6eb0db)
+![Fan Page Detail](https://media.git.generalassemb.ly/user/19097/files/a1ab4b00-8e69-11eb-903c-95d813bd943f)
 
 <br/>
 <br/>
 
 **ERD**
 ![Models](https://media.git.generalassemb.ly/user/19097/files/b28fa180-8411-11eb-8009-fde4decd67f7)
+
+<br/>
+<br/>
+
+**Technologies Used**
+
+- React
+- Spotify API
+- MongoDB Atlas
+- Heroku
+- GitHub
+- Node
+  - React Bootstrap
+  - Axios
+  - Express
+  - Mongoose
+  - JSON Web Token
+  - bcrypt
+  - dotenv
+  - cors
+  - morga
+
+**Team**
+
+- Front End
+
+  - Jennifer Herrarte: [LinkedIn](https://www.linkedin.com/in/jenniferherrarte/) / [GitHub](https://github.com/jennuwine)
+  - Megan Matthews: [LinkedIn](https://www.linkedin.com/in/meganmatthews44/) / [GitHub](https://github.com/meganmatthews44)
+  - Chuck Hyun Choi: [LinkedIn](https://www.linkedin.com/in/chuckchoi/) / [GitHub](https://github.com/chuckchoiboi)
+
+- Back End
+
+  - Gregory Harper: [LinkedIn](https://www.linkedin.com/in/gregory-harper-71592067/) / [GitHub](https://github.com/gharper235)
+  - Arifur Rahmen: [LinkedIn](https://www.linkedin.com/in/arifurrahma/) / [GitHub](https://github.com/ifrah1)
+  - Raul Rodriguez: [LinkedIn](https://www.linkedin.com/in/raulirodriguez/) / [GitHub](https://github.com/raulrodriguez8)
