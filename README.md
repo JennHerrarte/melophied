@@ -55,6 +55,18 @@ Discover new songs by browsing other community created tribute fan pages. Explor
 <br/>
 <br/>
 
+**APIs Used**
+
+- Spotify API
+  - [Authentication](https://developer.spotify.com/documentation/general/guides/authorization-guide/) -- generating token
+  - [Search API](https://developer.spotify.com/documentation/web-api/reference/#category-search)
+  - [Artists API](https://developer.spotify.com/documentation/web-api/reference/#category-artists)
+  - [Albums API](https://developer.spotify.com/documentation/web-api/reference/#category-albums)
+  - [Tracks API](https://developer.spotify.com/documentation/web-api/reference/#category-tracks)
+
+<br/>
+<br/>
+
 **Technologies Used**
 
 - React
@@ -71,7 +83,7 @@ Discover new songs by browsing other community created tribute fan pages. Explor
   - bcrypt
   - dotenv
   - cors
-  - morga
+  - morgan
 
 **Team**
 
