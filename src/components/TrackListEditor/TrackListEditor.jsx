@@ -17,6 +17,7 @@ const TrackListEditor = ({trackData, trackList, setTrackList, setTrackId, setDis
     const audio = document.getElementById('displayAudio')
 
     const playAudio = (url) => {
+        audio.volume = 0.3;
         audio.src = url
         audio.play()
     }
