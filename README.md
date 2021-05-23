@@ -1,4 +1,4 @@
-# Melophied
+# Melophied 🎵
 
 - [App Link](https://melophied.herokuapp.com/)
 
