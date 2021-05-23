@@ -90,11 +90,11 @@ Discover new songs by browsing other community created tribute fan pages. Explor
 - Front End
 
   - Jennifer Herrarte: [LinkedIn](https://www.linkedin.com/in/jenniferherrarte/) / [GitHub](https://github.com/jennuwine)
-  - Megan Matthews: [LinkedIn](https://www.linkedin.com/in/meganmatthews44/) / [GitHub](https://github.com/meganmatthews44)
-  - Chuck Hyun Choi: [LinkedIn](https://www.linkedin.com/in/chuckchoi/) / [GitHub](https://github.com/chuckchoiboi)
+  - Megan Matthews
+  - Chuck Hyun Choi
 
 - Back End
 
-  - Gregory Harper: [LinkedIn](https://www.linkedin.com/in/gregory-harper-71592067/) / [GitHub](https://github.com/gharper235)
-  - Arifur Rahmen: [LinkedIn](https://www.linkedin.com/in/arifurrahma/) / [GitHub](https://github.com/ifrah1)
-  - Raul Rodriguez: [LinkedIn](https://www.linkedin.com/in/raulirodriguez/) / [GitHub](https://github.com/raulrodriguez8)
+  - Gregory Harper
+  - Arifur Rahmen
+  - Raul Rodriguez
