@@ -12,7 +12,7 @@
 
 Welcome to Melophied!
 
-Melophied is the ultimate tribute to your favorite musical artists. We feel that each person has their own unique favorite songs and albums which get shadowed by other “top lists”. In Melophied you show the world what YOUR top 5 songs and albums are for each tribute artist page you create. You can even show details on concerts you have attended for that musical artist.
+Melophied is the ultimate tribute to your favorite musical artists. We feel that each person has their own unique favorite songs and albums which get shadowed by other “top lists”. In Melophied you show the world what YOUR top 5 songs and albums are for each tribute artist page you create. 
 Discover new songs by browsing other community created tribute fan pages. Explore other user’s favorite lists and compare with yours to find new content!
 
 <br/>
