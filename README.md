@@ -1,4 +1,5 @@
-# Melophied 🎵
+
+![2](https://github.com/jennherrarte/melophied/assets/36706323/549c9e2a-7082-4180-8640-5606edc0b68f)
 
 - [App Link](https://melophied.herokuapp.com/)
 
