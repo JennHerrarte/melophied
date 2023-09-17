@@ -28,8 +28,7 @@ Discover new songs by browsing other community created tribute fan pages. Explor
 - I want to be able to upvote and de-upvote other users’ fan pages
 - I want to be able to Log out
 
-<br/>
-<br/>
+
 
 # 🖌️ **Wireframes**
 
