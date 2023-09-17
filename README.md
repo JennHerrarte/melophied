@@ -1,10 +1,5 @@
 
 ![2](https://github.com/jennherrarte/melophied/assets/36706323/549c9e2a-7082-4180-8640-5606edc0b68f)
-
-- [Front-end Repository](https://github.com/chuckchoiboi/melophied)
-
-- [Back-end Repository](https://github.com/ifrah1/melophied-server)
-
 <br>
 
 # 🎧 **App Summary**
@@ -13,6 +8,10 @@ Welcome to Melophied!
 
 Melophied is the ultimate tribute to your favorite musical artists. We feel that each person has their own unique favorite songs and albums which get shadowed by other “top lists”. In Melophied you show the world what YOUR top 5 songs and albums are for each tribute artist page you create. 
 Discover new songs by browsing other community created tribute fan pages. Explore other user’s favorite lists and compare with yours to find new content!
+
+- [Front-end Repository](https://github.com/chuckchoiboi/melophied)
+
+- [Back-end Repository](https://github.com/ifrah1/melophied-server)
 
 <br/>
 <br/>
