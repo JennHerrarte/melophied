@@ -1,15 +1,13 @@
 
 ![2](https://github.com/jennherrarte/melophied/assets/36706323/549c9e2a-7082-4180-8640-5606edc0b68f)
 
-- [App Link](https://melophied.herokuapp.com/)
-
 - [Front-end Repository](https://github.com/chuckchoiboi/melophied)
 
 - [Back-end Repository](https://github.com/ifrah1/melophied-server)
 
 <br>
 
-**App Summary**
+# 🎧 **App Summary**
 
 Welcome to Melophied!
 
@@ -19,7 +17,7 @@ Discover new songs by browsing other community created tribute fan pages. Explor
 <br/>
 <br/>
 
-**User Stories**
+# 👤 **User Stories**
 
 &nbsp;&nbsp;&nbsp;As a user…
 
@@ -36,7 +34,7 @@ Discover new songs by browsing other community created tribute fan pages. Explor
 <br/>
 <br/>
 
-**Wireframes**
+# 🖌️ **Wireframes**
 
 ![Home Page](https://media.git.generalassemb.ly/user/19097/files/11a0e680-8411-11eb-8f48-144f7615a49b)
 ![Register Page](https://media.git.generalassemb.ly/user/19097/files/12397d00-8411-11eb-8237-61ccc4ebedb9)
@@ -50,13 +48,13 @@ Discover new songs by browsing other community created tribute fan pages. Explor
 <br/>
 <br/>
 
-**ERD**
+## 🗄️ **ERD**
 ![Models](https://media.git.generalassemb.ly/user/19097/files/b28fa180-8411-11eb-8009-fde4decd67f7)
 
 <br/>
 <br/>
 
-**APIs Used**
+# 💿 **APIs Used**
 
 - Spotify API
   - [Authentication](https://developer.spotify.com/documentation/general/guides/authorization-guide/) -- generating token
@@ -68,7 +66,7 @@ Discover new songs by browsing other community created tribute fan pages. Explor
 <br/>
 <br/>
 
-**Technologies Used**
+# 🖥️ **Technologies Used**
 
 - React
 - Spotify API
@@ -86,15 +84,15 @@ Discover new songs by browsing other community created tribute fan pages. Explor
   - cors
   - morgan
 
-**Team**
+# ⚽ **Team**
 
-- Front End
+### Front End
 
   - Jennifer Herrarte: [LinkedIn](https://www.linkedin.com/in/jenniferherrarte/) / [GitHub](https://github.com/jennuwine)
   - Megan Matthews
   - Chuck Hyun Choi
 
-- Back End
+### Back End
 
   - Gregory Harper
   - Arifur Rahmen
