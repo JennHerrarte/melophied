@@ -13,8 +13,6 @@ Discover new songs by browsing other community created tribute fan pages. Explor
 
 - [Back-end Repository](https://github.com/ifrah1/melophied-server)
 
-<br/>
-<br/>
 
 # 👤 **User Stories**
 
@@ -44,14 +42,11 @@ Discover new songs by browsing other community created tribute fan pages. Explor
 ![Create Fan Page](https://media.git.generalassemb.ly/user/19097/files/935d2f00-8e69-11eb-8ee1-de52cf6eb0db)
 ![Fan Page Detail](https://media.git.generalassemb.ly/user/19097/files/a1ab4b00-8e69-11eb-903c-95d813bd943f)
 
-<br/>
-<br/>
 
 ## 🗄️ **ERD**
 ![Models](https://media.git.generalassemb.ly/user/19097/files/b28fa180-8411-11eb-8009-fde4decd67f7)
 
-<br/>
-<br/>
+
 
 # 💿 **APIs Used**
 
@@ -62,8 +57,7 @@ Discover new songs by browsing other community created tribute fan pages. Explor
   - [Albums API](https://developer.spotify.com/documentation/web-api/reference/#category-albums)
   - [Tracks API](https://developer.spotify.com/documentation/web-api/reference/#category-tracks)
 
-<br/>
-<br/>
+
 
 # 🖥️ **Technologies Used**
 
